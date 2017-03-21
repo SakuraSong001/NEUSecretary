@@ -7,7 +7,99 @@
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d">
 
-    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+
+        <RelativePanel>
+            <Button x:ConnectionId='10' Name="HamburgerButton" 
+                    RelativePanel.AlignLeftWithPanel="True"
+                    FontFamily="Segoe MDL2 Assets"
+                    FontSize="36" 
+                    Content="&#xE700;" 
+                                                  />
+
+            <Button x:ConnectionId='11' Name="BackButton"
+                    RelativePanel.RightOf="HamburgerButton" 
+                    FontFamily="Segoe MDl2 Assets" 
+                    FontSize="36"
+                    Content="&#xE0C4;" 
+                                            
+                     />
+
+            <TextBlock x:ConnectionId='12' Name="TitleTextBlock"
+                       RelativePanel.RightOf="BackButton"
+                       FontSize="28"
+                       FontWeight="Bold"
+                       Margin="20,5,0,0"/>
+
+            <Button x:ConnectionId='13' Name="SearchButton" 
+                    RelativePanel.AlignRightWithPanel="True"
+                    FontFamily="Segoe MDL2 Assets"
+                    FontSize="36" 
+                    Content="&#xE1A3;" />
+
+            <TextBox x:ConnectionId='14' Name="SearchTextBox" 
+                     RelativePanel.LeftOf="SearchButton" 
+                     Height="48" 
+                     Width="200"
+                     FontSize="24"
+                     PlaceholderText="Search" />
+        </RelativePanel>
+
+        <SplitView x:ConnectionId='1' Grid.Row="1" 
+                   Name="MySplitView"
+                   DisplayMode="CompactOverlay" 
+                   OpenPaneLength="200" 
+                   CompactPaneLength="56">
+            <SplitView.Pane>
+                <ListBox x:ConnectionId='2' SelectionMode="Single" 
+                                                                    >
+                    <ListBoxItem x:ConnectionId='3' Name="Homepage">
+                        <StackPanel Orientation="Horizontal">
+                            <TextBlock FontFamily="Segoe MDL2 Assets" FontSize="36" Text="&#xE80F;" />
+                            <TextBlock FontSize="24" Margin="20,0,0,0">主页</TextBlock>
+                        </StackPanel>
+                    </ListBoxItem>
+                    <ListBoxItem x:ConnectionId='4' Name="Library">
+                        <StackPanel Orientation="Horizontal">
+                            <TextBlock FontFamily="Segoe MDL2 Assets" FontSize="36" Text="&#xE82E;"  />
+                            <TextBlock FontSize="24" Margin="20,0,0,0">图书馆</TextBlock>
+                        </StackPanel>
+                    </ListBoxItem>
+                    <ListBoxItem x:ConnectionId='5' Name="Class">
+                        <StackPanel Orientation="Horizontal">
+                            <TextBlock FontFamily="Segoe MDL2 Assets" FontSize="36" Text="&#xE8F1;"  />
+                            <TextBlock FontSize="24" Margin="20,0,0,0">课程表</TextBlock>
+                        </StackPanel>
+                    </ListBoxItem>
+                    <ListBoxItem x:ConnectionId='6' Name="Selfstudy">
+                        <StackPanel Orientation="Horizontal">
+                            <TextBlock FontFamily="Segoe MDL2 Assets" FontSize="36" Text="&#xE2AD;"  />
+                            <TextBlock FontSize="24" Margin="20,0,0,0">上自习</TextBlock>
+                        </StackPanel>
+                    </ListBoxItem>
+                    <ListBoxItem x:ConnectionId='7' Name="Score">
+                        <StackPanel Orientation="Horizontal">
+                            <TextBlock FontFamily="Segoe MDL2 Assets" FontSize="36" Text="&#xE73E;"  />
+                            <TextBlock FontSize="24" Margin="20,0,0,0">查成绩</TextBlock>
+                        </StackPanel>
+                    </ListBoxItem>
+                    <ListBoxItem x:ConnectionId='8' Name="Selfinfo">
+                        <StackPanel Orientation="Horizontal">
+                            <TextBlock FontFamily="Segoe MDL2 Assets" FontSize="36" Text="&#xE181;"  />
+                            <TextBlock FontSize="24" Margin="20,0,0,0">个人信息</TextBlock>
+                        </StackPanel>
+                    </ListBoxItem>
+                </ListBox>
+            </SplitView.Pane>
+            <SplitView.Content>
+                <Frame x:ConnectionId='9' Name="MyFrame"></Frame>
+            </SplitView.Content>
+
+        </SplitView>
 
     </Grid>
 </Page>

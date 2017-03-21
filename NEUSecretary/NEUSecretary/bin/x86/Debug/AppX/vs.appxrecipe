@@ -16,7 +16,7 @@
     <PackageRegistrationPath>
     </PackageRegistrationPath>
     <RemoveNonLayoutFiles>true</RemoveNonLayoutFiles>
-    <RegisteredManifestChecksum>51785BE484400D8D99BFD92228F4E9CD239C4CDD22E0605F8772FE38654F61B2</RegisteredManifestChecksum>
+    <RegisteredManifestChecksum>2578D782012CEE9B7B9B1F7E301A51B563C1AF4F71A02E94C0690EADAE57EC30</RegisteredManifestChecksum>
     <RegisteredPackageMoniker>e8db42a9-4d43-4cd4-b170-0c2f890c58c0_1.0.0.0_x86__0xs43674bzpb2</RegisteredPackageMoniker>
     <RegisteredUserModeAppID>e8db42a9-4d43-4cd4-b170-0c2f890c58c0_0xs43674bzpb2!App</RegisteredUserModeAppID>
     <RegisteredPackageID>e8db42a9-4d43-4cd4-b170-0c2f890c58c0</RegisteredPackageID>
@@ -28,13 +28,13 @@
     <AppXManifest Include="C:\NEUSecretary\NEUSecretary\NEUSecretary\bin\x86\Debug\Core\AppxManifest.xml">
       <PackagePath>AppxManifest.xml</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2017-03-20T16:51:51.911</Modified>
+      <Modified>2017-03-21T17:55:24.886</Modified>
     </AppXManifest>
   </ItemGroup>
   <ItemGroup>
     <AppxPackagedFile Include="C:\NEUSecretary\NEUSecretary\NEUSecretary\bin\x86\Debug\NEUSecretary.exe">
       <PackagePath>entrypoint\NEUSecretary.exe</PackagePath>
-      <Modified>2017-03-20T16:51:50.576</Modified>
+      <Modified>2017-03-21T17:55:23.051</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Leeeeo\.nuget\packages\Microsoft.CSharp\4.0.0\lib\netcore50\Microsoft.CSharp.dll">
       <PackagePath>Microsoft.CSharp.dll</PackagePath>
@@ -448,9 +448,33 @@
       <PackagePath>System.Xml.XmlSerializer.dll</PackagePath>
       <Modified>2015-07-22T15:11:12.000</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\NEUSecretary\NEUSecretary\NEUSecretary\Properties\Default.rd.xml">
-      <PackagePath>Properties\Default.rd.xml</PackagePath>
-      <Modified>2017-03-20T16:46:12.000</Modified>
+    <AppxPackagedFile Include="C:\NEUSecretary\NEUSecretary\NEUSecretary\Assets\class.png">
+      <PackagePath>Assets\class.png</PackagePath>
+      <Modified>2017-03-21T17:41:15.703</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\NEUSecretary\NEUSecretary\NEUSecretary\Assets\homepage.png">
+      <PackagePath>Assets\homepage.png</PackagePath>
+      <Modified>2017-03-21T17:29:06.527</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\NEUSecretary\NEUSecretary\NEUSecretary\Assets\Library.png">
+      <PackagePath>Assets\Library.png</PackagePath>
+      <Modified>2017-03-21T17:09:49.527</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\NEUSecretary\NEUSecretary\NEUSecretary\Assets\score.png">
+      <PackagePath>Assets\score.png</PackagePath>
+      <Modified>2017-03-21T17:47:56.977</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\NEUSecretary\NEUSecretary\NEUSecretary\Assets\selfinfo.png">
+      <PackagePath>Assets\selfinfo.png</PackagePath>
+      <Modified>2017-03-21T17:54:49.987</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\NEUSecretary\NEUSecretary\NEUSecretary\Assets\Selfstudy.png">
+      <PackagePath>Assets\Selfstudy.png</PackagePath>
+      <Modified>2017-03-21T17:44:15.789</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\NEUSecretary\NEUSecretary\NEUSecretary\Assets\timg.png">
+      <PackagePath>Assets\timg.png</PackagePath>
+      <Modified>2017-03-21T17:14:41.120</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\NEUSecretary\NEUSecretary\NEUSecretary\Assets\LockScreenLogo.scale-200.png">
       <PackagePath>Assets\LockScreenLogo.scale-200.png</PackagePath>
@@ -486,9 +510,13 @@
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
       <Modified>2015-09-20T09:22:56.000</Modified>
     </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\NEUSecretary\NEUSecretary\NEUSecretary\Properties\Default.rd.xml">
+      <PackagePath>Properties\Default.rd.xml</PackagePath>
+      <Modified>2017-03-20T16:46:12.000</Modified>
+    </AppxPackagedFile>
     <AppxPackagedFile Include="C:\NEUSecretary\NEUSecretary\NEUSecretary\bin\x86\Debug\NEUSecretary.xr.xml">
       <PackagePath>NEUSecretary.xr.xml</PackagePath>
-      <Modified>2017-03-20T16:47:19.000</Modified>
+      <Modified>2017-03-21T17:55:22.741</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Program Files %28x86%29\Windows Kits\10\UnionMetadata\Windows.winmd">
       <PackagePath>WinMetadata\Windows.winmd</PackagePath>
@@ -496,11 +524,11 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\NEUSecretary\NEUSecretary\NEUSecretary\bin\x86\Debug\resources.pri">
       <PackagePath>resources.pri</PackagePath>
-      <Modified>2017-03-20T16:51:51.624</Modified>
+      <Modified>2017-03-21T17:55:24.443</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\NEUSecretary\NEUSecretary\NEUSecretary\bin\x86\Debug\Core\NEUSecretary.exe">
       <PackagePath>NEUSecretary.exe</PackagePath>
-      <Modified>2017-03-20T16:51:51.904</Modified>
+      <Modified>2017-03-21T17:55:24.879</Modified>
     </AppxPackagedFile>
   </ItemGroup>
   <ItemGroup>

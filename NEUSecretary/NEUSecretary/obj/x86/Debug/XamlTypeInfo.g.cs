@@ -132,15 +132,27 @@ namespace NEUSecretary.NEUSecretary_XamlTypeInfo
 
         private void InitTypeTables()
         {
-            _typeNameTable = new string[3];
-            _typeNameTable[0] = "NEUSecretary.MainPage";
+            _typeNameTable = new string[9];
+            _typeNameTable[0] = "NEUSecretary.Class";
             _typeNameTable[1] = "Windows.UI.Xaml.Controls.Page";
             _typeNameTable[2] = "Windows.UI.Xaml.Controls.UserControl";
+            _typeNameTable[3] = "NEUSecretary.Homepage";
+            _typeNameTable[4] = "NEUSecretary.Library";
+            _typeNameTable[5] = "NEUSecretary.MainPage";
+            _typeNameTable[6] = "NEUSecretary.Score";
+            _typeNameTable[7] = "NEUSecretary.Selfinfo";
+            _typeNameTable[8] = "NEUSecretary.Selfstudy";
 
-            _typeTable = new global::System.Type[3];
-            _typeTable[0] = typeof(global::NEUSecretary.MainPage);
+            _typeTable = new global::System.Type[9];
+            _typeTable[0] = typeof(global::NEUSecretary.Class);
             _typeTable[1] = typeof(global::Windows.UI.Xaml.Controls.Page);
             _typeTable[2] = typeof(global::Windows.UI.Xaml.Controls.UserControl);
+            _typeTable[3] = typeof(global::NEUSecretary.Homepage);
+            _typeTable[4] = typeof(global::NEUSecretary.Library);
+            _typeTable[5] = typeof(global::NEUSecretary.MainPage);
+            _typeTable[6] = typeof(global::NEUSecretary.Score);
+            _typeTable[7] = typeof(global::NEUSecretary.Selfinfo);
+            _typeTable[8] = typeof(global::NEUSecretary.Selfstudy);
         }
 
         private int LookupTypeIndexByName(string typeName)
@@ -175,7 +187,13 @@ namespace NEUSecretary.NEUSecretary_XamlTypeInfo
             return -1;
         }
 
-        private object Activate_0_MainPage() { return new global::NEUSecretary.MainPage(); }
+        private object Activate_0_Class() { return new global::NEUSecretary.Class(); }
+        private object Activate_3_Homepage() { return new global::NEUSecretary.Homepage(); }
+        private object Activate_4_Library() { return new global::NEUSecretary.Library(); }
+        private object Activate_5_MainPage() { return new global::NEUSecretary.MainPage(); }
+        private object Activate_6_Score() { return new global::NEUSecretary.Score(); }
+        private object Activate_7_Selfinfo() { return new global::NEUSecretary.Selfinfo(); }
+        private object Activate_8_Selfstudy() { return new global::NEUSecretary.Selfstudy(); }
 
         private global::Windows.UI.Xaml.Markup.IXamlType CreateXamlType(int typeIndex)
         {
@@ -187,9 +205,9 @@ namespace NEUSecretary.NEUSecretary_XamlTypeInfo
             switch (typeIndex)
             {
 
-            case 0:   //  NEUSecretary.MainPage
+            case 0:   //  NEUSecretary.Class
                 userType = new global::NEUSecretary.NEUSecretary_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Windows.UI.Xaml.Controls.Page"));
-                userType.Activator = Activate_0_MainPage;
+                userType.Activator = Activate_0_Class;
                 userType.SetIsLocalType();
                 xamlType = userType;
                 break;
@@ -200,6 +218,48 @@ namespace NEUSecretary.NEUSecretary_XamlTypeInfo
 
             case 2:   //  Windows.UI.Xaml.Controls.UserControl
                 xamlType = new global::NEUSecretary.NEUSecretary_XamlTypeInfo.XamlSystemBaseType(typeName, type);
+                break;
+
+            case 3:   //  NEUSecretary.Homepage
+                userType = new global::NEUSecretary.NEUSecretary_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Windows.UI.Xaml.Controls.Page"));
+                userType.Activator = Activate_3_Homepage;
+                userType.SetIsLocalType();
+                xamlType = userType;
+                break;
+
+            case 4:   //  NEUSecretary.Library
+                userType = new global::NEUSecretary.NEUSecretary_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Windows.UI.Xaml.Controls.Page"));
+                userType.Activator = Activate_4_Library;
+                userType.SetIsLocalType();
+                xamlType = userType;
+                break;
+
+            case 5:   //  NEUSecretary.MainPage
+                userType = new global::NEUSecretary.NEUSecretary_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Windows.UI.Xaml.Controls.Page"));
+                userType.Activator = Activate_5_MainPage;
+                userType.SetIsLocalType();
+                xamlType = userType;
+                break;
+
+            case 6:   //  NEUSecretary.Score
+                userType = new global::NEUSecretary.NEUSecretary_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Windows.UI.Xaml.Controls.Page"));
+                userType.Activator = Activate_6_Score;
+                userType.SetIsLocalType();
+                xamlType = userType;
+                break;
+
+            case 7:   //  NEUSecretary.Selfinfo
+                userType = new global::NEUSecretary.NEUSecretary_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Windows.UI.Xaml.Controls.Page"));
+                userType.Activator = Activate_7_Selfinfo;
+                userType.SetIsLocalType();
+                xamlType = userType;
+                break;
+
+            case 8:   //  NEUSecretary.Selfstudy
+                userType = new global::NEUSecretary.NEUSecretary_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Windows.UI.Xaml.Controls.Page"));
+                userType.Activator = Activate_8_Selfstudy;
+                userType.SetIsLocalType();
+                xamlType = userType;
                 break;
             }
             return xamlType;

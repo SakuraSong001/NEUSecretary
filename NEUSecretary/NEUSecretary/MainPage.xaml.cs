@@ -25,6 +25,64 @@ namespace NEUSecretary
         public MainPage()
         {
             this.InitializeComponent();
+            BackButton.Visibility = Visibility.Collapsed;
+            MyFrame.Navigate(typeof(Homepage));
+            TitleTextBlock.Text = "主页";
+            Homepage.IsSelected = true;
+        }
+
+        private void HamburgerButton_Click(object sender, RoutedEventArgs e)
+        {
+            MySplitView.IsPaneOpen = !MySplitView.IsPaneOpen;
+        }
+
+        private void BackButton_Click(object sender, RoutedEventArgs e)
+        {
+            if (MyFrame.CanGoBack)
+            {
+                MyFrame.GoBack();
+                Homepage.IsSelected = true;
+            }
+        }
+
+        private void ListBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            if (Homepage.IsSelected)
+            {
+                BackButton.Visibility = Visibility.Collapsed;
+                MyFrame.Navigate(typeof(Homepage));
+                TitleTextBlock.Text = "主页";
+            }
+            else if (Library.IsSelected)
+            {
+                BackButton.Visibility = Visibility.Visible;
+                MyFrame.Navigate(typeof(Library));
+                TitleTextBlock.Text = "图书馆";
+            }
+            else if (Class.IsSelected)
+            {
+                BackButton.Visibility = Visibility.Visible;
+                MyFrame.Navigate(typeof(Class));
+                TitleTextBlock.Text = "课程表";
+            }
+            else if(Selfstudy.IsSelected)
+            {
+                BackButton.Visibility = Visibility.Visible;
+                MyFrame.Navigate(typeof(Selfstudy));
+                TitleTextBlock.Text = "上自习";
+            }
+            else if(Score.IsSelected)
+            {
+                BackButton.Visibility = Visibility.Visible;
+                MyFrame.Navigate(typeof(Score));
+                TitleTextBlock.Text = "查成绩";
+            }
+            else if(Selfinfo.IsSelected)
+            {
+                BackButton.Visibility = Visibility.Visible;
+                MyFrame.Navigate(typeof(Selfinfo));
+                TitleTextBlock.Text = "个人信息";
+            }
         }
     }
 }
