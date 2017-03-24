@@ -14,8 +14,9 @@
             <RowDefinition Height="auto">
             </RowDefinition>
         </Grid.RowDefinitions>
-        <Image Source="Assets/timg.png" Grid.Row="0"></Image>
+        <GridView x:ConnectionId='1' x:Name="gridView" Grid.Row="0" HorizontalAlignment="Left" VerticalAlignment="Top" Width="100"/>
         <Image Source="Assets/homepage.png" Grid.Row="1"></Image>
+        
     </Grid>
 </Page>
 

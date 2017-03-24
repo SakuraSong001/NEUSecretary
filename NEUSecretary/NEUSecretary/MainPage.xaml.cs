@@ -84,5 +84,12 @@ namespace NEUSecretary
                 TitleTextBlock.Text = "个人信息";
             }
         }
+
+        private void LoggedButton_Click(object sender, RoutedEventArgs e)
+        {
+            BackButton.Visibility = Visibility.Visible;
+            MyFrame.Navigate(typeof(LoginPage));
+            TitleTextBlock.Text = "登录";
+        }
     }
 }

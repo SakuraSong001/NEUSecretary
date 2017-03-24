@@ -28,13 +28,13 @@
                     Content="&#xE0C4;" 
                                             
                      />
-
+            
             <TextBlock x:ConnectionId='12' Name="TitleTextBlock"
                        RelativePanel.RightOf="BackButton"
                        FontSize="28"
                        FontWeight="Bold"
                        Margin="20,5,0,0"/>
-
+          
             <Button x:ConnectionId='13' Name="SearchButton" 
                     RelativePanel.AlignRightWithPanel="True"
                     FontFamily="Segoe MDL2 Assets"
@@ -47,6 +47,21 @@
                      Width="200"
                      FontSize="24"
                      PlaceholderText="Search" />
+
+            <Button x:ConnectionId='15' Name="LoggedButton"
+                    RelativePanel.LeftOf="SearchTextBox"
+                    FontSize="36"
+                    FontFamily="Segoe MDL2 Assets"
+                    Content="&#xE13D;" 
+                                              
+                    Background="White">
+                <Button.Flyout>
+                    <Flyout>
+                        <TextBlock FontSize="16" HorizontalAlignment="Left" VerticalAlignment="Center" Foreground="Gray">点击登录以获得更好的体验</TextBlock>
+                    </Flyout>
+                </Button.Flyout>
+            </Button>
+            
         </RelativePanel>
 
         <SplitView x:ConnectionId='1' Grid.Row="1" 
