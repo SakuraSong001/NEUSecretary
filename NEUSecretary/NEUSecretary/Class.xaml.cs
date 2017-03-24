@@ -26,5 +26,17 @@ namespace NEUSecretary
         {
             this.InitializeComponent();
         }
+
+        private void ComboBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            if(TermComboBoxTextBlock == null)
+            {
+                return;
+            }
+
+            var combo = (ComboBox)sender;
+            var item = (ComboBoxItem)combo.SelectedItem;
+            TermComboBoxTextBlock.Text = item.Content.ToString();
+        }
     }
 }

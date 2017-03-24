@@ -8,6 +8,53 @@
     mc:Ignorable="d">
 
     <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
-        <Image Source="Assets/class.png" VerticalAlignment="Top"></Image>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*" />
+            <RowDefinition Height="10*" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+        <TextBlock Text="Somethingelse wait for adding." Grid.Row="2" FontSize="20" />
+        <StackPanel Grid.Row="0" Margin="15,5,15,5" Orientation="Horizontal">
+            <ComboBox Name="TermComboBox" 
+                      SelectionChanged="ComboBox_SelectionChanged" 
+                      VerticalAlignment="Center"
+                      HorizontalAlignment="Left"
+                      Width="150">
+                <ComboBoxItem IsSelected="True">请选择学期</ComboBoxItem>
+            </ComboBox>
+            <TextBlock Name="TermComboBoxTextBlock" VerticalAlignment="Center"></TextBlock>
+        </StackPanel>
+        <Grid Grid.Row="1">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*" />
+                <RowDefinition Height="3*" />
+                <RowDefinition Height="3*" />
+                <RowDefinition Height="3*" />
+                <RowDefinition Height="3*" />
+                <RowDefinition Height="3*" />
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="3*" />
+                <ColumnDefinition Width="3*" />
+                <ColumnDefinition Width="3*" />
+                <ColumnDefinition Width="3*" />
+                <ColumnDefinition Width="3*" />
+                <ColumnDefinition Width="3*" />
+                <ColumnDefinition Width="3*" />
+            </Grid.ColumnDefinitions>
+            <TextBlock Text="1" HorizontalAlignment="Center" VerticalAlignment="Top" Grid.Row="1" />
+            <TextBlock Text="2" HorizontalAlignment="Center" VerticalAlignment="Top" Grid.Row="2" />
+            <TextBlock Text="3" HorizontalAlignment="Center" VerticalAlignment="Top" Grid.Row="3" />
+            <TextBlock Text="4" HorizontalAlignment="Center" VerticalAlignment="Top" Grid.Row="4" />
+            <TextBlock Text="5" HorizontalAlignment="Center" VerticalAlignment="Top" Grid.Row="5" />
+            <TextBlock Text="Sun." HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Column="1" />
+            <TextBlock Text="Mon." HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Column="2" />
+            <TextBlock Text="Tues." HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Column="3" />
+            <TextBlock Text="Wed." HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Column="4" />
+            <TextBlock Text="Thur." HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Column="5" />
+            <TextBlock Text="Fri." HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Column="6" />
+            <TextBlock Text="Sat." HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Column="7" />
+        </Grid>
     </Grid>
 </Page>
