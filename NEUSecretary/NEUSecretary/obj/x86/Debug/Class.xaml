@@ -15,18 +15,19 @@
         </Grid.RowDefinitions>
         <TextBlock Text="Somethingelse wait for adding." Grid.Row="2" FontSize="20" />
         <StackPanel Grid.Row="0" Margin="15,5,15,5" Orientation="Horizontal">
-            <ComboBox x:ConnectionId='1' Name="TermComboBox" 
+            <ComboBox x:ConnectionId='43' Name="TermComboBox" 
                                                                    
                       VerticalAlignment="Center"
                       HorizontalAlignment="Left"
                       Width="150">
                 <ComboBoxItem IsSelected="True">请选择学期</ComboBoxItem>
             </ComboBox>
-            <TextBlock x:ConnectionId='2' Name="TermComboBoxTextBlock" VerticalAlignment="Center"></TextBlock>
+            <TextBlock x:ConnectionId='44' Name="TermComboBoxTextBlock" VerticalAlignment="Center"></TextBlock>
         </StackPanel>
         <Grid Grid.Row="1">
             <Grid.RowDefinitions>
                 <RowDefinition Height="*" />
+                <RowDefinition Height="3*" />
                 <RowDefinition Height="3*" />
                 <RowDefinition Height="3*" />
                 <RowDefinition Height="3*" />
@@ -48,6 +49,7 @@
             <TextBlock Text="3" HorizontalAlignment="Center" VerticalAlignment="Top" Grid.Row="3" />
             <TextBlock Text="4" HorizontalAlignment="Center" VerticalAlignment="Top" Grid.Row="4" />
             <TextBlock Text="5" HorizontalAlignment="Center" VerticalAlignment="Top" Grid.Row="5" />
+            <TextBlock Text="6" HorizontalAlignment="Center" VerticalAlignment="Top" Grid.Row="6" />
             <TextBlock Text="Sun." HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Column="1" />
             <TextBlock Text="Mon." HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Column="2" />
             <TextBlock Text="Tues." HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Column="3" />
@@ -55,6 +57,48 @@
             <TextBlock Text="Thur." HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Column="5" />
             <TextBlock Text="Fri." HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Column="6" />
             <TextBlock Text="Sat." HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Column="7" />
+            <TextBlock x:ConnectionId='1' Name="class71"  HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Row="1" Grid.Column="1"/>
+            <TextBlock x:ConnectionId='2' Name="class72"  HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Row="2" Grid.Column="1"/>
+            <TextBlock x:ConnectionId='3' Name="class73"  HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Row="3" Grid.Column="1"/>
+            <TextBlock x:ConnectionId='4' Name="class74"  HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Row="4" Grid.Column="1"/>
+            <TextBlock x:ConnectionId='5' Name="class75"  HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Row="5" Grid.Column="1"/>
+            <TextBlock x:ConnectionId='6' Name="class76"  HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Row="6" Grid.Column="1"/>
+            <TextBlock x:ConnectionId='7' Name="class61"  HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Row="1" Grid.Column="7"/>
+            <TextBlock x:ConnectionId='8' Name="class62"  HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Row="2" Grid.Column="7"/>
+            <TextBlock x:ConnectionId='9' Name="class63"  HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Row="3" Grid.Column="7"/>
+            <TextBlock x:ConnectionId='10' Name="class64"  HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Row="4" Grid.Column="7"/>
+            <TextBlock x:ConnectionId='11' Name="class65"  HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Row="5" Grid.Column="7"/>
+            <TextBlock x:ConnectionId='12' Name="class66"  HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Row="6" Grid.Column="7"/>
+            <TextBlock x:ConnectionId='13' Name="class51"  HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Row="1" Grid.Column="6"/>
+            <TextBlock x:ConnectionId='14' Name="class52"  HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Row="2" Grid.Column="6"/>
+            <TextBlock x:ConnectionId='15' Name="class53"  HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Row="3" Grid.Column="6"/>
+            <TextBlock x:ConnectionId='16' Name="class54"  HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Row="4" Grid.Column="6"/>
+            <TextBlock x:ConnectionId='17' Name="class55"  HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Row="5" Grid.Column="6"/>
+            <TextBlock x:ConnectionId='18' Name="class56"  HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Row="6" Grid.Column="6"/>
+            <TextBlock x:ConnectionId='19' Name="class41"  HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Row="1" Grid.Column="5"/>
+            <TextBlock x:ConnectionId='20' Name="class42"  HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Row="2" Grid.Column="5"/>
+            <TextBlock x:ConnectionId='21' Name="class43"  HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Row="3" Grid.Column="5"/>
+            <TextBlock x:ConnectionId='22' Name="class44"  HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Row="4" Grid.Column="5"/>
+            <TextBlock x:ConnectionId='23' Name="class45"  HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Row="5" Grid.Column="5"/>
+            <TextBlock x:ConnectionId='24' Name="class46"  HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Row="6" Grid.Column="5"/>
+            <TextBlock x:ConnectionId='25' Name="class31"  HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Row="1" Grid.Column="4"/>
+            <TextBlock x:ConnectionId='26' Name="class32"  HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Row="2" Grid.Column="4"/>
+            <TextBlock x:ConnectionId='27' Name="class33"  HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Row="3" Grid.Column="4"/>
+            <TextBlock x:ConnectionId='28' Name="class34"  HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Row="4" Grid.Column="4"/>
+            <TextBlock x:ConnectionId='29' Name="class35"  HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Row="5" Grid.Column="4"/>
+            <TextBlock x:ConnectionId='30' Name="class36"  HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Row="6" Grid.Column="4"/>
+            <TextBlock x:ConnectionId='31' Name="class21"  HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Row="1" Grid.Column="3"/>
+            <TextBlock x:ConnectionId='32' Name="class22"  HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Row="2" Grid.Column="3"/>
+            <TextBlock x:ConnectionId='33' Name="class23"  HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Row="3" Grid.Column="3"/>
+            <TextBlock x:ConnectionId='34' Name="class24"  HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Row="4" Grid.Column="3"/>
+            <TextBlock x:ConnectionId='35' Name="class25"  HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Row="5" Grid.Column="3"/>
+            <TextBlock x:ConnectionId='36' Name="class26"  HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Row="6" Grid.Column="3"/>
+            <TextBlock x:ConnectionId='37' Name="class11"  HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Row="1" Grid.Column="2"/>
+            <TextBlock x:ConnectionId='38' Name="class12"  HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Row="2" Grid.Column="2"/>
+            <TextBlock x:ConnectionId='39' Name="class13"  HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Row="3" Grid.Column="2"/>
+            <TextBlock x:ConnectionId='40' Name="class14"  HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Row="4" Grid.Column="2"/>
+            <TextBlock x:ConnectionId='41' Name="class15"  HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Row="5" Grid.Column="2"/>
+            <TextBlock x:ConnectionId='42' Name="class16"  HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Row="6" Grid.Column="2"/>
         </Grid>
     </Grid>
 </Page>

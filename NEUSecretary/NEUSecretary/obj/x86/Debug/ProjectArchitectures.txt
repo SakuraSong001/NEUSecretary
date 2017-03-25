@@ -1,1 +1,1 @@
-D:\code\NEUSecretary\NEUSecretary\NEUSecretary\NEUSecretary.csproj;x86
+C:\NEUSecretary\NEUSecretary\NEUSecretary\NEUSecretary.csproj;x86

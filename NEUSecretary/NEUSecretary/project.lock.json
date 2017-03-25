@@ -278,6 +278,52 @@
           "lib/dotnet/Microsoft.Win32.Primitives.dll": {}
         }
       },
+      "SQLite.Net-PCL/3.0.5": {
+        "type": "package",
+        "compile": {
+          "lib/Windows8/SQLite.Net.Platform.WinRT.dll": {},
+          "lib/Windows8/SQLite.Net.dll": {}
+        },
+        "runtime": {
+          "lib/Windows8/SQLite.Net.Platform.WinRT.dll": {},
+          "lib/Windows8/SQLite.Net.dll": {}
+        }
+      },
+      "SQLite.UWP.Native/3.12.3": {
+        "type": "package",
+        "compile": {
+          "lib/uap10.0/_._": {}
+        },
+        "runtime": {
+          "lib/uap10.0/_._": {}
+        },
+        "runtimeTargets": {
+          "runtimes/win10-arm/native/sqlite3.dll": {
+            "assetType": "native",
+            "rid": "win10-arm"
+          },
+          "runtimes/win10-x64/native/sqlite3.dll": {
+            "assetType": "native",
+            "rid": "win10-x64"
+          },
+          "runtimes/win10-x86/native/sqlite3.dll": {
+            "assetType": "native",
+            "rid": "win10-x86"
+          }
+        }
+      },
+      "SQLiteWrapperUWP-PCL/1.0.0.4": {
+        "type": "package",
+        "dependencies": {
+          "SQLite.Net-PCL": "3.0.5"
+        },
+        "compile": {
+          "lib/portable-net45+win+wpa81+wp80+MonoAndroid10+xamarinios10+MonoTouch10/BuiltToRoam.Data.SQLite.dll": {}
+        },
+        "runtime": {
+          "lib/portable-net45+win+wpa81+wp80+MonoAndroid10+xamarinios10+MonoTouch10/BuiltToRoam.Data.SQLite.dll": {}
+        }
+      },
       "System.AppContext/4.0.0": {
         "type": "package",
         "dependencies": {
@@ -2156,6 +2202,41 @@
           "runtimes/win8-arm/native/mscorrc.dll": {}
         }
       },
+      "SQLite.Net-PCL/3.0.5": {
+        "type": "package",
+        "compile": {
+          "lib/Windows8/SQLite.Net.Platform.WinRT.dll": {},
+          "lib/Windows8/SQLite.Net.dll": {}
+        },
+        "runtime": {
+          "lib/Windows8/SQLite.Net.Platform.WinRT.dll": {},
+          "lib/Windows8/SQLite.Net.dll": {}
+        }
+      },
+      "SQLite.UWP.Native/3.12.3": {
+        "type": "package",
+        "compile": {
+          "lib/uap10.0/_._": {}
+        },
+        "runtime": {
+          "lib/uap10.0/_._": {}
+        },
+        "native": {
+          "runtimes/win10-arm/native/sqlite3.dll": {}
+        }
+      },
+      "SQLiteWrapperUWP-PCL/1.0.0.4": {
+        "type": "package",
+        "dependencies": {
+          "SQLite.Net-PCL": "3.0.5"
+        },
+        "compile": {
+          "lib/portable-net45+win+wpa81+wp80+MonoAndroid10+xamarinios10+MonoTouch10/BuiltToRoam.Data.SQLite.dll": {}
+        },
+        "runtime": {
+          "lib/portable-net45+win+wpa81+wp80+MonoAndroid10+xamarinios10+MonoTouch10/BuiltToRoam.Data.SQLite.dll": {}
+        }
+      },
       "System.AppContext/4.0.0": {
         "type": "package",
         "dependencies": {
@@ -3875,6 +3956,41 @@
         },
         "runtime": {
           "runtimes/win8-aot/lib/netcore50/System.Private.DataContractSerialization.dll": {}
+        }
+      },
+      "SQLite.Net-PCL/3.0.5": {
+        "type": "package",
+        "compile": {
+          "lib/Windows8/SQLite.Net.Platform.WinRT.dll": {},
+          "lib/Windows8/SQLite.Net.dll": {}
+        },
+        "runtime": {
+          "lib/Windows8/SQLite.Net.Platform.WinRT.dll": {},
+          "lib/Windows8/SQLite.Net.dll": {}
+        }
+      },
+      "SQLite.UWP.Native/3.12.3": {
+        "type": "package",
+        "compile": {
+          "lib/uap10.0/_._": {}
+        },
+        "runtime": {
+          "lib/uap10.0/_._": {}
+        },
+        "native": {
+          "runtimes/win10-arm/native/sqlite3.dll": {}
+        }
+      },
+      "SQLiteWrapperUWP-PCL/1.0.0.4": {
+        "type": "package",
+        "dependencies": {
+          "SQLite.Net-PCL": "3.0.5"
+        },
+        "compile": {
+          "lib/portable-net45+win+wpa81+wp80+MonoAndroid10+xamarinios10+MonoTouch10/BuiltToRoam.Data.SQLite.dll": {}
+        },
+        "runtime": {
+          "lib/portable-net45+win+wpa81+wp80+MonoAndroid10+xamarinios10+MonoTouch10/BuiltToRoam.Data.SQLite.dll": {}
         }
       },
       "System.AppContext/4.0.0": {
@@ -5608,6 +5724,41 @@
           "runtimes/win7-x64/native/mscorrc.dll": {}
         }
       },
+      "SQLite.Net-PCL/3.0.5": {
+        "type": "package",
+        "compile": {
+          "lib/Windows8/SQLite.Net.Platform.WinRT.dll": {},
+          "lib/Windows8/SQLite.Net.dll": {}
+        },
+        "runtime": {
+          "lib/Windows8/SQLite.Net.Platform.WinRT.dll": {},
+          "lib/Windows8/SQLite.Net.dll": {}
+        }
+      },
+      "SQLite.UWP.Native/3.12.3": {
+        "type": "package",
+        "compile": {
+          "lib/uap10.0/_._": {}
+        },
+        "runtime": {
+          "lib/uap10.0/_._": {}
+        },
+        "native": {
+          "runtimes/win10-x64/native/sqlite3.dll": {}
+        }
+      },
+      "SQLiteWrapperUWP-PCL/1.0.0.4": {
+        "type": "package",
+        "dependencies": {
+          "SQLite.Net-PCL": "3.0.5"
+        },
+        "compile": {
+          "lib/portable-net45+win+wpa81+wp80+MonoAndroid10+xamarinios10+MonoTouch10/BuiltToRoam.Data.SQLite.dll": {}
+        },
+        "runtime": {
+          "lib/portable-net45+win+wpa81+wp80+MonoAndroid10+xamarinios10+MonoTouch10/BuiltToRoam.Data.SQLite.dll": {}
+        }
+      },
       "System.AppContext/4.0.0": {
         "type": "package",
         "dependencies": {
@@ -7327,6 +7478,41 @@
         },
         "runtime": {
           "runtimes/win8-aot/lib/netcore50/System.Private.DataContractSerialization.dll": {}
+        }
+      },
+      "SQLite.Net-PCL/3.0.5": {
+        "type": "package",
+        "compile": {
+          "lib/Windows8/SQLite.Net.Platform.WinRT.dll": {},
+          "lib/Windows8/SQLite.Net.dll": {}
+        },
+        "runtime": {
+          "lib/Windows8/SQLite.Net.Platform.WinRT.dll": {},
+          "lib/Windows8/SQLite.Net.dll": {}
+        }
+      },
+      "SQLite.UWP.Native/3.12.3": {
+        "type": "package",
+        "compile": {
+          "lib/uap10.0/_._": {}
+        },
+        "runtime": {
+          "lib/uap10.0/_._": {}
+        },
+        "native": {
+          "runtimes/win10-x64/native/sqlite3.dll": {}
+        }
+      },
+      "SQLiteWrapperUWP-PCL/1.0.0.4": {
+        "type": "package",
+        "dependencies": {
+          "SQLite.Net-PCL": "3.0.5"
+        },
+        "compile": {
+          "lib/portable-net45+win+wpa81+wp80+MonoAndroid10+xamarinios10+MonoTouch10/BuiltToRoam.Data.SQLite.dll": {}
+        },
+        "runtime": {
+          "lib/portable-net45+win+wpa81+wp80+MonoAndroid10+xamarinios10+MonoTouch10/BuiltToRoam.Data.SQLite.dll": {}
         }
       },
       "System.AppContext/4.0.0": {
@@ -9060,6 +9246,41 @@
           "runtimes/win7-x86/native/mscorrc.dll": {}
         }
       },
+      "SQLite.Net-PCL/3.0.5": {
+        "type": "package",
+        "compile": {
+          "lib/Windows8/SQLite.Net.Platform.WinRT.dll": {},
+          "lib/Windows8/SQLite.Net.dll": {}
+        },
+        "runtime": {
+          "lib/Windows8/SQLite.Net.Platform.WinRT.dll": {},
+          "lib/Windows8/SQLite.Net.dll": {}
+        }
+      },
+      "SQLite.UWP.Native/3.12.3": {
+        "type": "package",
+        "compile": {
+          "lib/uap10.0/_._": {}
+        },
+        "runtime": {
+          "lib/uap10.0/_._": {}
+        },
+        "native": {
+          "runtimes/win10-x86/native/sqlite3.dll": {}
+        }
+      },
+      "SQLiteWrapperUWP-PCL/1.0.0.4": {
+        "type": "package",
+        "dependencies": {
+          "SQLite.Net-PCL": "3.0.5"
+        },
+        "compile": {
+          "lib/portable-net45+win+wpa81+wp80+MonoAndroid10+xamarinios10+MonoTouch10/BuiltToRoam.Data.SQLite.dll": {}
+        },
+        "runtime": {
+          "lib/portable-net45+win+wpa81+wp80+MonoAndroid10+xamarinios10+MonoTouch10/BuiltToRoam.Data.SQLite.dll": {}
+        }
+      },
       "System.AppContext/4.0.0": {
         "type": "package",
         "dependencies": {
@@ -10779,6 +11000,41 @@
         },
         "runtime": {
           "runtimes/win8-aot/lib/netcore50/System.Private.DataContractSerialization.dll": {}
+        }
+      },
+      "SQLite.Net-PCL/3.0.5": {
+        "type": "package",
+        "compile": {
+          "lib/Windows8/SQLite.Net.Platform.WinRT.dll": {},
+          "lib/Windows8/SQLite.Net.dll": {}
+        },
+        "runtime": {
+          "lib/Windows8/SQLite.Net.Platform.WinRT.dll": {},
+          "lib/Windows8/SQLite.Net.dll": {}
+        }
+      },
+      "SQLite.UWP.Native/3.12.3": {
+        "type": "package",
+        "compile": {
+          "lib/uap10.0/_._": {}
+        },
+        "runtime": {
+          "lib/uap10.0/_._": {}
+        },
+        "native": {
+          "runtimes/win10-x86/native/sqlite3.dll": {}
+        }
+      },
+      "SQLiteWrapperUWP-PCL/1.0.0.4": {
+        "type": "package",
+        "dependencies": {
+          "SQLite.Net-PCL": "3.0.5"
+        },
+        "compile": {
+          "lib/portable-net45+win+wpa81+wp80+MonoAndroid10+xamarinios10+MonoTouch10/BuiltToRoam.Data.SQLite.dll": {}
+        },
+        "runtime": {
+          "lib/portable-net45+win+wpa81+wp80+MonoAndroid10+xamarinios10+MonoTouch10/BuiltToRoam.Data.SQLite.dll": {}
         }
       },
       "System.AppContext/4.0.0": {
@@ -12893,6 +13149,55 @@
         "runtimes/win8-arm/native/mscordbi.dll",
         "runtimes/win8-arm/native/mscorrc.debug.dll",
         "runtimes/win8-arm/native/mscorrc.dll"
+      ]
+    },
+    "SQLite.Net-PCL/3.0.5": {
+      "sha512": "K2La4B09cI6LXNaNiVhzUdRnoTw1Yyn5Rmb85/l7UXkF6vo/MOnJch8KBvzErbzxcxhoST/tb2t5ZO41iJWC0A==",
+      "type": "package",
+      "files": [
+        "SQLite.Net-PCL.3.0.5.nupkg.sha512",
+        "SQLite.Net-PCL.nuspec",
+        "lib/MonoAndroid/SQLite.Net.Platform.XamarinAndroid.dll",
+        "lib/MonoAndroid/SQLite.Net.dll",
+        "lib/Windows8/SQLite.Net.Platform.WinRT.dll",
+        "lib/Windows8/SQLite.Net.dll",
+        "lib/Xamarin.iOS10/SQLite.Net.Platform.XamarinIOS.Unified.dll",
+        "lib/Xamarin.iOS10/SQLite.Net.dll",
+        "lib/monotouch/SQLite.Net.Platform.XamarinIOS.dll",
+        "lib/monotouch/SQLite.Net.dll",
+        "lib/net4/SQLite.Net.Platform.Win32.dll",
+        "lib/net4/SQLite.Net.dll",
+        "lib/net40/SQLite.Net.Platform.Generic.dll",
+        "lib/net40/SQLite.Net.dll",
+        "lib/portable-win8+net45+wp8+wpa81+MonoAndroid1+MonoTouch1/SQLite.Net.dll",
+        "lib/portable-win81+wpa81/SQLite.Net.Platform.WinRT.dll",
+        "lib/portable-win81+wpa81/SQLite.Net.dll",
+        "lib/windowsphone8/ARM/SQLite.Net.Platform.WindowsPhone8.dll",
+        "lib/windowsphone8/ARM/SQLite.Net.dll",
+        "lib/windowsphone8/x86/SQLite.Net.Platform.WindowsPhone8.dll",
+        "lib/windowsphone8/x86/SQLite.Net.dll"
+      ]
+    },
+    "SQLite.UWP.Native/3.12.3": {
+      "sha512": "oL32u5+gAL1Pc15IPWATH+g4hPlWRhzxp5bFCvLA0IKALo7oc3kPLFAzLwNCPN3iu0WgleM0lSr+rP+v8yIh/g==",
+      "type": "package",
+      "files": [
+        "SQLite.UWP.Native.3.12.3.nupkg.sha512",
+        "SQLite.UWP.Native.nuspec",
+        "lib/uap10.0/_._",
+        "runtimes/win10-arm/native/sqlite3.dll",
+        "runtimes/win10-x64/native/sqlite3.dll",
+        "runtimes/win10-x86/native/sqlite3.dll"
+      ]
+    },
+    "SQLiteWrapperUWP-PCL/1.0.0.4": {
+      "sha512": "CgMsYN1nP2EF2rSCMIg4Ok7na3uGd9DbITXvAf1vTuYpivcQoCXPUeOwAkASESzAl4zsSedlzigCQOY29GwNNQ==",
+      "type": "package",
+      "files": [
+        "SQLiteWrapperUWP-PCL.1.0.0.4.nupkg.sha512",
+        "SQLiteWrapperUWP-PCL.nuspec",
+        "content/NuGet/README.txt",
+        "lib/portable-net45+win+wpa81+wp80+MonoAndroid10+xamarinios10+MonoTouch10/BuiltToRoam.Data.SQLite.dll"
       ]
     },
     "System.AppContext/4.0.0": {
@@ -15497,7 +15802,9 @@
   },
   "projectFileDependencyGroups": {
     "": [
-      "Microsoft.NETCore.UniversalWindowsPlatform >= 5.1.0"
+      "Microsoft.NETCore.UniversalWindowsPlatform >= 5.1.0",
+      "SQLite.UWP.Native >= 3.12.3",
+      "SQLiteWrapperUWP-PCL >= 1.0.0.4"
     ],
     "UAP,Version=v10.0": []
   }

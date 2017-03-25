@@ -9,6 +9,8 @@ using System.IO;
 using SQLite.Net.Attributes;
 using System.Linq;
 using Windows.Foundation.Metadata;
+using Windows.UI.Popups;
+using System.Text;
 //“空白页”项模板在 http://go.microsoft.com/fwlink/?LinkId=402352&clcid=0x409 上有介绍
 
 namespace TestSerializer
@@ -53,7 +55,7 @@ namespace TestSerializer
         private String key;
         private String value;
 
-        private void Button_Click_1(object sender, RoutedEventArgs e)
+        private async void Button_Click_1(object sender, RoutedEventArgs e)
         {
             String fdlocal = ApplicationData.Current.LocalCacheFolder.Path;
             String filename = "20143714_class.db";
@@ -61,25 +63,43 @@ namespace TestSerializer
             //ISQLitePlatform platform = new SQLitePlatformWinRT();
             // SQLiteConnection conn = new SQLiteConnection(platform, dbfullpath);
 
-            using (SQLiteConnection conn = new SQLiteConnection(new SQLitePlatformWinRT(), dbfullpath))
+            /*
+            var db = new SQLiteConnection(new SQLitePlatformWinRT(), dbfullpath);
+
+            db.CreateTable<Student>();
+            Student item = new Student { id = 1, name = "Leeeeo", schoolid = 123456, title = "test" };
+            db.Insert(item);
+            */
+
+
+            var conn = new SQLiteConnection(new SQLitePlatformWinRT(), dbfullpath);
+            StringBuilder sb = new StringBuilder();
+            var list = conn.Table<Student>();
+            foreach (var item in list)
             {
-                conn.DeleteAll<Student>();
+                sb.AppendLine($"{item.id} {item.name} {item.schoolid} {item.title}");
+            }
+            await new MessageDialog(sb.ToString()+dbfullpath).ShowAsync();
+        
+            /*
+            conn.DeleteAll<Student>();
                 Student[] stus =
                 {
-                    new Student {name="Leeeeo",schoolid=123456,title="test" }, };
+                    new Student {id=1,name="Leeeeo",schoolid=123456,title="test" } };
                 int n = conn.InsertAll(stus);
                 textblock.Text=($"已插入(n)条数据");
-            }
-            /*
-            using (SQLiteConnection conn = new SQLiteConnection(new SQLitePlatformWinRT(), dbfullpath))
-            {
-                TableQuery<Student> t = conn.Table<Student>();
+           
+
+           */
+           /*
+            var conn = new SQLiteConnection(new SQLitePlatformWinRT(), dbfullpath);
+            TableQuery<Student> t = conn.Table<Student>();
                 var q = from s in t.AsParallel()
                         orderby s.schoolid
                         select s;
                 Lv.ItemsSource = q;
-            }
-            */
+          */
+        
         }
 
         [Table("STUDENT")]
