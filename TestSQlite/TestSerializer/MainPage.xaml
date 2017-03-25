@@ -1,0 +1,24 @@
+﻿<Page
+    x:Class="TestSerializer.MainPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:TestSerializer"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
+
+    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+        <Grid.RowDefinitions>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+        </Grid.RowDefinitions>
+        <Button Grid.Row="0" VerticalAlignment="Top" Click="Button_Click">Unseriallizer</Button>
+        <Button Grid.Row="1" VerticalAlignment="Top" Click="Button_Click_1">SQlite</Button>
+        <ListView Name="Lv" Grid.Row="2"></ListView>
+        <TextBlock Grid.Row="3" Name="textblock" VerticalAlignment="Top" HorizontalAlignment="Left">sadfadfadsf</TextBlock>
+       
+    </Grid>
+</Page>
