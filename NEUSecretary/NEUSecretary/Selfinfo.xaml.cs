@@ -1,17 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.IO;
-using System.Linq;
-using System.Runtime.InteropServices.WindowsRuntime;
-using Windows.Foundation;
-using Windows.Foundation.Collections;
+﻿using Windows.Storage;
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
-using Windows.UI.Xaml.Controls.Primitives;
-using Windows.UI.Xaml.Data;
-using Windows.UI.Xaml.Input;
-using Windows.UI.Xaml.Media;
-using Windows.UI.Xaml.Navigation;
 
 // “空白页”项模板在 http://go.microsoft.com/fwlink/?LinkId=234238 上有介绍
 
@@ -22,9 +11,20 @@ namespace NEUSecretary
     /// </summary>
     public sealed partial class Selfinfo : Page
     {
+        ApplicationDataContainer localSettings = ApplicationData.Current.LocalSettings;
         public Selfinfo()
         {
             this.InitializeComponent();
+            MyIdTextBlock.Text = localSettings.Values["stuId"].ToString();
+            MyNameTextBlock.Text = localSettings.Values["name"].ToString();
+        }
+
+        private void LogoutButton_Click(object sender, RoutedEventArgs e)
+        {
+            localSettings.Values["stuId"] = "Null";
+            localSettings.Values["name"] = "Null";
+            Frame rootFrame = Window.Current.Content as Frame;
+            rootFrame.Navigate(typeof(LoginPage));
         }
     }
 }

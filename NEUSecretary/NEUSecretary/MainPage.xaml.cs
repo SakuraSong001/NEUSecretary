@@ -25,7 +25,6 @@ namespace NEUSecretary
         public MainPage()
         {
             this.InitializeComponent();
-            BackButton.Visibility = Visibility.Collapsed;
             MyFrame.Navigate(typeof(Homepage));
             TitleTextBlock.Text = "主页";
             Homepage.IsSelected = true;
@@ -49,37 +48,37 @@ namespace NEUSecretary
         {
             if (Homepage.IsSelected)
             {
-                BackButton.Visibility = Visibility.Collapsed;
+              
                 MyFrame.Navigate(typeof(Homepage));
                 TitleTextBlock.Text = "主页";
             }
             else if (Library.IsSelected)
             {
-                BackButton.Visibility = Visibility.Visible;
+         
                 MyFrame.Navigate(typeof(Library));
                 TitleTextBlock.Text = "图书馆";
             }
             else if (Class.IsSelected)
             {
-                BackButton.Visibility = Visibility.Visible;
+        
                 MyFrame.Navigate(typeof(Class));
                 TitleTextBlock.Text = "课程表";
             }
             else if(Selfstudy.IsSelected)
             {
-                BackButton.Visibility = Visibility.Visible;
+                
                 MyFrame.Navigate(typeof(Selfstudy));
                 TitleTextBlock.Text = "上自习";
             }
             else if(Score.IsSelected)
             {
-                BackButton.Visibility = Visibility.Visible;
+                
                 MyFrame.Navigate(typeof(Score));
                 TitleTextBlock.Text = "查成绩";
             }
             else if(Selfinfo.IsSelected)
             {
-                BackButton.Visibility = Visibility.Visible;
+                
                 MyFrame.Navigate(typeof(Selfinfo));
                 TitleTextBlock.Text = "个人信息";
             }
@@ -87,7 +86,7 @@ namespace NEUSecretary
 
         private void LoggedButton_Click(object sender, RoutedEventArgs e)
         {
-            BackButton.Visibility = Visibility.Visible;
+            
             MyFrame.Navigate(typeof(LoginPage));
             TitleTextBlock.Text = "登录";
         }

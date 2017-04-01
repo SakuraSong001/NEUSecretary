@@ -7,7 +7,7 @@
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d">
 
-    <Grid>
+    <Grid >
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto" />
             <RowDefinition Height="*" />
@@ -19,62 +19,31 @@
                     FontFamily="Segoe MDL2 Assets"
                     FontSize="36" 
                     Content="&#xE700;" 
+                    Width="60"
+                    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}"
                     Click="HamburgerButton_Click" />
-
-            <Button Name="BackButton"
-                    RelativePanel.RightOf="HamburgerButton" 
-                    FontFamily="Segoe MDl2 Assets" 
-                    FontSize="36"
-                    Content="&#xE0C4;" 
-                    Click="BackButton_Click"
-                     />
-            
             <TextBlock Name="TitleTextBlock"
-                       RelativePanel.RightOf="BackButton"
+                       RelativePanel.RightOf="HamburgerButton"
                        FontSize="28"
                        FontWeight="Bold"
+                       Text="测试"
+                       
                        Margin="20,5,0,0"/>
-          
-            <Button Name="SearchButton" 
-                    RelativePanel.AlignRightWithPanel="True"
-                    FontFamily="Segoe MDL2 Assets"
-                    FontSize="36" 
-                    Content="&#xE1A3;" />
-
-            <TextBox Name="SearchTextBox" 
-                     RelativePanel.LeftOf="SearchButton" 
-                     Height="48" 
-                     Width="200"
-                     FontSize="24"
-                     PlaceholderText="Search" />
-
-            <Button Name="LoggedButton"
-                    RelativePanel.LeftOf="SearchTextBox"
-                    FontSize="36"
-                    FontFamily="Segoe MDL2 Assets"
-                    Content="&#xE13D;" 
-                    Click="LoggedButton_Click"
-                    Background="White">
-                <Button.Flyout>
-                    <Flyout>
-                        <TextBlock FontSize="16" HorizontalAlignment="Left" VerticalAlignment="Center" Foreground="Gray">点击登录以获得更好的体验</TextBlock>
-                    </Flyout>
-                </Button.Flyout>
-            </Button>
-            
         </RelativePanel>
-
-        <SplitView Grid.Row="1" 
+        <SplitView 
+                   Grid.Row="1" 
                    Name="MySplitView"
                    DisplayMode="CompactOverlay" 
+                   PaneBackground="Green"
                    OpenPaneLength="200" 
-                   CompactPaneLength="56">
+                   CompactPaneLength="60"
+                   >
             <SplitView.Pane>
                 <ListBox SelectionMode="Single" 
                          SelectionChanged="ListBox_SelectionChanged">
                     <ListBoxItem Name="Homepage">
                         <StackPanel Orientation="Horizontal">
-                            <TextBlock FontFamily="Segoe MDL2 Assets" FontSize="36" Text="&#xE80F;" />
+                            <TextBlock FontFamily="Segoe MDL2 Assets" FontSize="36" Text="&#xE80F;"/>
                             <TextBlock FontSize="24" Margin="20,0,0,0">主页</TextBlock>
                         </StackPanel>
                     </ListBoxItem>
@@ -111,7 +80,7 @@
                 </ListBox>
             </SplitView.Pane>
             <SplitView.Content>
-                <Frame Name="MyFrame"></Frame>
+                <Frame Name="MyFrame" Background="SkyBlue"></Frame>
             </SplitView.Content>
 
         </SplitView>

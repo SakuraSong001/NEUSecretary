@@ -5,6 +5,7 @@ using SQLite.Net;
 using SQLite.Net.Platform.WinRT;
 using SQLite.Net.Attributes;
 using System.Text;
+using NEUSecretary.Models;
 
 // “空白页”项模板在 http://go.microsoft.com/fwlink/?LinkId=234238 上有介绍
 
@@ -15,45 +16,6 @@ namespace NEUSecretary
     /// </summary>
     public sealed partial class Class : Page
     {
-        [Table("STUDENT")]
-        public class Student
-        {
-            [Column("ID")]
-            [NotNull, PrimaryKey]
-            public int id { get; set; }
-
-            [Column("NAME")]
-            [NotNull]
-            public string name { get; set; }
-
-            [Column("SCHOOLID")]
-            [NotNull]
-            public int schoolid { get; set; }
-
-            [Column("TITLE")]
-            public string title { get; set; }
-        }
-
-        [Table("CLASS")]
-        public class StudentClass
-        {
-            [Column("ID")]
-            [NotNull, PrimaryKey]
-            public int id { get; set; }
-
-            [Column("WEEKDAY")]
-            [NotNull]
-            public int weekday { get; set; }
-
-            [Column("TIME")]
-            [NotNull]
-            public int time { get; set; }
-
-            [Column("CLASSINFO")]
-            [NotNull]
-            public string classinfo { get; set; }
-
-        }
 
         public Class()
         {
@@ -75,12 +37,12 @@ namespace NEUSecretary
 
         public async void InitClass()
         {
+            ApplicationDataContainer localSettings = ApplicationData.Current.LocalSettings;
             var local = ApplicationData.Current.LocalFolder;
             var localStorageFolder = await local.CreateFolderAsync("File", CreationCollisionOption.OpenIfExists);
-            StorageFile file = await localStorageFolder.GetFileAsync("20143714_class.db");
+            var id = localSettings.Values["stuId"];
+            StorageFile file = await localStorageFolder.GetFileAsync(id+"_class.db");
 
-            //var dialog23 = new MessageDialog(file.Path, "消息提示");
-            //await dialog23.ShowAsync();
             SQLiteConnection conn = new SQLiteConnection(new SQLitePlatformWinRT(), file.Path);
             StringBuilder sb = new StringBuilder();
             var list = conn.Table<StudentClass>();

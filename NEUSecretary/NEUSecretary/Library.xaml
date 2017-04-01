@@ -7,7 +7,7 @@
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d">
 
-    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
-        <Image Source="Assets/Library.png" VerticalAlignment="Top"></Image>
+    <Grid Background="SkyBlue">
+        <WebView Source="http://www.lib.neu.edu.cn/index.html"></WebView>
     </Grid>
 </Page>

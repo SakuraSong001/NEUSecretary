@@ -5,15 +5,16 @@
     xmlns:local="using:NEUSecretary"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:m="using:NEUSecretary.Models" 
     mc:Ignorable="d">
 
     <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
-        <RelativePanel>
-            <Button x:ConnectionId='1' Name="HeadPottraitButton"
+        <RelativePanel Background="DeepSkyBlue">
+            <TextBlock x:ConnectionId='1' Name="HeadPottraitButton"
                 RelativePanel.AlignHorizontalCenterWithPanel="True"
                 FontFamily="Segoe MDL2 Assets"
                 FontSize="200"           
-                Content="&#xE13D;"
+                Text="&#xED59;"
                 Margin="0,100,0,20"/>
             
             <StackPanel x:ConnectionId='2' Orientation="Vertical" 
@@ -23,20 +24,21 @@
                 
                 <StackPanel Orientation="Horizontal" Margin="0,10,0,0">
                     <TextBlock HorizontalAlignment="Left" VerticalAlignment="Center" FontSize="24">学          号：</TextBlock>
-                    <TextBox x:ConnectionId='8' Name="AccountTextBlock" HorizontalAlignment="Left" VerticalAlignment="Center" FontSize="24"></TextBox>
+                    <TextBox x:ConnectionId='9' PlaceholderText="请输入你的学号" Name="AccountTextBlock" HorizontalAlignment="Left" VerticalAlignment="Center" FontSize="24"></TextBox>
                 </StackPanel>
                 <StackPanel Orientation="Horizontal" Margin="0,5,0,0">
                     <TextBlock HorizontalAlignment="Left" VerticalAlignment="Center" FontSize="24">密          码：</TextBlock>
-                    <TextBox x:ConnectionId='7' Name="PasswordTextBlock" HorizontalAlignment="Left" VerticalAlignment="Center" FontSize="24"></TextBox>
+                    <PasswordBox x:ConnectionId='8' PlaceholderText="请输入你的密码" Name="PasswordTextBlock" HorizontalAlignment="Left" VerticalAlignment="Center" FontSize="24" PasswordChar="*"/>
                 </StackPanel>
                 <StackPanel Orientation="Horizontal" Margin="0,5,0,0">
                     <TextBlock HorizontalAlignment="Left" VerticalAlignment="Center" FontSize="24">验证码：</TextBlock>
-                    <Image x:ConnectionId='4' Name="IdentityCodePic"  Height="50"></Image>
                     <TextBox x:ConnectionId='5' Name="IdentityCodeTextBlock" HorizontalAlignment="Left" VerticalAlignment="Center" FontSize="24"></TextBox>
-                    <Button x:ConnectionId='6' Name="GetIdButton"                           >获取验证码</Button>
+                    <Image x:ConnectionId='6' Name="IdentityCodePic"  Height="50"></Image>
+                    <Button x:ConnectionId='7' Name="GetIdButton"                           >获取验证码</Button>
                 </StackPanel>
             </StackPanel>
             <Button x:ConnectionId='3' Name="LoggingButton" RelativePanel.Below="LoggedStackPanel" RelativePanel.AlignHorizontalCenterWithPanel="True" Margin="0,30,0,0"                            >登录</Button>
+            <Button x:ConnectionId='4' Name="PassLoginButton" RelativePanel.Below="LoggingButton" RelativePanel.AlignHorizontalCenterWithPanel="True" Margin="114,-32.8,-114.2,62.2"                               RenderTransformOrigin="-0.305,0.727">跳过登陆</Button>
         </RelativePanel>
     </Grid>
 </Page>

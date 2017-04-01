@@ -7,8 +7,8 @@
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d">
 
-    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
-        <Image Source="Assets/Selfstudy.png" VerticalAlignment="Top"></Image>
+    <Grid Background="SkyBlue">
+        <Image Source="Assets/IMG_0557.JPG" VerticalAlignment="Top" Stretch="Fill"></Image>
 
     </Grid>
 </Page>
