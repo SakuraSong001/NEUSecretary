@@ -43,14 +43,14 @@
         <TextBlock x:ConnectionId='8' Foreground="Black" Name="score16"  HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Row="1" Grid.Column="5"/>
         <TextBlock x:ConnectionId='9' Foreground="Black" Name="score17"  HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Row="1" Grid.Column="6"/>
         <TextBlock x:ConnectionId='10' Foreground="Black" Name="score18"  HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Row="1" Grid.Column="7"/>
-        <TextBlock x:ConnectionId='11' Foreground="Black" Name="score21"  HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Row="2" Grid.Column="0"/>
-        <TextBlock x:ConnectionId='12' Foreground="Black" Name="score22"  HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Row="2" Grid.Column="1"/>
-        <TextBlock x:ConnectionId='13' Foreground="Black" Name="score23"  HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Row="2" Grid.Column="2"/>
-        <TextBlock x:ConnectionId='14' Foreground="Black" Name="score24"  HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Row="2" Grid.Column="3"/>
-        <TextBlock x:ConnectionId='15' Foreground="Black" Name="score25"  HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Row="2" Grid.Column="4"/>
-        <TextBlock x:ConnectionId='16' Foreground="Black" Name="score26"  HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Row="2" Grid.Column="5"/>
-        <TextBlock x:ConnectionId='17' Foreground="Black" Name="score27"  HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Row="2" Grid.Column="6"/>
-        <TextBlock x:ConnectionId='18' Foreground="Black" Name="score28"  HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Row="2" Grid.Column="7"/>
+        <TextBlock x:ConnectionId='11' Foreground="Black" Name="score21"  HorizontalAlignment="Center" VerticalAlignment="Top" Grid.Row="2" Grid.Column="0"/>
+        <TextBlock x:ConnectionId='12' Foreground="Black" Name="score22"  HorizontalAlignment="Center" VerticalAlignment="Top" Grid.Row="2" Grid.Column="1"/>
+        <TextBlock x:ConnectionId='13' Foreground="Black" Name="score23"  HorizontalAlignment="Center" VerticalAlignment="Top" Grid.Row="2" Grid.Column="2"/>
+        <TextBlock x:ConnectionId='14' Foreground="Black" Name="score24"  HorizontalAlignment="Center" VerticalAlignment="Top" Grid.Row="2" Grid.Column="3"/>
+        <TextBlock x:ConnectionId='15' Foreground="Black" Name="score25"  HorizontalAlignment="Center" VerticalAlignment="Top" Grid.Row="2" Grid.Column="4"/>
+        <TextBlock x:ConnectionId='16' Foreground="Black" Name="score26"  HorizontalAlignment="Center" VerticalAlignment="Top" Grid.Row="2" Grid.Column="5"/>
+        <TextBlock x:ConnectionId='17' Foreground="Black" Name="score27"  HorizontalAlignment="Center" VerticalAlignment="Top" Grid.Row="2" Grid.Column="6"/>
+        <TextBlock x:ConnectionId='18' Foreground="Black" Name="score28"  HorizontalAlignment="Center" VerticalAlignment="Top" Grid.Row="2" Grid.Column="7"/>
     </Grid>
 </Page>
 

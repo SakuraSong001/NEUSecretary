@@ -98,4 +98,20 @@ namespace NEUSecretary.Models
         [NotNull]
         public string gpa { get; set; }
     }
+
+    [Table("ROOM")]
+    class ROOM
+    {
+        [Column("ID")]
+        [NotNull, PrimaryKey]
+        public int id { get; set; }
+
+        [Column("CLASSROOM")]
+        [NotNull]
+        public string classroom { get; set; }
+
+        [Column("ROOMINFO")]
+        [NotNull]
+        public string roominfo { get; set; }
+    }
 }

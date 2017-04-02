@@ -8,7 +8,75 @@
     mc:Ignorable="d">
 
     <Grid Background="SkyBlue">
-        <Image Source="Assets/IMG_0557.JPG" VerticalAlignment="Top" Stretch="Fill"></Image>
-
+        <Grid.RowDefinitions>
+            <RowDefinition Height="1*"></RowDefinition>
+            <RowDefinition Height="1*"></RowDefinition>
+            <RowDefinition Height="14*"></RowDefinition>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="3*" />
+            <ColumnDefinition Width="3*" />
+            <ColumnDefinition Width="3*" />
+            <ColumnDefinition Width="3*" />
+            <ColumnDefinition Width="3*" />
+            <ColumnDefinition Width="3*" />
+            <ColumnDefinition Width="3*" />
+            <ColumnDefinition Width="3*" />
+        </Grid.ColumnDefinitions>
+        <ComboBox Name="TermComboBox" 
+                      SelectionChanged="TermComboBox_SelectionChanged" 
+                      VerticalAlignment="Center"
+                      HorizontalAlignment="Right"
+                      Width="150" Grid.Row="0" Grid.Column="1">
+            <ComboBoxItem  Foreground="White">2014-2015学年第一学期</ComboBoxItem>
+            <ComboBoxItem  Foreground="White">2014-2015学年第二学期</ComboBoxItem>
+            <ComboBoxItem  Foreground="White">2015-2016学年第一学期</ComboBoxItem>
+            <ComboBoxItem  Foreground="White">2015-2016学年第二学期</ComboBoxItem>
+            <ComboBoxItem  Foreground="White">2016-2017学年第一学期</ComboBoxItem>
+        </ComboBox>
+        <ComboBox Name="WeekdayComboBox" 
+                      SelectionChanged="WeekdayComboBox_SelectionChanged" 
+                      VerticalAlignment="Center"
+                      HorizontalAlignment="Right"
+                      Width="150" Grid.Row="0" Grid.Column="2">
+            <ComboBoxItem  Foreground="White">星期一</ComboBoxItem>
+            <ComboBoxItem  Foreground="White">星期二</ComboBoxItem>
+            <ComboBoxItem  Foreground="White">星期三</ComboBoxItem>
+            <ComboBoxItem  Foreground="White">星期四</ComboBoxItem>
+            <ComboBoxItem  Foreground="White">星期五</ComboBoxItem>
+            <ComboBoxItem  Foreground="White">星期六</ComboBoxItem>
+            <ComboBoxItem  Foreground="White">星期日</ComboBoxItem>
+        </ComboBox>
+        <ComboBox Name="TimeComboBox" 
+                      SelectionChanged="TimeComboBox_SelectionChanged" 
+                      VerticalAlignment="Center"
+                      HorizontalAlignment="Right"
+                      Width="150" Grid.Row="0" Grid.Column="3">
+            <ComboBoxItem  Foreground="White">1-2</ComboBoxItem>
+            <ComboBoxItem  Foreground="White">3-4</ComboBoxItem>
+            <ComboBoxItem  Foreground="White">5-6</ComboBoxItem>
+            <ComboBoxItem  Foreground="White">7-8</ComboBoxItem>
+            <ComboBoxItem  Foreground="White">9-10</ComboBoxItem>
+            <ComboBoxItem  Foreground="White">11-12</ComboBoxItem>
+        </ComboBox>
+        <ComboBox Name="RoomComboBox" 
+                      SelectionChanged="RoomComboBox_SelectionChanged" 
+                      VerticalAlignment="Center"
+                      HorizontalAlignment="Right"
+                      Width="150" Grid.Row="0" Grid.Column="4">
+            <ComboBoxItem  Foreground="White">逸夫楼</ComboBoxItem>
+            <ComboBoxItem  Foreground="White">大成教学楼</ComboBoxItem>
+            <ComboBoxItem  Foreground="White">机电馆</ComboBoxItem>
+            <ComboBoxItem  Foreground="White">建筑学馆</ComboBoxItem>
+            <ComboBoxItem  Foreground="White">信息学馆</ComboBoxItem>
+            <ComboBoxItem  Foreground="White">生命学馆</ComboBoxItem>
+            <ComboBoxItem  Foreground="White">文管学馆</ComboBoxItem>
+        </ComboBox>
+        <TextBox Name="ResultWeek"  Grid.Row="0" Grid.Column="5" PlaceholderText="请输入查询第几周"></TextBox>
+        <Button Name="SearchBtn" Grid.Row="0" Grid.Column="6" Click="SearchBtn_Click">查询</Button>
+        <TextBlock Foreground="Black" Name="room11"  HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Row="1" Grid.Column="2"/>
+        <TextBlock Foreground="Black" Name="room12"  HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Row="1" Grid.Column="4"/>
+        <TextBlock Foreground="Black" Name="room21"  HorizontalAlignment="Center" VerticalAlignment="Top" Grid.Row="2" Grid.Column="2"/>
+        <TextBlock Foreground="Black" Name="room22"  HorizontalAlignment="Center" VerticalAlignment="Top" Grid.Row="2" Grid.Column="4"/>
     </Grid>
 </Page>

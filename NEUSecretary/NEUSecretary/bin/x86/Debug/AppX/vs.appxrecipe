@@ -28,13 +28,13 @@
     <AppXManifest Include="C:\NEUSecretary\NEUSecretary\NEUSecretary\bin\x86\Debug\Core\AppxManifest.xml">
       <PackagePath>AppxManifest.xml</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2017-04-02T15:42:05.617</Modified>
+      <Modified>2017-04-02T17:16:30.993</Modified>
     </AppXManifest>
   </ItemGroup>
   <ItemGroup>
     <AppxPackagedFile Include="C:\NEUSecretary\NEUSecretary\NEUSecretary\bin\x86\Debug\NEUSecretary.exe">
       <PackagePath>entrypoint\NEUSecretary.exe</PackagePath>
-      <Modified>2017-04-02T15:42:04.768</Modified>
+      <Modified>2017-04-02T17:16:29.099</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Leeeeo\.nuget\packages\Microsoft.CSharp\4.0.0\lib\netcore50\Microsoft.CSharp.dll">
       <PackagePath>Microsoft.CSharp.dll</PackagePath>
@@ -544,7 +544,7 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\NEUSecretary\NEUSecretary\NEUSecretary\bin\x86\Debug\NEUSecretary.xr.xml">
       <PackagePath>NEUSecretary.xr.xml</PackagePath>
-      <Modified>2017-04-02T15:34:48.376</Modified>
+      <Modified>2017-04-02T16:18:23.255</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Program Files %28x86%29\Windows Kits\10\UnionMetadata\Windows.winmd">
       <PackagePath>WinMetadata\Windows.winmd</PackagePath>
@@ -552,11 +552,11 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\NEUSecretary\NEUSecretary\NEUSecretary\bin\x86\Debug\resources.pri">
       <PackagePath>resources.pri</PackagePath>
-      <Modified>2017-04-02T15:42:05.347</Modified>
+      <Modified>2017-04-02T17:16:30.582</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\NEUSecretary\NEUSecretary\NEUSecretary\bin\x86\Debug\Core\NEUSecretary.exe">
       <PackagePath>NEUSecretary.exe</PackagePath>
-      <Modified>2017-04-02T15:42:05.608</Modified>
+      <Modified>2017-04-02T17:16:30.981</Modified>
     </AppxPackagedFile>
   </ItemGroup>
   <ItemGroup>
