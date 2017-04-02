@@ -8,7 +8,48 @@
     mc:Ignorable="d">
 
     <Grid Background="SkyBlue">
-        <Image Source="Assets/score.png" VerticalAlignment="Top"></Image>
-
+        <Grid.RowDefinitions>
+            <RowDefinition Height="1*"></RowDefinition>
+            <RowDefinition Height="1*"></RowDefinition>
+            <RowDefinition Height="14*"></RowDefinition>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="2*" />
+            <ColumnDefinition Width="2*" />
+            <ColumnDefinition Width="6*" />
+            <ColumnDefinition Width="1*" />
+            <ColumnDefinition Width="1*" />
+            <ColumnDefinition Width="1*" />
+            <ColumnDefinition Width="2*" />
+            <ColumnDefinition Width="1*" />
+        </Grid.ColumnDefinitions>
+        <TextBlock Name="GPATextblock" Grid.Row="0" Grid.ColumnSpan="5"   VerticalAlignment="Center" HorizontalAlignment="Center" Text="测试"/>
+        <ComboBox Name="TermComboBox" 
+                      SelectionChanged="ComboBox_SelectionChanged" 
+                      VerticalAlignment="Center"
+                      HorizontalAlignment="Right"
+                      Width="150" Grid.Row="0" Grid.ColumnSpan="6">
+            <ComboBoxItem  Foreground="White">2014-2015学年第一学期</ComboBoxItem>
+            <ComboBoxItem  Foreground="White">2014-2015学年第二学期</ComboBoxItem>
+            <ComboBoxItem  Foreground="White">2015-2016学年第一学期</ComboBoxItem>
+            <ComboBoxItem  Foreground="White">2015-2016学年第二学期</ComboBoxItem>
+            <ComboBoxItem  Foreground="White">2016-2017学年第一学期</ComboBoxItem>
+        </ComboBox>
+        <TextBlock Foreground="Black" Name="score11"  HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Row="1" Grid.Column="0"/>
+        <TextBlock Foreground="Black" Name="score12"  HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Row="1" Grid.Column="1"/>
+        <TextBlock Foreground="Black" Name="score13"  HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Row="1" Grid.Column="2"/>
+        <TextBlock Foreground="Black" Name="score14"  HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Row="1" Grid.Column="3"/>
+        <TextBlock Foreground="Black" Name="score15"  HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Row="1" Grid.Column="4"/>
+        <TextBlock Foreground="Black" Name="score16"  HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Row="1" Grid.Column="5"/>
+        <TextBlock Foreground="Black" Name="score17"  HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Row="1" Grid.Column="6"/>
+        <TextBlock Foreground="Black" Name="score18"  HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Row="1" Grid.Column="7"/>
+        <TextBlock Foreground="Black" Name="score21"  HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Row="2" Grid.Column="0"/>
+        <TextBlock Foreground="Black" Name="score22"  HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Row="2" Grid.Column="1"/>
+        <TextBlock Foreground="Black" Name="score23"  HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Row="2" Grid.Column="2"/>
+        <TextBlock Foreground="Black" Name="score24"  HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Row="2" Grid.Column="3"/>
+        <TextBlock Foreground="Black" Name="score25"  HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Row="2" Grid.Column="4"/>
+        <TextBlock Foreground="Black" Name="score26"  HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Row="2" Grid.Column="5"/>
+        <TextBlock Foreground="Black" Name="score27"  HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Row="2" Grid.Column="6"/>
+        <TextBlock Foreground="Black" Name="score28"  HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Row="2" Grid.Column="7"/>
     </Grid>
 </Page>

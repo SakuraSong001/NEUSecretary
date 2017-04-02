@@ -46,4 +46,56 @@ namespace NEUSecretary.Models
         public string classinfo { get; set; }
 
     }
+
+    [Table("SCORE")]
+    class Scoreinfo
+    {
+        [Column("ID")]
+        [NotNull, PrimaryKey]
+        public int id { get; set; }
+
+        [Column("CLASSPRO")]
+        [NotNull]
+        public string classPro { get; set; }
+
+        [Column("CLASSNO")]
+        [NotNull]
+        public string classNo { get; set; }
+
+        [Column("CLASSNAME")]
+        [NotNull]
+        public string className { get; set; }
+
+        [Column("CLASSTYPE")]
+        [NotNull]
+        public string classType { get; set; }
+
+        [Column("CLASSCOST")]
+        [NotNull]
+        public string classCost { get; set; }
+
+        [Column("CLASSPAY")]
+        [NotNull]
+        public string classPay { get; set; }
+
+        [Column("SCORETYPE")]
+        [NotNull]
+        public string scoreType { get; set; }
+
+        [Column("SCORE")]
+        [NotNull]
+        public string score { get; set; }
+    }
+
+    [Table("GPA")]
+    class GPA
+    {
+        [Column("ID")]
+        [NotNull, PrimaryKey]
+        public int id { get; set; }
+
+        [Column("GPA")]
+        [NotNull]
+        public string gpa { get; set; }
+    }
 }

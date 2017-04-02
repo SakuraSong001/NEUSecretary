@@ -21,7 +21,13 @@
                       VerticalAlignment="Center"
                       HorizontalAlignment="Left"
                       Width="150">
-                <ComboBoxItem IsSelected="True">请选择学期</ComboBoxItem>
+                <ComboBoxItem  Foreground="White">2014-2015学年第一学期</ComboBoxItem>
+                <ComboBoxItem  Foreground="White">2014-2015学年第二学期</ComboBoxItem>
+                <ComboBoxItem  Foreground="White">2015-2016学年第一学期</ComboBoxItem>
+                <ComboBoxItem  Foreground="White">2015-2016学年第二学期</ComboBoxItem>
+                <ComboBoxItem  Foreground="White">2016-2017学年第一学期</ComboBoxItem>
+                <ComboBoxItem  Foreground="White">2016-2017学年第二学期</ComboBoxItem>
+                
             </ComboBox>
             <TextBlock Foreground="Black" Name="TermComboBoxTextBlock" VerticalAlignment="Center"></TextBlock>
         </StackPanel>

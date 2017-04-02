@@ -35,6 +35,7 @@ namespace NEUSecretary
             String password = PasswordTextBlock.Password;
             String code = IdentityCodeTextBlock.Text;
             String postUrl = "http://uvp.leeeeo.com/auth/";
+ 
             ApplicationDataContainer localSettings = ApplicationData.Current.LocalSettings;
 
             var local = ApplicationData.Current.LocalFolder;
@@ -46,6 +47,7 @@ namespace NEUSecretary
                     new KeyValuePair<string,string>("id", id),
                     new KeyValuePair<string,string>("password", password),
                     new KeyValuePair<string,string>("code", code),
+                    new KeyValuePair<string,string>("YearTermNO", "14"),
                 };
                 var content = new HttpFormUrlEncodedContent(kvp);
                 HttpResponseMessage response = await client.PostAsync(new Uri(postUrl), content);
@@ -84,7 +86,8 @@ namespace NEUSecretary
             //获取返回值
             var result = await dialog.ShowAsync();
             localSettings.Values["stuId"] = id;
-           
+            localSettings.Values["stuPw"] = password;
+            localSettings.Values["code"] = code;          
             file = await localStorageFolder.GetFileAsync(id + "_class.db");
 
             SQLiteConnection conn = new SQLiteConnection(new SQLitePlatformWinRT(), file.Path);
