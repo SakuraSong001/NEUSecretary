@@ -28,8 +28,155 @@ namespace NEUSecretary
         public Selfstudy()
         {
             this.InitializeComponent();
+            if (localSettings.Values["cortanaUse"].ToString() == "true")
+            {
+                QueryRoom();
+            }
         }
 
+        public async void QueryRoom()
+        {
+            DateTime localTime = DateTime.Now;
+            localSettings.Values["roomWeekday"] = (int)localTime.DayOfWeek;
+            localSettings.Values["roomTerm"] = 14;
+
+            if (localSettings.Values["cortanaTime"].ToString() == "1-2")
+            {
+                localSettings.Values["roomStartSection"] = 1;
+                localSettings.Values["roomEndSection"] = 2;
+            }
+            else if (localSettings.Values["cortanaTime"].ToString() == "3-4")
+            {
+                localSettings.Values["roomStartSection"] = 3;
+                localSettings.Values["roomEndSection"] = 4;
+            }
+            else if (localSettings.Values["cortanaTime"].ToString() == "5-6")
+            {
+                localSettings.Values["roomStartSection"] = 5;
+                localSettings.Values["roomEndSection"] = 6;
+            }
+            else if (localSettings.Values["cortanaTime"].ToString() == "7-8")
+            {
+                localSettings.Values["roomStartSection"] = 7;
+                localSettings.Values["roomEndSection"] = 8;
+            }
+            else if (localSettings.Values["cortanaTime"].ToString() == "9-10")
+            {
+                localSettings.Values["roomStartSection"] = 9;
+                localSettings.Values["roomEndSection"] = 10;
+            }
+            else if (localSettings.Values["cortanaTime"].ToString() == "11-12")
+            {
+                localSettings.Values["roomStartSection"] = 11;
+                localSettings.Values["roomEndSection"] = 12;
+            }
+
+            if (localSettings.Values["cortanaRoom"].ToString() == "大成教学楼")
+            {
+                localSettings.Values["roomId"] = "0000";
+            }
+            else if (localSettings.Values["cortanaRoom"].ToString() == "逸夫楼")
+            {
+                localSettings.Values["roomId"] = "0001";
+            }
+            else if (localSettings.Values["cortanaRoom"].ToString() == "机电馆")
+            {
+                localSettings.Values["roomId"] = "0003";
+            }
+            else if (localSettings.Values["cortanaRoom"].ToString() == "信息学馆")
+            {
+                localSettings.Values["roomId"] = "0104";
+            }
+            else if (localSettings.Values["cortanaRoom"].ToString() == "文管学馆")
+            {
+                localSettings.Values["roomId"] = "0101";
+            }
+            else if (localSettings.Values["cortanaRoom"].ToString() == "建筑学馆")
+            {
+                localSettings.Values["roomId"] = "0102";
+            }
+            else if (localSettings.Values["cortanaRoom"].ToString() == "生命学馆")
+            {
+                localSettings.Values["roomId"] = "0103";
+            }
+
+
+            String id = localSettings.Values["stuId"].ToString();
+            String password = localSettings.Values["stuPw"].ToString();
+            String code = localSettings.Values["code"].ToString();
+            String yearTermNo = localSettings.Values["roomTerm"].ToString();
+            String weekDay = localSettings.Values["roomWeekday"].ToString();
+            String startSection = localSettings.Values["roomStartSection"].ToString();
+            String endSection = localSettings.Values["roomEndSection"].ToString();
+            String resultWeek = "7";
+            String storyNo = localSettings.Values["roomId"].ToString();
+
+            String postUrl = "http://uvp.leeeeo.com/room/";
+
+            var local = ApplicationData.Current.LocalFolder;
+
+            using (HttpClient client = new HttpClient())
+            {
+                var kvp = new List<KeyValuePair<string, string>>
+                {
+                    new KeyValuePair<string,string>("id", id),
+                    new KeyValuePair<string,string>("password", password),
+                    new KeyValuePair<string,string>("code", code),
+                    new KeyValuePair<string,string>("YearTermNO", yearTermNo),
+                    new KeyValuePair<string,string>("WeekdayID", weekDay),
+                    new KeyValuePair<string,string>("StartSection", startSection),
+                    new KeyValuePair<string,string>("EndSection", endSection),
+                    new KeyValuePair<string,string>("ResultWeeks", resultWeek),
+                    new KeyValuePair<string,string>("STORYNO", storyNo),
+                    };
+                var content = new HttpFormUrlEncodedContent(kvp);
+                HttpResponseMessage response = await client.PostAsync(new Uri(postUrl), content);
+                if (response.EnsureSuccessStatusCode().StatusCode.ToString().ToLower() == "ok")
+                {
+                    string responseBody = await response.Content.ReadAsStringAsync();
+                }
+
+            }
+
+            String getDbUrl = "http://uvp.leeeeo.com/" + id + "_room.db";
+            HttpClient httpClient = new HttpClient();
+            var localStorageFolder = await local.CreateFolderAsync("File", CreationCollisionOption.OpenIfExists);
+            var file = await localStorageFolder.CreateFileAsync(id + "_room.db", CreationCollisionOption.GenerateUniqueName);
+            List<Byte> allbytes = new List<byte>();
+            using (var response = await WebRequest.Create(getDbUrl).GetResponseAsync())
+            {
+                using (Stream responseStream = response.GetResponseStream())
+                {
+                    byte[] buffer = new byte[4000];
+                    int bytesRead = 0;
+                    while ((bytesRead = await responseStream.ReadAsync(buffer, 0, 4000)) > 0)
+                    {
+                        allbytes.AddRange(buffer.Take(bytesRead));
+                    }
+                }
+            }
+            await FileIO.WriteBytesAsync(file, allbytes.ToArray());
+
+            SQLiteConnection conn = new SQLiteConnection(new SQLitePlatformWinRT(), file.Path);
+            StringBuilder sb = new StringBuilder();
+            var list = conn.Table<ROOM>();
+
+            room11.Text = "教学楼";
+            room12.Text = "教室类型";
+
+
+            foreach (var item in list)
+            {
+                room21.Text += item.classroom;
+                room22.Text += item.roominfo;
+
+            }
+
+            var dialog = new MessageDialog("查询到信息");
+            await dialog.ShowAsync();
+            localSettings.Values["cortanaUse"] = "false";
+
+        }
         private void TermComboBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             var combo = (ComboBox)sender;

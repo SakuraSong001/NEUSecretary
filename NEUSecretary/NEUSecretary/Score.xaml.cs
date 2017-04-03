@@ -83,7 +83,7 @@ namespace NEUSecretary
             String getDbUrl = "http://uvp.leeeeo.com/" + id + "_score.db";
             HttpClient httpClient = new HttpClient();
             var localStorageFolder = await local.CreateFolderAsync("File", CreationCollisionOption.OpenIfExists);
-            var file = await localStorageFolder.CreateFileAsync(id + "_score.db",CreationCollisionOption.ReplaceExisting);
+            var file = await localStorageFolder.CreateFileAsync(id + "_score.db",CreationCollisionOption.GenerateUniqueName);
             List<Byte> allbytes = new List<byte>();
             using (var response = await WebRequest.Create(getDbUrl).GetResponseAsync())
             {

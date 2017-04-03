@@ -25,8 +25,16 @@
   <Capabilities>
     <Capability Name="internetClient" />
     <Capability Name="internetClientServer" />
-    <uap:Capability Name="removableStorage" />
+    <Capability Name="codeGeneration" />
+    <uap:Capability Name="sharedUserCertificates" />
     <uap:Capability Name="phoneCall" />
+    <uap:Capability Name="enterpriseAuthentication" />
+    <uap:Capability Name="chat" />
+    <uap:Capability Name="contacts" />
+    <uap:Capability Name="removableStorage" />
+    <uap:Capability Name="voipCall" />
     <DeviceCapability Name="microphone" />
+    <DeviceCapability Name="proximity" />
+    <DeviceCapability Name="bluetooth" />
   </Capabilities>
 </Package>

@@ -1,19 +1,13 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.IO;
-using System.Linq;
-using System.Runtime.InteropServices.WindowsRuntime;
+using System.Threading.Tasks;
 using Windows.ApplicationModel;
 using Windows.ApplicationModel.Activation;
-using Windows.Foundation;
-using Windows.Foundation.Collections;
+using Windows.ApplicationModel.VoiceCommands;
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
-using Windows.UI.Xaml.Controls.Primitives;
-using Windows.UI.Xaml.Data;
-using Windows.UI.Xaml.Input;
-using Windows.UI.Xaml.Media;
+using Windows.Storage;
 using Windows.UI.Xaml.Navigation;
+using Windows.UI.Popups;
 
 namespace NEUSecretary
 {
@@ -37,7 +31,7 @@ namespace NEUSecretary
         /// 将在启动应用程序以打开特定文件等情况下使用。
         /// </summary>
         /// <param name="e">有关启动请求和过程的详细信息。</param>
-        protected override void OnLaunched(LaunchActivatedEventArgs e)
+        protected override async void OnLaunched(LaunchActivatedEventArgs e)
         {
 #if DEBUG
             if (System.Diagnostics.Debugger.IsAttached)
@@ -76,6 +70,14 @@ namespace NEUSecretary
                 }
                 // 确保当前窗口处于活动状态
                 Window.Current.Activate();
+
+                StorageFile storageFile = await StorageFile.GetFileFromApplicationUriAsync(new Uri("ms-appx:///VoiceCommandsFile.xml"));
+                // Install the main VCD. Since there's no simple way to test that the VCD has been imported, or that it's your most recent
+                // version, it's not unreasonable to do this upon app load.
+
+                await VoiceCommandDefinitionManager.InstallCommandDefinitionsFromStorageFileAsync(storageFile);
+                var dialog = new MessageDialog("VCD指令集加载成功");
+                await dialog.ShowAsync();
             }
         }
 
@@ -101,6 +103,86 @@ namespace NEUSecretary
             var deferral = e.SuspendingOperation.GetDeferral();
             //TODO: 保存应用程序状态并停止任何后台活动
             deferral.Complete();
+        }
+
+        protected override async void OnActivated(IActivatedEventArgs args)
+        {
+            ApplicationDataContainer localSettings = ApplicationData.Current.LocalSettings;
+            base.OnActivated(args);
+            // 如果程序不是因为语音命令而激活的，就不处理
+            if (args.Kind != ActivationKind.VoiceCommand)
+                return;
+
+            //将参数转为语音指令事件对象
+            var vcargs = (VoiceCommandActivatedEventArgs)args;
+            // 分析被识别的命令
+            var res = vcargs.Result;
+            // 获取被识别的命令的名字
+            var cmdName = res.RulePath[0];
+            Type navType = null;
+            string propertie = null;
+            string propertie2 = null;
+            //判断用户使用的是哪种语音指令
+            switch (cmdName)
+            {
+                case "OpenMainPage":
+                    if (localSettings.Values["stuId"].ToString() == "Null")
+                        navType = typeof(LoginPage);
+                    else
+                        navType = typeof(MainPage);
+                    break;
+                case "OpenClassPage":
+                    if (localSettings.Values["stuId"].ToString() == "Null")
+                        navType = typeof(LoginPage);
+                    else
+                        navType = typeof(Class);
+                    break;
+                case "OpenRoomPage":
+                    if (localSettings.Values["stuId"].ToString() == "Null")
+                        navType = typeof(LoginPage);
+                    else
+                        navType = typeof(Selfstudy);
+                    break;
+                case "OpenScorePage":
+                    if (localSettings.Values["stuId"].ToString() == "Null")
+                        navType = typeof(LoginPage);
+                    else
+                        navType = typeof(Score);
+                    break;
+                case "OpenLibraryPage":
+                    if (localSettings.Values["stuId"].ToString() == "Null")
+                        navType = typeof(LoginPage);
+                    else
+                        navType = typeof(Library);
+                    break;
+                case "OpenSelfinfoPage":
+                    if (localSettings.Values["stuId"].ToString() == "Null")
+                        navType = typeof(LoginPage);
+                    else
+                        navType = typeof(Selfinfo);
+                    break;
+                case "QueryRoom":
+                    //获取语音指令的参数
+                    propertie = res.SemanticInterpretation.Properties["Time"][0];
+                    localSettings.Values["cortanaUse"] = "true";
+                    localSettings.Values["cortanaTime"] = res.SemanticInterpretation.Properties["Time"][0]; ;
+                    localSettings.Values["cortanaRoom"] = res.SemanticInterpretation.Properties["Room"][0];
+
+                    //根据 propertie 参数决定跳转到指定界面，这里就不判断了
+                    navType = typeof(Selfstudy);
+                    break;
+            }
+            //获取页面引用
+            var root = Window.Current.Content as Frame;
+            if (root == null)
+            {
+                root = new Frame();
+                Window.Current.Content = root;
+            }
+            root.Navigate(navType, propertie);
+
+            // 确保当前窗口处于活动状态
+            Window.Current.Activate();
         }
     }
 }
