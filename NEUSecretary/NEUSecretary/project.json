@@ -1,5 +1,6 @@
 ﻿{
   "dependencies": {
+    "Microsoft.Net.Http": "2.2.29",
     "Microsoft.NETCore.UniversalWindowsPlatform": "5.1.0",
     "SQLite.UWP.Native": "3.12.3",
     "SQLiteWrapperUWP-PCL": "1.0.0.4"

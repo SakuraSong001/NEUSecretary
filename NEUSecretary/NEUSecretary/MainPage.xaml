@@ -17,64 +17,64 @@
             <Button Name="HamburgerButton" 
                     RelativePanel.AlignLeftWithPanel="True"
                     FontFamily="Segoe MDL2 Assets"
-                    FontSize="36" 
+                    FontSize="33" 
                     Content="&#xE700;" 
                     Width="60"
                     Background="{ThemeResource ApplicationPageBackgroundThemeBrush}"
                     Click="HamburgerButton_Click" />
             <TextBlock Name="TitleTextBlock"
                        RelativePanel.RightOf="HamburgerButton"
-                       FontSize="28"
+                       RelativePanel.AlignVerticalCenterWith="HamburgerButton"
+                       FontSize="27"
                        FontWeight="Bold"
                        Text="测试"
                        
                        Margin="20,5,0,0"/>
         </RelativePanel>
         <SplitView 
-                   Grid.Row="1" 
                    Name="MySplitView"
                    DisplayMode="CompactOverlay" 
                    PaneBackground="Green"
                    OpenPaneLength="200" 
-                   CompactPaneLength="60"
+                   CompactPaneLength="60" Margin="0,50,0,0" Grid.RowSpan="2"
                    >
             <SplitView.Pane>
                 <ListBox SelectionMode="Single" 
                          SelectionChanged="ListBox_SelectionChanged">
                     <ListBoxItem Name="Homepage">
                         <StackPanel Orientation="Horizontal">
-                            <TextBlock FontFamily="Segoe MDL2 Assets" FontSize="36" Text="&#xE80F;"/>
-                            <TextBlock FontSize="24" Margin="20,0,0,0">主页</TextBlock>
+                            <TextBlock FontFamily="Segoe MDL2 Assets" FontSize="33" Text="&#xE80F;"/>
+                            <TextBlock FontSize="23" Margin="20,0,0,0">主页</TextBlock>
                         </StackPanel>
                     </ListBoxItem>
                     <ListBoxItem Name="Library">
                         <StackPanel Orientation="Horizontal">
-                            <TextBlock FontFamily="Segoe MDL2 Assets" FontSize="36" Text="&#xE82E;"  />
-                            <TextBlock FontSize="24" Margin="20,0,0,0">图书馆</TextBlock>
+                            <TextBlock FontFamily="Segoe MDL2 Assets" FontSize="33" Text="&#xE82E;"  />
+                            <TextBlock FontSize="23" Margin="20,0,0,0">图书馆</TextBlock>
                         </StackPanel>
                     </ListBoxItem>
                     <ListBoxItem Name="Class">
                         <StackPanel Orientation="Horizontal">
-                            <TextBlock FontFamily="Segoe MDL2 Assets" FontSize="36" Text="&#xE8F1;"  />
-                            <TextBlock FontSize="24" Margin="20,0,0,0">课程表</TextBlock>
+                            <TextBlock FontFamily="Segoe MDL2 Assets" FontSize="33" Text="&#xE8F1;"  />
+                            <TextBlock FontSize="23" Margin="20,0,0,0">课程表</TextBlock>
                         </StackPanel>
                     </ListBoxItem>
                     <ListBoxItem Name="Selfstudy">
                         <StackPanel Orientation="Horizontal">
-                            <TextBlock FontFamily="Segoe MDL2 Assets" FontSize="36" Text="&#xE2AD;"  />
-                            <TextBlock FontSize="24" Margin="20,0,0,0">上自习</TextBlock>
+                            <TextBlock FontFamily="Segoe MDL2 Assets" FontSize="33" Text="&#xE2AD;"  />
+                            <TextBlock FontSize="23" Margin="20,0,0,0">上自习</TextBlock>
                         </StackPanel>
                     </ListBoxItem>
                     <ListBoxItem Name="Score">
                         <StackPanel Orientation="Horizontal">
-                            <TextBlock FontFamily="Segoe MDL2 Assets" FontSize="36" Text="&#xE73E;"  />
-                            <TextBlock FontSize="24" Margin="20,0,0,0">查成绩</TextBlock>
+                            <TextBlock FontFamily="Segoe MDL2 Assets" FontSize="33" Text="&#xE73E;"  />
+                            <TextBlock FontSize="23" Margin="20,0,0,0">查成绩</TextBlock>
                         </StackPanel>
                     </ListBoxItem>
                     <ListBoxItem Name="Selfinfo">
                         <StackPanel Orientation="Horizontal">
-                            <TextBlock FontFamily="Segoe MDL2 Assets" FontSize="36" Text="&#xE181;"  />
-                            <TextBlock FontSize="24" Margin="20,0,0,0">个人信息</TextBlock>
+                            <TextBlock FontFamily="Segoe MDL2 Assets" FontSize="33" Text="&#xE181;"  />
+                            <TextBlock FontSize="23" Margin="20,0,0,0">个人信息</TextBlock>
                         </StackPanel>
                     </ListBoxItem>
                 </ListBox>
