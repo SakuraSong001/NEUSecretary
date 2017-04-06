@@ -28,13 +28,13 @@
     <AppXManifest Include="D:\code\NEUSecretary\NEUSecretary\NEUSecretary\bin\x86\Debug\Core\AppxManifest.xml">
       <PackagePath>AppxManifest.xml</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2017-04-06T05:29:28.405</Modified>
+      <Modified>2017-04-06T12:49:22.435</Modified>
     </AppXManifest>
   </ItemGroup>
   <ItemGroup>
     <AppxPackagedFile Include="D:\code\NEUSecretary\NEUSecretary\NEUSecretary\bin\x86\Debug\NEUSecretary.exe">
       <PackagePath>entrypoint\NEUSecretary.exe</PackagePath>
-      <Modified>2017-04-06T05:29:15.977</Modified>
+      <Modified>2017-04-06T12:49:15.899</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\user\.nuget\packages\Microsoft.CSharp\4.0.0\lib\netcore50\Microsoft.CSharp.dll">
       <PackagePath>Microsoft.CSharp.dll</PackagePath>
@@ -564,7 +564,7 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="D:\code\NEUSecretary\NEUSecretary\NEUSecretary\bin\x86\Debug\NEUSecretary.xr.xml">
       <PackagePath>NEUSecretary.xr.xml</PackagePath>
-      <Modified>2017-04-06T05:29:13.226</Modified>
+      <Modified>2017-04-06T12:49:14.556</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Program Files %28x86%29\Windows Kits\10\UnionMetadata\Windows.winmd">
       <PackagePath>WinMetadata\Windows.winmd</PackagePath>
@@ -572,11 +572,11 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="D:\code\NEUSecretary\NEUSecretary\NEUSecretary\bin\x86\Debug\resources.pri">
       <PackagePath>resources.pri</PackagePath>
-      <Modified>2017-04-06T05:29:24.638</Modified>
+      <Modified>2017-04-06T12:49:20.424</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="D:\code\NEUSecretary\NEUSecretary\NEUSecretary\bin\x86\Debug\Core\NEUSecretary.exe">
       <PackagePath>NEUSecretary.exe</PackagePath>
-      <Modified>2017-04-06T05:29:28.378</Modified>
+      <Modified>2017-04-06T12:49:22.396</Modified>
     </AppxPackagedFile>
   </ItemGroup>
   <ItemGroup>

@@ -15,6 +15,7 @@ using Windows.UI.Xaml.Navigation;
 using System.Collections.ObjectModel;
 using Windows.UI.Xaml.Media.Imaging;
 using System.Diagnostics;
+using Windows.Storage;
 
 // “空白页”项模板在 http://go.microsoft.com/fwlink/?LinkId=234238 上有介绍
 
@@ -25,8 +26,10 @@ namespace NEUSecretary
     /// </summary>
     public sealed partial class Homepage : Page
     {
+        ApplicationDataContainer localSettings = ApplicationData.Current.LocalSettings;
         public Homepage()
         {
+            GetWeather();
             this.InitializeComponent();
             this.LeftFlipView.ItemsSource = this.CenterFlipView.ItemsSource = this.RightFlipView.ItemsSource = new ObservableCollection<BitmapImage>()
             {
@@ -37,8 +40,14 @@ namespace NEUSecretary
             this.CenterFlipView.SelectedIndex = 0;
             this.LeftFlipView.SelectedIndex = this.LeftFlipView.Items.Count - 1;
             this.RightFlipView.SelectedIndex = this.CenterFlipView.SelectedIndex + 1;
+            
+            WelcomeTextBlock.Text = localSettings.Values["name"].ToString() + "，欢迎回来！";
+            GetWeather();
 
         }
+        
+
+
 
         protected override void OnNavigatedTo(NavigationEventArgs e)
         {
@@ -63,14 +72,11 @@ namespace NEUSecretary
             timer3.Start();
         }
 
-        private async void Button_Click(object sender, RoutedEventArgs e)
+        private async void GetWeather()
         {
             var position = await LocationManager.GetPosition();
             double lon = position.Coordinate.Point.Position.Longitude;
             double lat = position.Coordinate.Point.Position.Latitude;
-
-            WeatherDescribeTextBlock.Text = lon + "," + lat;
-
             RootObject myWeather = await WeatherDataApi.GetWeather(lon, lat);
 
             String errorCode = myWeather.error_code.ToString();
@@ -84,9 +90,7 @@ namespace NEUSecretary
                 Debug.WriteLine(myWeather.error_code.ToString() + ":" + myWeather.reason.ToString());
             }
             WeatherTextBlock.Text = myWeather.result.today.city + " " + myWeather.result.today.temperature + " " + myWeather.result.today.weather;
-            WeatherDescribeTextBlock.Text = myWeather.result.today.wind;
-
-
+            WeatherDescribeTextBlock.Text = myWeather.result.today.wind;            
         }
     }
 }
