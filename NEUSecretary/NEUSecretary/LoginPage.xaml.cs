@@ -104,6 +104,10 @@ namespace NEUSecretary
 
         private async void GetIdButton_Click(object sender, RoutedEventArgs e)
         {
+            GetIdButton.Visibility = new Visibility();
+            GetIdButton.Visibility = Visibility.Collapsed;
+            IdentityCodePic.Visibility = Visibility.Visible;
+            IdentityCodeTextBlock.Visibility = Visibility.Visible;
             String id = AccountTextBlock.Text;
             String getUrl = "http://uvp.leeeeo.com/auth/" + id;
             String getCheckPicUrl = "http://uvp.leeeeo.com/" + id + "_check.png";
@@ -124,6 +128,7 @@ namespace NEUSecretary
 
             if (!error)
             {
+
                 HttpClient httpClient = new HttpClient();
                 var localStorageFolder = await local.CreateFolderAsync("File", CreationCollisionOption.OpenIfExists);
                 var file = await localStorageFolder.CreateFileAsync(id + "_check.png", CreationCollisionOption.ReplaceExisting);
@@ -142,8 +147,7 @@ namespace NEUSecretary
                     }
                 }
                 await FileIO.WriteBytesAsync(file, allbytes.ToArray());
-
-                IdentityCodePic.Source = new BitmapImage(new Uri(file.Path));
+                IdentityCodePic.Source = new BitmapImage(new Uri(file.Path));                
                 GetIdButton.IsEnabled = false;
             }
             

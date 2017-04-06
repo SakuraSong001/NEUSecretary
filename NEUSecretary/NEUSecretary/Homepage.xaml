@@ -7,15 +7,90 @@
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d">
 
-    <Grid Background="SkyBlue">
+    
+    <Grid Background="White">
         <Grid.RowDefinitions>
-            <RowDefinition Height="auto">
-            </RowDefinition>
-            <RowDefinition Height="auto">
-            </RowDefinition>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="2*"/>
         </Grid.RowDefinitions>
-        <GridView x:Name="gridView" Grid.Row="0" HorizontalAlignment="Left" VerticalAlignment="Top" Width="100"/>
-        <Image Source="Assets/homepage.png" Grid.Row="1"></Image>
-        
+
+        <Grid Grid.Row="0" Margin="15,5,15,5">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="2*"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+
+            <!--左-->
+            <Grid Grid.Column="0" Margin="0,20,0,0">
+                <Grid.Background>
+                    <SolidColorBrush Color="LightGray"/>
+                </Grid.Background>
+                <FlipView x:Name="LeftFlipView" Opacity="0.5" IsEnabled="False" >
+                    <FlipView.ItemTemplate>
+                        <DataTemplate>
+                            <Image Source="{Binding}" Stretch="Fill"/>
+                        </DataTemplate>
+                    </FlipView.ItemTemplate>
+                </FlipView>
+            </Grid>
+
+            <!--中-->
+            <FlipView x:Name="CenterFlipView" Grid.Column="1">
+                <FlipView.ItemTemplate>
+                    <DataTemplate>
+                        <Image Source="{Binding}" Stretch="Fill"/>
+                    </DataTemplate>
+                </FlipView.ItemTemplate>
+            </FlipView>
+
+            <!--右-->
+            <Grid Grid.Column="2" Margin="0,20,0,0">
+                <Grid.Background>
+                    <SolidColorBrush Color="LightGray"/>
+                </Grid.Background>
+                <FlipView x:Name="RightFlipView" Opacity="0.3" IsEnabled="False" >
+                    <FlipView.ItemTemplate>
+                        <DataTemplate>
+                            <Image Source="{Binding}" Stretch="Fill"/>
+                        </DataTemplate>
+                    </FlipView.ItemTemplate>
+                </FlipView>
+            </Grid>
+
+
+
+        </Grid>
+        <RelativePanel Grid.Row="1" Margin="15,10,15,20">
+            <TextBlock Name="WeatherTextBlock" FontSize="18" Margin="0,10,0,5"
+                       RelativePanel.AlignRightWithPanel="True" Foreground="Black"
+                       HorizontalAlignment="Center" VerticalAlignment="Center"></TextBlock>
+            <TextBlock Name="WeatherDescribeTextBlock" 
+                       RelativePanel.AlignRightWithPanel="True"
+                       RelativePanel.Below="WeatherTextBlock"
+                       FontSize="18" Foreground="Black"></TextBlock>
+
+            <Image Height="50" Width="50" Name="WeatherIconImage"
+                   RelativePanel.LeftOf="WeatherTextBlock" Margin="0,0,20,0" ></Image>
+            
+            <TextBlock Name="WeekdayTextBlock" FontSize="19" Margin="15,5,35,0"
+                       Foreground="Black" RelativePanel.AlignVerticalCenterWith="WeatherIconImage"
+                       HorizontalAlignment="Center" VerticalAlignment="Center">星期一</TextBlock>
+            <TextBlock Name="DayTextBlock" FontSize="19" Margin="0,0,10,0"                        
+                       RelativePanel.RightOf="WeekdayTextBlock" Foreground="Black"
+                       RelativePanel.AlignVerticalCenterWith="WeekdayTextBlock"                       
+                       HorizontalAlignment="Center" VerticalAlignment="Center">2017.04.01</TextBlock>
+
+            <TextBlock Name="WelcomeTextBlock" FontSize="20" Margin="20,20,0,0" Foreground="Black"
+                       HorizontalAlignment="Center" VerticalAlignment="Center"
+                       RelativePanel.AlignLeftWithPanel="True"
+                       RelativePanel.Below="WeekdayTextBlock"></TextBlock>
+
+            <TextBlock Name="TodayClassTextBlock" Margin="20,20,0,10" FontSize="20"
+                       RelativePanel.Below="WelcomeTextBlock" Foreground="Black"
+                       HorizontalAlignment="Center" VerticalAlignment="Center">今天有几节什么课</TextBlock>
+            <TextBlock Name="NearlyTestTextBlock" Margin="20,10,0,0" FontSize="20" Foreground="Black"
+                       RelativePanel.Below="TodayClassTextBlock" >最近有什么考试</TextBlock>
+        </RelativePanel>
     </Grid>
 </Page>

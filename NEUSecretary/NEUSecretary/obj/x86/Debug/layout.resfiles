@@ -1,3 +1,6 @@
+WinMetadata\Windows.winmd
+Assets\000.jpg
+Assets\091.jpg
 Assets\class.png
 Assets\gakki.png
 Assets\homepage.png
@@ -18,4 +21,3 @@ Assets\Wide310x150Logo.scale-200.png
 NEUSecretary.xr.xml
 Properties\Default.rd.xml
 VoiceCommandsFile.xml
-WinMetadata\Windows.winmd
