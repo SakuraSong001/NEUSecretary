@@ -7,13 +7,13 @@
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d">
 
-    <Grid Background="White">
+    <Grid Background="#FF09B5D1">
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto" />
             <RowDefinition Height="*" />
         </Grid.RowDefinitions>
-
-        <RelativePanel>
+        
+        <RelativePanel Background="#FF09B5D1">
             <Button Name="HamburgerButton" 
                     RelativePanel.AlignLeftWithPanel="True"
                     FontFamily="Segoe MDL2 Assets"
@@ -34,48 +34,47 @@
         <SplitView 
                    Name="MySplitView"
                    DisplayMode="CompactOverlay" 
-                   
                    OpenPaneLength="140" 
-                   CompactPaneLength="45" Margin="0,35,0,0" Grid.RowSpan="2"
+                   CompactPaneLength="45" Margin="0,35,0,0" Grid.RowSpan="2" BorderBrush="#FF292929"
                    >
             <SplitView.Pane>
                 <ListBox SelectionMode="Single" 
-                         Background="{ThemeResource ApplicationForegroundThemeBrush }"
-                         SelectionChanged="ListBox_SelectionChanged">
+                         Background="#DE212020"
+                         SelectionChanged="ListBox_SelectionChanged" BorderBrush="#FF323131" Foreground="#FF817E7E">
                     <ListBoxItem Name="Homepage">
                         <StackPanel Orientation="Horizontal">
-                            <TextBlock FontFamily="Segoe MDL2 Assets" FontSize="23" Foreground="Black" Text="&#xE80F;" VerticalAlignment="Center" HorizontalAlignment="Center"/>
-                            <TextBlock FontSize="18" FontWeight="Light" Margin="12,0,0,0" Foreground="Black" >主页</TextBlock>
+                            <TextBlock FontFamily="Segoe MDL2 Assets" FontSize="23" Foreground="#FFD6D2D2" Text="&#xE80F;" VerticalAlignment="Center" HorizontalAlignment="Center" />
+                            <TextBlock FontSize="18" FontWeight="Light" Margin="12,0,0,0" Foreground="#FFD6D2D2" >主页</TextBlock>
                         </StackPanel>
                     </ListBoxItem>
                     <ListBoxItem Name="Library">
                         <StackPanel Orientation="Horizontal">
-                            <TextBlock FontFamily="Segoe MDL2 Assets" FontSize="23" Foreground="Black" Text="&#xE82E;"  VerticalAlignment="Center" HorizontalAlignment="Center"/>
-                            <TextBlock FontSize="18" FontWeight="Light" Margin="12,0,0,0" Foreground="Black">图书馆</TextBlock>
+                            <TextBlock FontFamily="Segoe MDL2 Assets" FontSize="23" Foreground="#FFD6D2D2" Text="&#xE82E;"  VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                            <TextBlock FontSize="18" FontWeight="Light" Margin="12,0,0,0" Foreground="#FFD6D2D2">图书馆</TextBlock>
                         </StackPanel>
                     </ListBoxItem>
                     <ListBoxItem Name="Class">
                         <StackPanel Orientation="Horizontal">
-                            <TextBlock FontFamily="Segoe MDL2 Assets" FontSize="24" Foreground="Black" Text="&#xE8F1;" VerticalAlignment="Center" HorizontalAlignment="Center" />
-                            <TextBlock FontSize="18" FontWeight="Light" Margin="12,0,0,0" Foreground="Black">课程表</TextBlock>
+                            <TextBlock FontFamily="Segoe MDL2 Assets" FontSize="24" Foreground="#FFD6D2D2" Text="&#xE8F1;" VerticalAlignment="Center" HorizontalAlignment="Center" />
+                            <TextBlock FontSize="18" FontWeight="Light" Margin="12,0,0,0" Foreground="#FFD6D2D2">课程表</TextBlock>
                         </StackPanel>
                     </ListBoxItem>
                     <ListBoxItem Name="Selfstudy">
                         <StackPanel Orientation="Horizontal">
-                            <TextBlock FontFamily="Segoe MDL2 Assets" FontSize="23" Foreground="Black" Text="&#xE2AD;" VerticalAlignment="Center" HorizontalAlignment="Center" />
-                            <TextBlock FontSize="18" FontWeight="Light" Margin="12,0,0,0" Foreground="Black">上自习</TextBlock>
+                            <TextBlock FontFamily="Segoe MDL2 Assets" FontSize="23" Foreground="#FFD6D2D2" Text="&#xE2AD;" VerticalAlignment="Center" HorizontalAlignment="Center" />
+                            <TextBlock FontSize="18" FontWeight="Light" Margin="12,0,0,0" Foreground="#FFD6D2D2">上自习</TextBlock>
                         </StackPanel>
                     </ListBoxItem>
                     <ListBoxItem Name="Score">
                         <StackPanel Orientation="Horizontal">
-                            <TextBlock FontFamily="Segoe MDL2 Assets" FontSize="23" Foreground="Black" Text="&#xE73E;" VerticalAlignment="Center" HorizontalAlignment="Center" />
-                            <TextBlock FontSize="18" FontWeight="Light" Margin="12,0,0,0" Foreground="Black">查成绩</TextBlock>
+                            <TextBlock FontFamily="Segoe MDL2 Assets" FontSize="23" Foreground="#FFD6D2D2" Text="&#xE73E;" VerticalAlignment="Center" HorizontalAlignment="Center" />
+                            <TextBlock FontSize="18" FontWeight="Light" Margin="12,0,0,0" Foreground="#FFD6D2D2">查成绩</TextBlock>
                         </StackPanel>
                     </ListBoxItem>
                     <ListBoxItem Name="Selfinfo">
                         <StackPanel Orientation="Horizontal">
-                            <TextBlock FontFamily="Segoe MDL2 Assets" FontSize="23" Foreground="Black" Text="&#xE181;" VerticalAlignment="Center" HorizontalAlignment="Center" />
-                            <TextBlock FontSize="18" FontWeight="Light" Margin="12,0,0,0" Foreground="Black">个人信息</TextBlock>
+                            <TextBlock FontFamily="Segoe MDL2 Assets" FontSize="23" Foreground="#FFD6D2D2" Text="&#xE181;" VerticalAlignment="Center" HorizontalAlignment="Center" />
+                            <TextBlock FontSize="18" FontWeight="Light" Margin="12,0,0,0" Foreground="#FFD6D2D2">个人信息</TextBlock>
                         </StackPanel>
                     </ListBoxItem>
                 </ListBox>

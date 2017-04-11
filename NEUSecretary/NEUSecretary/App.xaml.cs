@@ -75,9 +75,9 @@ namespace NEUSecretary
                 // Install the main VCD. Since there's no simple way to test that the VCD has been imported, or that it's your most recent
                 // version, it's not unreasonable to do this upon app load.
 
-                await VoiceCommandDefinitionManager.InstallCommandDefinitionsFromStorageFileAsync(storageFile);
+               /* await VoiceCommandDefinitionManager.InstallCommandDefinitionsFromStorageFileAsync(storageFile);
                 var dialog = new MessageDialog("VCD指令集加载成功");
-                await dialog.ShowAsync();
+                await dialog.ShowAsync();*/
             }
         }
 

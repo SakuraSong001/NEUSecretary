@@ -28,7 +28,8 @@ namespace NEUSecretary
         public Selfstudy()
         {
             this.InitializeComponent();
-            if (localSettings.Values["cortanaUse"].ToString() == "true")
+            if (localSettings.Values["cortanaUse"] !=null)
+                if (localSettings.Values["cortanaUse"].ToString() == "true")
             {
                 QueryRoom();
             }

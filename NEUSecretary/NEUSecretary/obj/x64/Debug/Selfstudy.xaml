@@ -1,0 +1,83 @@
+﻿<Page
+    x:Class="NEUSecretary.Selfstudy"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:NEUSecretary"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
+
+    <Grid Background="SkyBlue">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="1*"></RowDefinition>
+            <RowDefinition Height="1*"></RowDefinition>
+            <RowDefinition Height="14*"></RowDefinition>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="3*" />
+            <ColumnDefinition Width="3*" />
+            <ColumnDefinition Width="3*" />
+            <ColumnDefinition Width="3*" />
+            <ColumnDefinition Width="3*" />
+            <ColumnDefinition Width="3*" />
+            <ColumnDefinition Width="3*" />
+            <ColumnDefinition Width="3*" />
+        </Grid.ColumnDefinitions>
+        <ComboBox x:ConnectionId='1' Name="TermComboBox" 
+                                                                       
+                      VerticalAlignment="Center"
+                      HorizontalAlignment="Right"
+                      Width="150" Grid.Row="0" Grid.Column="1">
+            <ComboBoxItem  Foreground="White">2014-2015学年第一学期</ComboBoxItem>
+            <ComboBoxItem  Foreground="White">2014-2015学年第二学期</ComboBoxItem>
+            <ComboBoxItem  Foreground="White">2015-2016学年第一学期</ComboBoxItem>
+            <ComboBoxItem  Foreground="White">2015-2016学年第二学期</ComboBoxItem>
+            <ComboBoxItem  Foreground="White">2016-2017学年第一学期</ComboBoxItem>
+        </ComboBox>
+        <ComboBox x:ConnectionId='2' Name="WeekdayComboBox" 
+                                                                          
+                      VerticalAlignment="Center"
+                      HorizontalAlignment="Right"
+                      Width="150" Grid.Row="0" Grid.Column="2">
+            <ComboBoxItem  Foreground="White">星期一</ComboBoxItem>
+            <ComboBoxItem  Foreground="White">星期二</ComboBoxItem>
+            <ComboBoxItem  Foreground="White">星期三</ComboBoxItem>
+            <ComboBoxItem  Foreground="White">星期四</ComboBoxItem>
+            <ComboBoxItem  Foreground="White">星期五</ComboBoxItem>
+            <ComboBoxItem  Foreground="White">星期六</ComboBoxItem>
+            <ComboBoxItem  Foreground="White">星期日</ComboBoxItem>
+        </ComboBox>
+        <ComboBox x:ConnectionId='3' Name="TimeComboBox" 
+                                                                       
+                      VerticalAlignment="Center"
+                      HorizontalAlignment="Right"
+                      Width="150" Grid.Row="0" Grid.Column="3">
+            <ComboBoxItem  Foreground="White">1-2</ComboBoxItem>
+            <ComboBoxItem  Foreground="White">3-4</ComboBoxItem>
+            <ComboBoxItem  Foreground="White">5-6</ComboBoxItem>
+            <ComboBoxItem  Foreground="White">7-8</ComboBoxItem>
+            <ComboBoxItem  Foreground="White">9-10</ComboBoxItem>
+            <ComboBoxItem  Foreground="White">11-12</ComboBoxItem>
+        </ComboBox>
+        <ComboBox x:ConnectionId='4' Name="RoomComboBox" 
+                                                                       
+                      VerticalAlignment="Center"
+                      HorizontalAlignment="Right"
+                      Width="150" Grid.Row="0" Grid.Column="4">
+            <ComboBoxItem  Foreground="White">逸夫楼</ComboBoxItem>
+            <ComboBoxItem  Foreground="White">大成教学楼</ComboBoxItem>
+            <ComboBoxItem  Foreground="White">机电馆</ComboBoxItem>
+            <ComboBoxItem  Foreground="White">建筑学馆</ComboBoxItem>
+            <ComboBoxItem  Foreground="White">信息学馆</ComboBoxItem>
+            <ComboBoxItem  Foreground="White">生命学馆</ComboBoxItem>
+            <ComboBoxItem  Foreground="White">文管学馆</ComboBoxItem>
+        </ComboBox>
+        <TextBox x:ConnectionId='5' Name="ResultWeek"  Grid.Row="0" Grid.Column="5" PlaceholderText="请输入查询第几周"></TextBox>
+        <Button x:ConnectionId='6' Name="SearchBtn" Grid.Row="0" Grid.Column="6"                        >查询</Button>
+        <TextBlock x:ConnectionId='7' Foreground="Black" Name="room11"  HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Row="1" Grid.Column="2"/>
+        <TextBlock x:ConnectionId='8' Foreground="Black" Name="room12"  HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Row="1" Grid.Column="4"/>
+        <TextBlock x:ConnectionId='9' Foreground="Black" Name="room21"  HorizontalAlignment="Center" VerticalAlignment="Top" Grid.Row="2" Grid.Column="2"/>
+        <TextBlock x:ConnectionId='10' Foreground="Black" Name="room22"  HorizontalAlignment="Center" VerticalAlignment="Top" Grid.Row="2" Grid.Column="4"/>
+    </Grid>
+</Page>
+
