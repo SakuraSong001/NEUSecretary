@@ -29,7 +29,7 @@ namespace NEUSecretary
         ApplicationDataContainer localSettings = ApplicationData.Current.LocalSettings;
         public Homepage()
         {
-            GetWeather();
+           // GetWeather();
             this.InitializeComponent();
             this.LeftFlipView.ItemsSource = this.CenterFlipView.ItemsSource = this.RightFlipView.ItemsSource = new ObservableCollection<BitmapImage>()
             {
@@ -42,7 +42,8 @@ namespace NEUSecretary
             this.RightFlipView.SelectedIndex = this.CenterFlipView.SelectedIndex + 1;
             
             WelcomeTextBlock.Text = localSettings.Values["name"].ToString() + "，欢迎回来！";
-            GetWeather();
+           
+            //   GetWeather();
 
         }
         
@@ -72,25 +73,28 @@ namespace NEUSecretary
             timer3.Start();
         }
 
-        private async void GetWeather()
-        {
-            var position = await LocationManager.GetPosition();
-            double lon = position.Coordinate.Point.Position.Longitude;
-            double lat = position.Coordinate.Point.Position.Latitude;
-            RootObject myWeather = await WeatherDataApi.GetWeather(lon, lat);
+        /*  private async void GetWeather()
+          {
+              var position = await LocationManager.GetPosition();
+              double lon = position.Coordinate.Point.Position.Longitude;
+              double lat = position.Coordinate.Point.Position.Latitude;
+              RootObject myWeather = await WeatherDataApi.GetWeather(lon, lat);
 
-            String errorCode = myWeather.error_code.ToString();
-            if(errorCode == "0")
-            {
-                Debug.WriteLine("成功");
-            }
-            else
-            {
-                Debug.WriteLine("失败");
-                Debug.WriteLine(myWeather.error_code.ToString() + ":" + myWeather.reason.ToString());
-            }
-            WeatherTextBlock.Text = myWeather.result.today.city + " " + myWeather.result.today.temperature + " " + myWeather.result.today.weather;
-            WeatherDescribeTextBlock.Text = myWeather.result.today.wind;            
-        }
+              String errorCode = myWeather.error_code.ToString();
+              if(errorCode == "0")
+              {
+                  Debug.WriteLine("成功");
+              }
+              else
+              {
+                  Debug.WriteLine("失败");
+                  Debug.WriteLine(myWeather.error_code.ToString() + ":" + myWeather.reason.ToString());
+              }
+              WeatherTextBlock.Text = myWeather.result.today.city + " " + myWeather.result.today.temperature + " " + myWeather.result.today.weather;
+              WeatherDescribeTextBlock.Text = myWeather.result.today.wind;     
+               ImageBrush imageBrush = new ImageBrush();
+              imageBrush.ImageSource = new BitmapImage(new Uri("ms-appx:///Assets//091.jpg", UriKind.Absolute));
+              weather_background.Background = imageBrush;       
+          }*/
     }
 }

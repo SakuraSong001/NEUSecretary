@@ -7,13 +7,14 @@
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d">
 
-    
-    <Grid Background="White">
+
+    <Grid BorderBrush="#FF292929"
+          Background="#FF302E2E">
         <Grid.RowDefinitions>
             <RowDefinition Height="*"/>
             <RowDefinition Height="2*"/>
         </Grid.RowDefinitions>
-
+       
         <Grid Grid.Row="0" Margin="15,5,15,5">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="*"/>
@@ -59,8 +60,17 @@
             </Grid>
 
 
-
         </Grid>
+
+        <Grid Grid.Row="1">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="2*"/>
+            </Grid.ColumnDefinitions>
+        </Grid>
+        <Grid Grid.Row="1"
+              Grid.Column="1"
+              Name="weather_background" />
         <RelativePanel Grid.Row="1" Margin="15,10,15,20">
             <TextBlock Name="WeatherTextBlock" FontSize="18" Margin="0,10,0,5"
                        RelativePanel.AlignRightWithPanel="True" Foreground="Black"
@@ -92,5 +102,7 @@
             <TextBlock Name="NearlyTestTextBlock" Margin="20,10,0,0" FontSize="20" Foreground="Black"
                        RelativePanel.Below="TodayClassTextBlock" >最近有什么考试</TextBlock>
         </RelativePanel>
+
+     
     </Grid>
 </Page>
