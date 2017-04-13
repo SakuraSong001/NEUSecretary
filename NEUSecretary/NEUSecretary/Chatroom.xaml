@@ -1,0 +1,51 @@
+﻿<Page
+    x:Class="NEUSecretary.Chatroom"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:NEUSecretary"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
+
+    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" MinHeight="143"/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+
+        <RelativePanel x:Name="TitlePanel" Grid.Row="0" Margin="12,10,0,53">
+            <TextBlock Text="NEUSecretary-Chatroom" FontSize="60" />
+            <TextBlock Margin="679,10,-679,-10" RenderTransformOrigin="0.96,0.633" >
+                <Run Text="本机IP：" />
+                <Run x:Name="runIp" FontSize="24"/>
+            </TextBlock>
+            <TextBlock Margin="679,49,-679,-49" >
+                <Run Text="监听端口："/>
+                <Run x:Name="runPort" FontSize="20"/>
+            </TextBlock>
+        </RelativePanel>
+
+        <Grid x:Name="ContentPanel" Grid.Row="1" Margin="12,0,12,0">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="179*"/>
+                <ColumnDefinition Width="1077*"/>
+            </Grid.ColumnDefinitions>
+            <RelativePanel Grid.ColumnSpan="2">
+                <TextBox Name="txtIp" Header="服务器IP：" Margin="889,-124,-889,124"/>
+                <TextBox Name="txtPort" Header="服务器端口：" Margin="1039,-124,-1039,124"/>
+                <Button Content="连接socket" Margin="1156,-96,-1132,120" x:Name="btConnectSocket" Click="OnConnectToServer" />
+                <TextBox Text="hello" x:Name="tbMsg" Margin="141,503,-936,-503"/>
+                <Button Content="发送消息" Margin="997,503,-973,-479" x:Name="btSendMsg" Click="btSendMsg_Click"  />
+                <Button Content="接收消息" Margin="1103,503,-1079,-479" x:Name="btGetMsg" Click="btGetMsg_Click"  />
+                <TextBlock Margin="36,30,-36,-30">
+                <Run Foreground="Red" FontWeight="Bold" FontSize="16">从服务器接收到的消息：</Run>
+                <LineBreak/>
+                <Run x:Name="runRecMsg"/>
+                </TextBlock>
+                <ScrollViewer Margin="36,80,-36,-151" ScrollViewer.HorizontalScrollMode="Auto">
+                    <StackPanel x:Name="lbMsg" Height="380" Width="902"/>
+                </ScrollViewer>
+            </RelativePanel>
+        </Grid>
+    </Grid>
+</Page>
