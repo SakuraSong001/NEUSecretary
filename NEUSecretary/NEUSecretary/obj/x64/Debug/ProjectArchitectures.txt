@@ -1,1 +1,1 @@
-D:\V.S.15\code\NEUSecretary\NEUSecretary\NEUSecretary\NEUSecretary.csproj;x64
+D:\code\NEUSecretary\NEUSecretary\NEUSecretary\NEUSecretary.csproj;x64

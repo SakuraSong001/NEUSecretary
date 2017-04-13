@@ -73,7 +73,7 @@ namespace NEUSecretary
             timer3.Start();
         }
 
-        /*  private async void GetWeather()
+          private async void GetWeather()
           {
               var position = await LocationManager.GetPosition();
               double lon = position.Coordinate.Point.Position.Longitude;
@@ -95,6 +95,6 @@ namespace NEUSecretary
                ImageBrush imageBrush = new ImageBrush();
               imageBrush.ImageSource = new BitmapImage(new Uri("ms-appx:///Assets//091.jpg", UriKind.Absolute));
               weather_background.Background = imageBrush;       
-          }*/
+          }
     }
 }

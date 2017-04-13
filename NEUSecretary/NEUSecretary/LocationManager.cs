@@ -7,7 +7,7 @@ using Windows.Devices.Geolocation;
 
 namespace NEUSecretary
 {
-  /*  public class LocationManager
+    public class LocationManager
     {
         public async static Task<Geoposition> GetPosition()
         {
@@ -18,5 +18,5 @@ namespace NEUSecretary
             var position = await geolocator.GetGeopositionAsync();
             return position;
         }   
-    }*/
+    }
 }
