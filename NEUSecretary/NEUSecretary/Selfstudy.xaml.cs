@@ -164,7 +164,8 @@ namespace NEUSecretary
 
             room11.Text = "教学楼";
             room12.Text = "教室类型";
-
+            room21.Text = "";
+            room22.Text = "";
 
             foreach (var item in list)
             {
@@ -277,41 +278,7 @@ namespace NEUSecretary
                 localSettings.Values["roomEndSection"] = 12;
             }
         }
-
-        private void RoomComboBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
-        {
-            var combo = (ComboBox)sender;
-            var item = (ComboBoxItem)combo.SelectedItem;
-            if (item.Content.ToString() == "大成教学楼")
-            {
-                localSettings.Values["roomId"] = "0000";
-            }
-            else if (item.Content.ToString() == "逸夫楼")
-            {
-                localSettings.Values["roomId"] = "0001";
-            }
-            else if (item.Content.ToString() == "机电馆")
-            {
-                localSettings.Values["roomId"] = "0003";
-            }
-            else if (item.Content.ToString() == "信息学馆")
-            {
-                localSettings.Values["roomId"] = "0104";
-            }
-            else if (item.Content.ToString() == "文管学馆")
-            {
-                localSettings.Values["roomId"] = "0101";
-            }
-            else if (item.Content.ToString() == "建筑学馆")
-            {
-                localSettings.Values["roomId"] = "0102";
-            }
-            else if (item.Content.ToString() == "生命学馆")
-            {
-                localSettings.Values["roomId"] = "0103";
-            }
-        }
-
+        
         private async void SearchBtn_Click(object sender, RoutedEventArgs e)
         {
             ApplicationDataContainer localSettings = ApplicationData.Current.LocalSettings;
@@ -329,6 +296,9 @@ namespace NEUSecretary
             String postUrl = "http://uvp.leeeeo.com/room/";
 
             var local = ApplicationData.Current.LocalFolder;
+            
+            room21.Text = "请稍候";
+            room22.Text = "请稍候";
 
             using (HttpClient client = new HttpClient())
             {
@@ -378,13 +348,46 @@ namespace NEUSecretary
 
             room11.Text = "教学楼";
             room12.Text = "教室类型";
-            
+            room21.Text = "";
+            room22.Text = "";
 
             foreach (var item in list)
             {
                 room21.Text += item.classroom;
                 room22.Text += item.roominfo;
                
+            }
+        }
+
+        private void RoomListBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            if (DachengHouse.IsSelected)
+            {
+                localSettings.Values["roomId"] = "0000";
+            }
+            else if (YifuHouse.IsSelected)
+            {
+                localSettings.Values["roomId"] = "0001";
+            }
+            else if (JidianHouse.IsSelected)
+            {
+                localSettings.Values["roomId"] = "0003";
+            }
+            else if (XinxiHouse.IsSelected)
+            {
+                localSettings.Values["roomId"] = "0104";
+            }
+            else if (WenguanHouse.IsSelected)
+            {
+                localSettings.Values["roomId"] = "0101";
+            }
+            else if (JianzhuHouse.IsSelected)
+            {
+                localSettings.Values["roomId"] = "0102";
+            }
+            else if (ShengmingHouse.IsSelected)
+            {
+                localSettings.Values["roomId"] = "0103";
             }
         }
     }
