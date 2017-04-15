@@ -11,11 +11,11 @@
     <Grid BorderBrush="#FF292929"
           Background="White">
         <Grid.RowDefinitions>
-            <RowDefinition Height="*"/>
-            <RowDefinition Height="2*"/>
+            <RowDefinition Height="3*"/>
+            <RowDefinition Height="5*"/>
         </Grid.RowDefinitions>
        
-        <Grid Grid.Row="0" Margin="15,5,15,5">
+        <Grid Grid.Row="0" Margin="0,5,0,5">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="*"/>
                 <ColumnDefinition Width="2*"/>
@@ -23,7 +23,7 @@
             </Grid.ColumnDefinitions>
 
             <!--左-->
-            <Grid Grid.Column="0" Margin="0,20,0,0">
+            <Grid Grid.Column="0" Margin="0,20,0,20">
                 <Grid.Background>
                     <SolidColorBrush Color="LightGray"/>
                 </Grid.Background>
@@ -46,7 +46,7 @@
             </FlipView>
 
             <!--右-->
-            <Grid Grid.Column="2" Margin="0,20,0,0">
+            <Grid Grid.Column="2" Margin="0,20,0,20">
                 <Grid.Background>
                     <SolidColorBrush Color="LightGray"/>
                 </Grid.Background>
@@ -71,36 +71,48 @@
         <Grid Grid.Row="1"
               Grid.Column="1"
               Name="weather_background" />
-        <RelativePanel Grid.Row="1" Margin="15,10,15,20">
-            <TextBlock Name="WeatherTextBlock" FontSize="18" Margin="0,10,0,5"
-                       RelativePanel.AlignRightWithPanel="True" Foreground="Black"
-                       HorizontalAlignment="Center" VerticalAlignment="Center"></TextBlock>
+        <RelativePanel Grid.Row="1" Margin="15,10,15,20" ScrollViewer.VerticalScrollMode="Enabled">
+            <TextBlock Name="WeatherTextBlock" Foreground="Black" FontWeight="Bold" FontSize="30" Margin="0,10,0,5"
+                       RelativePanel.AlignRightWithPanel="True" 
+                       HorizontalAlignment="Center" VerticalAlignment="Center">ssssssssssss</TextBlock>
             <TextBlock Name="WeatherDescribeTextBlock" 
                        RelativePanel.AlignRightWithPanel="True"
                        RelativePanel.Below="WeatherTextBlock"
-                       FontSize="18" Foreground="Black"></TextBlock>
+                       Foreground="Black" FontWeight="Bold" FontSize="30">ddddddddd</TextBlock>
 
-            <Image Height="50" Width="50" Name="WeatherIconImage"
+            <Image Height="100" Width="100" Name="WeatherIconImage" Source="Assets\sw-wind-direction-icon_128.png"
                    RelativePanel.LeftOf="WeatherTextBlock" Margin="0,0,20,0" ></Image>
             
-            <TextBlock Name="WeekdayTextBlock" FontSize="19" Margin="15,5,35,0"
-                       Foreground="Black" RelativePanel.AlignVerticalCenterWith="WeatherIconImage"
+            <TextBlock Name="WeekdayTextBlock"  Margin="15,5,35,0"
+                       Foreground="Black" FontWeight="Bold" FontSize="30" RelativePanel.AlignVerticalCenterWith="WeatherIconImage"
                        HorizontalAlignment="Center" VerticalAlignment="Center">星期一</TextBlock>
-            <TextBlock Name="DayTextBlock" FontSize="19" Margin="0,0,10,0"                        
-                       RelativePanel.RightOf="WeekdayTextBlock" Foreground="Black"
+            <TextBlock Name="DayTextBlock" Foreground="Black" FontWeight="Bold" FontSize="30"                       
+                       RelativePanel.RightOf="WeekdayTextBlock"
                        RelativePanel.AlignVerticalCenterWith="WeekdayTextBlock"                       
                        HorizontalAlignment="Center" VerticalAlignment="Center">2017.04.01</TextBlock>
 
-            <TextBlock Name="WelcomeTextBlock" FontSize="20" Margin="20,20,0,0" Foreground="Black"
+            <TextBlock Name="WelcomeTextBlock"  Margin="20,20,0,0" 
                        HorizontalAlignment="Center" VerticalAlignment="Center"
                        RelativePanel.AlignLeftWithPanel="True"
-                       RelativePanel.Below="WeekdayTextBlock"></TextBlock>
+                       RelativePanel.Below="WeekdayTextBlock" Foreground="#5c85ee" FontWeight="Bold" FontSize="24">欢迎回啦i</TextBlock>
+            <RelativePanel RelativePanel.Below="WelcomeTextBlock" Name="TodayClassPanel">
+                <TextBlock Name="TodayClassGuideBlock" Margin="20,20,0,10" FontSize="20" FontWeight="Bold"
+                        Foreground="#535353"
+                       HorizontalAlignment="Center" VerticalAlignment="Center">今天你有以下课程</TextBlock>
+                <TextBlock Name="TodayClassTextBlock" Margin="20,20,0,10" FontSize="20"
+                       RelativePanel.Below="TodayClassGuideBlock" Foreground="#666666"
+                       HorizontalAlignment="Center" VerticalAlignment="Center" RelativePanel.AlignRightWithPanel="True"></TextBlock>
+            </RelativePanel>
+            <RelativePanel RelativePanel.AlignHorizontalCenterWithPanel="True" RelativePanel.Below="WelcomeTextBlock">
+                <TextBlock Name="NearlyTestGuideBlock" Margin="0,20,0,10" FontSize="20" FontWeight="Bold"
+                        Foreground="#535353" RelativePanel.AlignHorizontalCenterWithPanel="True"
+                       >最近考试</TextBlock>
+                <TextBlock Name="NearlyTestTextBlock" Margin="0,20,0,10" FontSize="20"
+                       RelativePanel.Below="NearlyTestGuideBlock" Foreground="#666666"
+                       HorizontalAlignment="Center" VerticalAlignment="Center" RelativePanel.AlignHorizontalCenterWithPanel="True">最近暂无考试</TextBlock>
 
-            <TextBlock Name="TodayClassTextBlock" Margin="20,20,0,10" FontSize="20"
-                       RelativePanel.Below="WelcomeTextBlock" Foreground="Black"
-                       HorizontalAlignment="Center" VerticalAlignment="Center">今天有几节什么课</TextBlock>
-            <TextBlock Name="NearlyTestTextBlock" Margin="20,10,0,0" FontSize="20" Foreground="Black"
-                       RelativePanel.Below="TodayClassTextBlock" >最近有什么考试</TextBlock>
+            </RelativePanel>
+            
         </RelativePanel>
 
      
