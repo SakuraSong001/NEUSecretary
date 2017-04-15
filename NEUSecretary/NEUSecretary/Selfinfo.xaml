@@ -7,44 +7,85 @@
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d">
     
-    <Grid Background="SkyBlue">
-        <RelativePanel HorizontalAlignment="Center">
-            <Image x:Name="UserHeadPortraitImage" 
-                   Height="150"
-                   Width="150"
-                   RelativePanel.AlignLeftWithPanel="True"
-                   Margin="50,50,0,0"
-                   Source="Assets\gakki.png"
+    <Grid Background="White">
+        <RelativePanel HorizontalAlignment="Center" >
+            <StackPanel Name="MyInfoStackPanel" Orientation="Horizontal" >
+                <StackPanel Margin="0 90 20 0" Orientation="Vertical">
+                    <Image x:Name="UserHeadPortraitImage" 
+                   MaxHeight="200"
+                   Source="Assets\default.jpg"
                    Stretch="Fill">
-            </Image>
-            <StackPanel RelativePanel.Below="UserHeadPortraitImage" 
-                        Margin="50,10,0,0" Name="MyInfoStackPanel" >
-                <StackPanel Orientation="Vertical" Margin="0,0,0,10">
-                    <TextBlock HorizontalAlignment="Left" VerticalAlignment="Center" FontSize="24" Margin="0,5,0,0">姓名</TextBlock>
-                    <TextBlock Name="MyNameTextBlock" HorizontalAlignment="Left" VerticalAlignment="Center">测试</TextBlock>
-                </StackPanel>
-                <StackPanel Orientation="Vertical" Margin="0,0,0,10">
-                    <TextBlock HorizontalAlignment="Left" VerticalAlignment="Center" FontSize="24" Margin="0,5,0,0">学号</TextBlock>
-                    <TextBlock Name="MyIdTextBlock" HorizontalAlignment="Left" VerticalAlignment="Center">测试</TextBlock>
-                </StackPanel>
-                <StackPanel Orientation="Vertical" Margin="0,0,0,10">
-                    <TextBlock HorizontalAlignment="Left" VerticalAlignment="Center" FontSize="24" Margin="0,5,0,0">学院</TextBlock>
-                    <TextBlock Name="MyCollegeTextBlock" HorizontalAlignment="Left" VerticalAlignment="Center">测试</TextBlock>
-                </StackPanel>
-                <StackPanel Orientation="Vertical" Margin="0,0,0,10">
-                    <TextBlock HorizontalAlignment="Left" VerticalAlignment="Center" FontSize="24" Margin="0,5,0,0">专业</TextBlock>
-                    <TextBlock Name="MyMajorTextBlock" HorizontalAlignment="Left" VerticalAlignment="Center">测试</TextBlock>
-                </StackPanel>
-                <StackPanel Orientation="Vertical" Margin="0,10,0,10">
-                    <Button Name="LogoutButton" 
-                    RelativePanel.Below="MyInfoStackPanel"
-                    RelativePanel.AlignHorizontalCenterWithPanel="True" Click="LogoutButton_Click"
+                    </Image>
+                    <Button HorizontalAlignment="Center" Foreground="White" Name="ChangePicButton" Background="#FF292929"
+                      Click="ChangePicButton_Click" Margin="0 15 0 15"
+                    >更换头像</Button>
+                    <Button HorizontalAlignment="Center" Foreground="White" Name="LogoutButton" Background="#FF292929"
+                      Click="LogoutButton_Click"
                     >退出登陆</Button>
+                    
+                </StackPanel>
+                <StackPanel Orientation="Vertical" Margin="0 90 0 0">
+                    <StackPanel Orientation="Vertical" Margin="0,0,0,10">
+                        <TextBlock Foreground="Black" HorizontalAlignment="Left" VerticalAlignment="Center" FontSize="16px" FontWeight="Bold" Margin="0,5,0,0">姓名</TextBlock>
+                        <TextBlock Foreground="Black" Name="MyNameTextBlock" HorizontalAlignment="Left" VerticalAlignment="Center">测试</TextBlock>
+                    </StackPanel>
+                    <StackPanel Orientation="Vertical" Margin="0,0,0,10">
+                        <TextBlock Foreground="Black"  HorizontalAlignment="Left" VerticalAlignment="Center" FontSize="16px" FontWeight="Bold" Margin="0,5,0,0">学号</TextBlock>
+                        <TextBlock Foreground="Black" Name="MyIdTextBlock" HorizontalAlignment="Left" VerticalAlignment="Center">测试</TextBlock>
+                    </StackPanel>
+                    <StackPanel Orientation="Vertical" Margin="0,0,0,10">
+                        <TextBlock Foreground="Black" HorizontalAlignment="Left" VerticalAlignment="Center" FontSize="16px" FontWeight="Bold" Margin="0,5,0,0">学院</TextBlock>
+                        <TextBlock Foreground="Black" Name="MyCollegeTextBlock" HorizontalAlignment="Left" VerticalAlignment="Center">计算机科学与工程</TextBlock>
+                    </StackPanel>
+                    <StackPanel Orientation="Vertical" Margin="0,0,0,10">
+                        <TextBlock Foreground="Black" HorizontalAlignment="Left" VerticalAlignment="Center" FontSize="16px" FontWeight="Bold" Margin="0,5,0,0">专业</TextBlock>
+                        <TextBlock Foreground="Black" Name="MyMajorTextBlock" HorizontalAlignment="Left" VerticalAlignment="Center">计算机科学与技术</TextBlock>
+                    </StackPanel>
+                </StackPanel>
+                <StackPanel>
+                    <Image x:Name="UserImage"
+                   MaxHeight="400"
+                   RelativePanel.AlignLeftWithPanel="True"
+                   Source="Assets\1222.png"
+                   Stretch="Fill">
+                    </Image>
+                </StackPanel>
+                <StackPanel Orientation="Vertical" Margin="0 90 0 0">
+                    <StackPanel Orientation="Horizontal" Margin="0 0 0 20">
+                        <TextBlock Foreground="#5c85ee" FontWeight="Bold" FontSize="16px">表达</TextBlock>
+                        <Rectangle Fill="#DF7071" Width="70" Margin="15 0 15 0"></Rectangle>
+                        <TextBlock Foreground="#5c85ee" FontSize="16px">70</TextBlock>
+                    </StackPanel>
+                    <StackPanel Orientation="Horizontal" Margin="0 0 0 20">
+                        <TextBlock Foreground="#5c85ee" FontWeight="Bold" FontSize="16px">执行</TextBlock>
+                        <Rectangle Fill="#799DD2" Width="70" Margin="15 0 15 0"></Rectangle>
+                        <TextBlock Foreground="#5c85ee" FontSize="16px">70</TextBlock>
+                    </StackPanel>
+                    <StackPanel Orientation="Horizontal" Margin="0 0 0 20">
+                        <TextBlock Foreground="#5c85ee" FontWeight="Bold" FontSize="16px">思辨</TextBlock>
+                        <Rectangle Fill="#B0D479" Width="70" Margin="15 0 15 0"></Rectangle>
+                        <TextBlock Foreground="#5c85ee" FontSize="16px">70</TextBlock>
+                    </StackPanel>
+                    <StackPanel Orientation="Horizontal" Margin="0 0 0 20">
+                        <TextBlock Foreground="#5c85ee" FontWeight="Bold" FontSize="16px">领导</TextBlock>
+                        <Rectangle Fill="#E79777" Width="70" Margin="15 0 15 0"></Rectangle>
+                        <TextBlock Foreground="#5c85ee" FontSize="16px">70</TextBlock>
+                    </StackPanel>
+                    <StackPanel Orientation="Horizontal" Margin="0 0 0 20">
+                        <TextBlock Foreground="#5c85ee" FontWeight="Bold" FontSize="16px">创新</TextBlock>
+                        <Rectangle Fill="#D97FB1" Width="70" Margin="15 0 15 0"></Rectangle>
+                        <TextBlock Foreground="#5c85ee" FontSize="16px">70</TextBlock>
+                    </StackPanel>
+                    <StackPanel Orientation="Horizontal" Margin="0 0 0 20">
+                        <TextBlock Foreground="#5c85ee" FontWeight="Bold" FontSize="16px">创业</TextBlock>
+                        <Rectangle Fill="#84CEE6" Width="70" Margin="15 0 15 0"></Rectangle>
+                        <TextBlock Foreground="#5c85ee" FontSize="16px">70</TextBlock>
+                    </StackPanel>
                 </StackPanel>
             </StackPanel>
-           
             
-            
+
+
 
         </RelativePanel>
     </Grid>
