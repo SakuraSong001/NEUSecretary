@@ -19,7 +19,7 @@
                         <Setter Target="TuringImage.Width" Value="150"/>
                         <Setter Target="TuringImage.Margin" Value="0 0 0 40"/>
                         <Setter Target="ScrollText.(RelativePanel.RightOf)" Value="TuringText"/>
-                        <Setter Target="ScrollText.Width" Value="720"/>
+                        <Setter Target="ScrollText.Width" Value="600"/>
                         <Setter Target="ScrollText.Height" Value="600"/>
                         <Setter Target="TuringInfo.Height" Value="30"/>
                         <Setter Target="TuringAge.Height" Value="30"/>
@@ -83,7 +83,7 @@
                     <StackPanel x:Name="lbMsg"/>
                 </ScrollViewer.Content>
             </ScrollViewer>
-            <Button Name="btnSendMsg" Click="btnSendMsg_Click" RelativePanel.Below="ScrollText" RelativePanel.AlignRightWith="ScrollText">发送</Button>
+            <Button Background="SkyBlue" Name="btnSendMsg" Click="btnSendMsg_Click" RelativePanel.Below="ScrollText" RelativePanel.AlignRightWith="ScrollText">发送</Button>
             <TextBox Text="hello" x:Name="tbMsg"  RelativePanel.Below="ScrollText" RelativePanel.AlignLeftWith="ScrollText"/>
         </RelativePanel>
         

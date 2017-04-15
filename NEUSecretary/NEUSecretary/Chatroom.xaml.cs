@@ -283,7 +283,7 @@ namespace NEUSecretary
             try
             {
                 await writer.StoreAsync();
-                //getMsg();
+                getMsg();
                 //await new MessageDialog("发送成功").ShowAsync();
             }
             catch (Exception exception)

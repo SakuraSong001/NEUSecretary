@@ -5,7 +5,6 @@ using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
 using Windows.Web.Http;
 using Windows.UI.Core;
-using static NEUSecretary.Models.TuringJson;
 using System.IO;
 using Windows.Data.Json;
 using Windows.UI.Popups;

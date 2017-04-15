@@ -82,6 +82,18 @@ namespace NEUSecretary
                 MyFrame.Navigate(typeof(Selfinfo));
                 TitleTextBlock.Text = "个人信息";
             }
+            else if (Secretary.IsSelected)
+            {
+
+                MyFrame.Navigate(typeof(Turing));
+                TitleTextBlock.Text = "小秘书";
+            }
+            else if (ChatRoom.IsSelected)
+            {
+
+                MyFrame.Navigate(typeof(Chatroom));
+                TitleTextBlock.Text = "聊天室";
+            }
         }
 
         private void LoggedButton_Click(object sender, RoutedEventArgs e)

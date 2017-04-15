@@ -9,7 +9,7 @@
 
 
     <Grid BorderBrush="#FF292929"
-          Background="#FF302E2E">
+          Background="White">
         <Grid.RowDefinitions>
             <RowDefinition Height="*"/>
             <RowDefinition Height="2*"/>

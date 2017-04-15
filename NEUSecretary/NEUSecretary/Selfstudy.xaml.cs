@@ -315,7 +315,15 @@ namespace NEUSecretary
                     new KeyValuePair<string,string>("STORYNO", storyNo),
                     };
                 var content = new HttpFormUrlEncodedContent(kvp);
-                HttpResponseMessage response = await client.PostAsync(new Uri(postUrl), content);
+                HttpResponseMessage response = new HttpResponseMessage();
+                try {
+                    response = await client.PostAsync(new Uri(postUrl), content);
+                }
+                catch (Exception exception)
+                {
+                    new MessageDialog(exception.Message, "出现异常");
+                    return;
+                }
                 if (response.EnsureSuccessStatusCode().StatusCode.ToString().ToLower() == "ok")
                 {
                     string responseBody = await response.Content.ReadAsStringAsync();
