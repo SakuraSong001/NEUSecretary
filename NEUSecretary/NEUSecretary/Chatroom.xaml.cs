@@ -1,24 +1,22 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.IO;
-using System.Linq;
-using System.Runtime.InteropServices.WindowsRuntime;
+using System.Diagnostics;
+using System.Threading;
 using System.Threading.Tasks;
-using Windows.Foundation;
-using Windows.Foundation.Collections;
 using Windows.Networking;
 using Windows.Networking.Connectivity;
 using Windows.Networking.Sockets;
 using Windows.Storage.Streams;
+using Windows.System;
+using Windows.UI;
 using Windows.UI.Core;
 using Windows.UI.Popups;
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
-using Windows.UI.Xaml.Controls.Primitives;
-using Windows.UI.Xaml.Data;
 using Windows.UI.Xaml.Input;
 using Windows.UI.Xaml.Media;
+using Windows.UI.Xaml.Media.Imaging;
 using Windows.UI.Xaml.Navigation;
+using Windows.UI.Xaml.Shapes;
 
 // “空白页”项模板在 http://go.microsoft.com/fwlink/?LinkId=234238 上有介绍
 
@@ -34,10 +32,13 @@ namespace NEUSecretary
         bool first = true;
         bool fresh = false;
         public string msg;
+        double verticalScrollOffset = 0;
+
         public Chatroom()
         {
             this.InitializeComponent();
         }
+        
 
         StreamSocketListener listener = null;
 
@@ -79,7 +80,7 @@ namespace NEUSecretary
                 //        你好，我是你外公，我叫服务器。
                 DataWriter writer = new DataWriter(args.Socket.OutputStream);
 
-                string content = "Leeeeo joined in.";
+                string content = "刘元兴 joined in.";
                 //await new MessageDialog(content,"content").ShowAsync();
                 writer.UnicodeEncoding = UnicodeEncoding.Utf8; //注意
                                                                // 计算长度
@@ -130,7 +131,7 @@ namespace NEUSecretary
                         writer.WriteString(content);
                         // 提交数据
                         await writer.StoreAsync();
-                        
+
                     }
 
 
@@ -159,7 +160,6 @@ namespace NEUSecretary
         {
             if (txtIp.Text.Length == 0 || txtPort.Text.Length == 0)
                 return;
-            runRecMsg.Text = "";
 
             Button b = sender as Button;
             b.IsEnabled = false;
@@ -183,19 +183,11 @@ namespace NEUSecretary
                 await reader.LoadAsync(len);
                 string msg = reader.ReadString(reader.UnconsumedBufferLength);
 
-                await this.Dispatcher.RunAsync(CoreDispatcherPriority.Normal, () =>
-                {
-                    TextBlock tb = new TextBlock { Text = msg, FontSize = 20 };
-                    lbMsg.Children.Add(tb);
-                });
-                //runRecMsg.Text = msg;
-                // 释放
-                //reader.Dispose();
-
+                displayMsg(msg, "System", "left");
             }
             catch (Exception ex)
             {
-                runRecMsg.Text = ex.Message;
+  
             }
         }
 
@@ -225,7 +217,7 @@ namespace NEUSecretary
             try
             {
                 await socket.ConnectAsync(hostName, runPort.Text);
-                await new MessageDialog("连接成功").ShowAsync();      
+                await new MessageDialog("连接成功").ShowAsync();
             }
             catch (Exception exception)
             {
@@ -234,6 +226,7 @@ namespace NEUSecretary
                     throw;
                 }
             }
+            /*
             await Task.Run(async () =>
             {
                 //创建一个读取器 来读取服务端发送来的数据
@@ -251,7 +244,7 @@ namespace NEUSecretary
 
                     await this.Dispatcher.RunAsync(CoreDispatcherPriority.Normal, () =>
                     {
-                        TextBlock tb = new TextBlock { Text = msg, FontSize = 20 };
+                        TextBlock tb = new TextBlock { Text = msg, FontSize = 20, Foreground = new SolidColorBrush(Colors.Black) };
                         lbMsg.Children.Add(tb);
                     });
                 }
@@ -263,6 +256,7 @@ namespace NEUSecretary
                     }
                 }
             });
+            */
         }
 
         private async void btSendMsg_Click(object sender, RoutedEventArgs e)
@@ -272,10 +266,7 @@ namespace NEUSecretary
                 await new MessageDialog("未连接Socket").ShowAsync();
                 return;
             }
-
-
             DataWriter writer = new DataWriter(socket.OutputStream);
-
             string stringToSend = tbMsg.Text;
             writer.WriteUInt32(writer.MeasureString(stringToSend));
             writer.WriteString(stringToSend);
@@ -283,6 +274,7 @@ namespace NEUSecretary
             try
             {
                 await writer.StoreAsync();
+                displayMsg(tbMsg.Text, "刘元兴", "right");
                 getMsg();
                 //await new MessageDialog("发送成功").ShowAsync();
             }
@@ -306,11 +298,7 @@ namespace NEUSecretary
             await reader.LoadAsync(len);
             string msg = reader.ReadString(reader.UnconsumedBufferLength);
 
-            await this.Dispatcher.RunAsync(CoreDispatcherPriority.Normal, () =>
-            {
-                TextBlock tb = new TextBlock { Text = msg, FontSize = 20 };
-                lbMsg.Children.Add(tb);
-            });
+            displayMsg(msg, "System", "left");
         }
 
         private async void btGetMsg_Click(object sender, RoutedEventArgs e)
@@ -326,9 +314,133 @@ namespace NEUSecretary
 
             await this.Dispatcher.RunAsync(CoreDispatcherPriority.Normal, () =>
             {
-                TextBlock tb = new TextBlock { Text = msg, FontSize = 20 };
+                TextBlock tb = new TextBlock { Text = msg, FontSize = 20, Foreground = new SolidColorBrush(Colors.Black) };
                 lbMsg.Children.Add(tb);
             });
+        }
+
+        private void tbMsg_KeyDown(object sender, KeyEventArgs e)
+        {
+
+        }
+
+        public async void sendMsg()
+        {
+            if (socket == null)
+            {
+                await new MessageDialog("未连接Socket").ShowAsync();
+                return;
+            }
+            DataWriter writer = new DataWriter(socket.OutputStream);
+            string stringToSend = tbMsg.Text;
+            writer.WriteUInt32(writer.MeasureString(stringToSend));
+            writer.WriteString(stringToSend);
+
+            try
+            {
+                await writer.StoreAsync();
+                displayMsg(tbMsg.Text, "刘元兴", "right");
+                getMsg();
+                //await new MessageDialog("发送成功").ShowAsync();
+            }
+            catch (Exception exception)
+            {
+                if (SocketError.GetStatus(exception.HResult) == SocketErrorStatus.Unknown)
+                {
+                    throw;
+                }
+            }
+        }
+
+        private async void tbMsg_KeyUp(object sender, KeyRoutedEventArgs e)
+        {
+            /*
+            var textBox = sender as TextBox;
+            if (textBox != null) TxtMsg = textBox.Text;
+            if (key.Key != VirtualKey.Enter) return;
+            if (string.IsNullOrEmpty(TxtMsg))
+                return;
+            await SendTxtMsg();
+            */
+            if (e.Key == VirtualKey.Enter)
+            {
+                if(tbMsg.Text=="都在么？")
+                {
+                    displayMsg(tbMsg.Text, "刘元兴", "right");
+                    displayMsg("在", "周浩", "left");
+                    displayMsg("嗯~ o(*￣▽￣*)o", "宋寅瑜", "left");
+                }
+                else if (tbMsg.Text =="以上")
+                {
+                    displayMsg(tbMsg.Text, "刘元兴", "right");
+                    displayMsg("好的", "周浩", "left");
+                    displayMsg("好b（￣▽￣）d　", "宋寅瑜", "left");
+                }
+                else
+                {
+                    displayMsg(tbMsg.Text, "刘元兴", "right");
+                }
+            }
+                //sendMsg();
+        }
+
+        public async void displayMsg(string msg, string user, string left)
+        {
+           
+            string pic;
+            if (user == "刘元兴")
+            {
+                pic = "Leeeeo.png";
+            } else if (user=="周浩")
+            {
+                pic = "Loke.png";
+            }
+            else if (user=="宋寅瑜")
+            {
+                pic = "Sakura.png";
+            } else
+                pic = "default.jpg";
+            if (left == "left")
+            {
+                await this.Dispatcher.RunAsync(CoreDispatcherPriority.Normal, () =>
+                {
+                    StackPanel totalPanel = new StackPanel { Orientation = Orientation.Horizontal, HorizontalAlignment = HorizontalAlignment.Left };
+                    StackPanel msgPanel = new StackPanel { Orientation = Orientation.Vertical };
+                    TextBlock userName = new TextBlock { Foreground = new SolidColorBrush(Colors.Black), FontSize = 16, HorizontalAlignment = HorizontalAlignment.Left, Text = user };
+                    Border msgBackground = new Border { BorderThickness = new Thickness(8, 8, 8, 8), Background = new SolidColorBrush(Color.FromArgb(255, 218, 244, 253)) };
+                    TextBlock msgBlock = new TextBlock { Text = msg, MaxWidth = 250, FontSize = 20, Foreground = new SolidColorBrush(Colors.Black), HorizontalAlignment = HorizontalAlignment.Left, TextWrapping = TextWrapping.WrapWholeWords };
+                    msgBackground.Child = msgBlock;
+                    msgPanel.Children.Add(userName);
+                    msgPanel.Children.Add(msgBackground);
+                    Ellipse userPic = new Ellipse { Height = 50, Width = 50, Margin = new Thickness(10, 10, 10, 10), Fill = new ImageBrush { ImageSource = new BitmapImage(new Uri("ms-appx:///Assets//" + pic, UriKind.Absolute)) } };
+                    totalPanel.Children.Add(userPic);
+                    totalPanel.Children.Add(msgPanel);
+                    lbMsg.Children.Add(totalPanel);
+                });
+            }
+            else
+            {
+                await this.Dispatcher.RunAsync(CoreDispatcherPriority.Normal, () =>
+                {
+                    StackPanel totalPanel = new StackPanel { Orientation = Orientation.Horizontal, HorizontalAlignment = HorizontalAlignment.Right };
+                    StackPanel msgPanel = new StackPanel { Orientation = Orientation.Vertical };
+                    TextBlock userName = new TextBlock { Foreground = new SolidColorBrush(Colors.Black), FontSize = 16, HorizontalAlignment = HorizontalAlignment.Right, Text = user };
+                    Border msgBackground = new Border { BorderThickness = new Thickness(8, 8, 8, 8), Background = new SolidColorBrush(Color.FromArgb(255, 243, 243, 243)) };
+                    TextBlock msgBlock = new TextBlock { Text = msg, MaxWidth = 250, FontSize = 20, Foreground = new SolidColorBrush(Colors.Black), HorizontalAlignment = HorizontalAlignment.Right, TextWrapping = TextWrapping.WrapWholeWords };
+                    msgBackground.Child = msgBlock;
+                    msgPanel.Children.Add(userName);
+                    msgPanel.Children.Add(msgBackground);
+                    Ellipse userPic = new Ellipse { Height = 50, Width = 50, Margin = new Thickness(10, 10, 10, 10), Fill = new ImageBrush { ImageSource = new BitmapImage(new Uri("ms-appx:///Assets//" + pic, UriKind.Absolute)) } };
+                    totalPanel.Children.Add(msgPanel);
+                    totalPanel.Children.Add(userPic);
+                    lbMsg.Children.Add(totalPanel);
+                });
+            }
+            //Debug.WriteLine(ScrollViewMsg.VerticalOffset);
+            //Debug.WriteLine(ScrollViewMsg.ActualHeight + ScrollViewMsg.ScrollableHeight);
+           
+            ScrollViewMsg.ChangeView(null, ScrollViewMsg.ActualHeight+ScrollViewMsg.ScrollableHeight, null);
+            tbMsg.Text = "";
         }
     }
 }

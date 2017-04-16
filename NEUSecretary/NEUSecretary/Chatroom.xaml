@@ -7,44 +7,102 @@
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d">
 
-    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+    <Grid Background="White">
+        <VisualStateManager.VisualStateGroups>
+            <VisualStateGroup>
+                <VisualState x:Name="MobileView">
+                    <VisualState.StateTriggers>
+                    <AdaptiveTrigger MinWindowWidth="0" />
+                    </VisualState.StateTriggers>
+                    <VisualState.Setters>
+                        <Setter Target="ChatroomTitle.FontSize" Value="30" />
+                        <Setter Target="ServerInfoIp.(RelativePanel.Below)" Value="ChatroomTitle"/>
+                        <Setter Target="ServerInfoPort.(RelativePanel.Below)" Value="ChatroomTitle"/>
+                        <Setter Target="ServerInfoPort.(RelativePanel.RightOf)" Value="ServerInfoIp"/>
+                    </VisualState.Setters>
+                </VisualState>
+                <VisualState x:Name="TabletView">
+                    <VisualState.StateTriggers>
+                        <AdaptiveTrigger MinWindowWidth="600" />
+                    </VisualState.StateTriggers>
+                    <VisualState.Setters>
+                        <Setter Target="lbMsg.Width" Value="900"/>
+                        <Setter Target="ScrollViewMsg.Height" Value="570"/>
+                        <Setter Target="tbMsg.Width" Value="900"/>
+                        <Setter Target="tbMsg.Margin" Value="10 10 0 0"/>
+                        <Setter Target="ScrollViewMsg.(RelativePanel.Below)"  Value=""/>
+                        <Setter Target="ScrollViewMsg.Margin" Value="10 0 0 0"/>
+                        <Setter Target="ScrollViewMsg.(RelativePanel.RightOf)"  Value="socketPlane"/>
+                        <Setter Target="txtIp.(RelativePanel.Below)" Value="ClientIp"/>
+                        <Setter Target="txtIp.(RelativePanel.RightOf)" Value=""/>
+                        <Setter Target="ClientPort.(RelativePanel.Below)" Value="txtIp"/>
+                        <Setter Target="ClientPort.(RelativePanel.RightOf)" Value=""/>
+                        <Setter Target="txtPort.(RelativePanel.Below)" Value="ClientPort"/>
+                        <Setter Target="txtPort.(RelativePanel.RightOf)" Value=""/>
+                        <Setter Target="btConnectSocket.(RelativePanel.Below)" Value="txtPort"/>
+                        <Setter Target="btConnectSocket.(RelativePanel.RightOf)" Value=""/>
+                        <Setter Target="ServerInfoIp.(RelativePanel.RightOf)" Value="ChatroomTitle"/>
+                        <Setter Target="ServerInfoPort.(RelativePanel.RightOf)" Value="ServerInfoIp"/>
+                        <Setter Target="socketPlane.BorderBrush" Value="#F3F3F3"/>
+                        <Setter Target="socketPlane.BorderThickness" Value="1"/>
+                        <Setter Target="socketPlane.Height" Value="610"/>
+                        <Setter Target="socketPlane.Width" Value="300"/>
+                        <Setter Target="txtIp.(RelativePanel.AlignHorizontalCenterWithPanel)" Value="True"/>
+                        <Setter Target="ClientIp.(RelativePanel.AlignHorizontalCenterWithPanel)" Value="True"/>
+                        <Setter Target="txtPort.(RelativePanel.AlignHorizontalCenterWithPanel)" Value="True"/>
+                        <Setter Target="ClientPort.(RelativePanel.AlignHorizontalCenterWithPanel)" Value="True"/>
+                        <Setter Target="btConnectSocket.(RelativePanel.AlignHorizontalCenterWithPanel)" Value="True"/>
+                        <Setter Target="btConnectSocket.(RelativePanel.AlignRightWithPanel)" Value="False"/>
+                        <Setter Target="btConnectSocket.Margin" Value="0 50 0 10"/>
+                        <Setter Target="txtIp.Margin" Value="0 10 0 10"/>
+                        <Setter Target="ClientIp.Margin" Value="0 50 0 10"/>
+                        <Setter Target="txtPort.Margin" Value="0 10 0 10"/>
+                        <Setter Target="ClientPort.Margin" Value="0 50 0 10"/>
+                        <Setter Target="socketPlane.VerticalAlignment" Value="Center"/>
+                        <Setter Target="tbMsg.(RelativePanel.AlignLeftWith)" Value="ScrollViewMsg"/>
+                        <Setter Target="ChatroomTitle.FontSize" Value="40"/>
+                        <Setter Target="ServerInfoIp.FontSize" Value="20"/>
+                        <Setter Target="ServerInfoPort.FontSize" Value="20"/>
+                        <Setter Target="TitlePanel.Margin" Value="0 0 0 20"/>
+                    </VisualState.Setters>
+                </VisualState>
+            </VisualStateGroup>
+        </VisualStateManager.VisualStateGroups>
+
         <Grid.RowDefinitions>
-            <RowDefinition Height="Auto" MinHeight="143"/>
+            <RowDefinition Height="Auto"/>
             <RowDefinition/>
         </Grid.RowDefinitions>
 
-        <RelativePanel x:Name="TitlePanel" Grid.Row="0" Margin="12,10,0,53">
-            <TextBlock Text="NEUSecretary-Chatroom" FontSize="60" />
-            <TextBlock Margin="679,10,-679,-10" RenderTransformOrigin="0.96,0.633" >
+        <RelativePanel x:Name="TitlePanel" Grid.Row="0" HorizontalAlignment="Center">
+            <TextBlock Name="ChatroomTitle" Margin="10 10 10 0" Text="NEUSecretary-Chatroom" Foreground="Black"/>
+            <TextBlock Name="ServerInfoIp" Foreground="Black" Margin="10 10 10 10" RelativePanel.AlignBottomWithPanel="True" >
                 <Run Text="本机IP：" />
                 <Run x:Name="runIp" FontSize="24"/>
             </TextBlock>
-            <TextBlock Margin="679,49,-679,-49" >
+            <TextBlock Name="ServerInfoPort" Foreground="Black" Margin="10 10 10 10" RelativePanel.AlignBottomWithPanel="True">
                 <Run Text="监听端口："/>
                 <Run x:Name="runPort" FontSize="20"/>
             </TextBlock>
         </RelativePanel>
+        <Grid x:Name="ContentPanel" Grid.Row="1">
+            <RelativePanel BorderBrush="Red" HorizontalAlignment="Center">
+                <RelativePanel Name="socketPlane">
+                    <TextBlock Foreground="Black" Name="ClientIp" Margin="10 10 10 10">服务器IP：</TextBlock>
+                    <TextBox Foreground="Black" Name="txtIp" RelativePanel.RightOf="ClientIp" Background="White"/>
+                    <TextBlock Foreground="Black" Name="ClientPort" RelativePanel.RightOf="txtIp" Margin="10 10 10 10">服务器端口：</TextBlock>
+                    <TextBox Foreground="Black" Name="txtPort" RelativePanel.RightOf="ClientPort" Background="White" />
+                    <Button Foreground="Black" Content="连接socket" x:Name="btConnectSocket" Click="OnConnectToServer" Background="#DEE1E4" RelativePanel.RightOf="txtPort" RelativePanel.AlignRightWithPanel="True" Margin="0 0 10 0"/>
+                </RelativePanel>
+                <ScrollViewer ScrollViewer.VerticalScrollBarVisibility="Hidden" ScrollViewer.IsScrollInertiaEnabled="True" BorderThickness="1" Margin="0 10 0 0" BorderBrush="#DEE1E4" Name="ScrollViewMsg" Height="420" VerticalScrollMode="Enabled"  RelativePanel.Below="socketPlane" RelativePanel.AlignHorizontalCenterWithPanel="True">
+                    <ScrollViewer.Content>
+                        <StackPanel x:Name="lbMsg" Width="400" Margin="0 0 0 70">
 
-        <Grid x:Name="ContentPanel" Grid.Row="1" Margin="12,0,12,0">
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="179*"/>
-                <ColumnDefinition Width="1077*"/>
-            </Grid.ColumnDefinitions>
-            <RelativePanel Grid.ColumnSpan="2">
-                <TextBox Name="txtIp" Header="服务器IP：" Margin="889,-124,-889,124"/>
-                <TextBox Name="txtPort" Header="服务器端口：" Margin="1039,-124,-1039,124"/>
-                <Button Content="连接socket" Margin="1156,-96,-1132,120" x:Name="btConnectSocket" Click="OnConnectToServer" />
-                <TextBox Text="hello" x:Name="tbMsg" Margin="141,503,-936,-503"/>
-                <Button Content="发送消息" Margin="997,503,-973,-479" x:Name="btSendMsg" Click="btSendMsg_Click"  />
-                <Button Content="接收消息" Margin="1103,503,-1079,-479" x:Name="btGetMsg" Click="btGetMsg_Click"  />
-                <TextBlock Margin="36,30,-36,-30">
-                <Run Foreground="Red" FontWeight="Bold" FontSize="16">从服务器接收到的消息：</Run>
-                <LineBreak/>
-                <Run x:Name="runRecMsg"/>
-                </TextBlock>
-                <ScrollViewer Margin="36,80,-36,-151" ScrollViewer.HorizontalScrollMode="Auto">
-                    <StackPanel x:Name="lbMsg" Height="380" Width="902"/>
+                        </StackPanel>
+                    </ScrollViewer.Content>
+                   
                 </ScrollViewer>
+                <TextBox BorderBrush="#DEE1E4" Foreground="Black" Background="White" Margin="0 10 0 0" Text="hello" x:Name="tbMsg" Width="400"  KeyUp="tbMsg_KeyUp" RelativePanel.Below="ScrollViewMsg"  RelativePanel.AlignHorizontalCenterWithPanel="True"/>
             </RelativePanel>
         </Grid>
     </Grid>
