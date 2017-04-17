@@ -5,6 +5,7 @@
     xmlns:local="using:NEUSecretary"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:gif="using:XamlAnimatedGif"
     mc:Ignorable="d">
 
     <Grid Background="#FF09B5D1">
@@ -30,6 +31,24 @@
                        Text="测试"
                        VerticalAlignment="Center" 
                        Margin="5,0,0,0"/>
+            <Button Name="TuringBtn" FontFamily="Segoe MDL2 Assets" Margin="0 0 0 0" Foreground="Black" FontSize="20" Content="&#xE899;"  RelativePanel.AlignRightWithPanel="True"   RelativePanel.AlignVerticalCenterWithPanel="True" Click="TuringBtn_Click" VerticalAlignment="Stretch">
+                <Button.Flyout>
+                    <Flyout>
+                        <StackPanel Name="TuringPanel" Margin="0 0 0 0" Background="Black">
+                            <Image Width="100" Height="100" Name="TuringPic" gif:AnimationBehavior.SourceUri="{Binding SelectedImage}"></Image>
+                            <ScrollViewer Name="TuringScrollView" Height="400" Width="300" ScrollViewer.VerticalScrollMode="Auto" ScrollViewer.VerticalScrollBarVisibility="Hidden">
+                                <ScrollViewer.Content>
+                                    <StackPanel Name="TuringMsgPanel" Background="White" Margin="0 0 0 0">
+                                        <TextBlock Foreground="#0064B4" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="20" Width="280" TextWrapping="Wrap">lsdfasfjlf</TextBlock>
+                                        <TextBlock Foreground="Black" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="16" Width="280" TextWrapping="Wrap" FlowDirection="RightToLeft">lsdfasfasdfasdfaasdfasdfjlf</TextBlock>
+                                    </StackPanel>
+                                </ScrollViewer.Content>
+                            </ScrollViewer>
+                            <TextBox BorderBrush="#DEE1E4" Foreground="Black" Background="White" Margin="0 10 0 0" PlaceholderText="有问题尽管问我~" x:Name="tbMsg" Width="300"  KeyUp="tbMsg_KeyUp" RelativePanel.Below="TuringScrollView"  RelativePanel.AlignHorizontalCenterWithPanel="True"/>
+                        </StackPanel>
+                    </Flyout>
+                </Button.Flyout>
+            </Button>
         </RelativePanel>
         <SplitView 
                    Name="MySplitView"
@@ -63,12 +82,6 @@
                         <StackPanel Orientation="Horizontal">
                             <TextBlock FontFamily="Segoe MDL2 Assets" FontSize="23" Foreground="#FFD6D2D2" Text="&#xE2AD;" VerticalAlignment="Center" HorizontalAlignment="Center" />
                             <TextBlock FontSize="18" FontWeight="Light" Margin="12,0,0,0" Foreground="#FFD6D2D2">上自习</TextBlock>
-                        </StackPanel>
-                    </ListBoxItem>
-                    <ListBoxItem Name="Secretary">
-                        <StackPanel Orientation="Horizontal">
-                            <TextBlock FontFamily="Segoe MDL2 Assets" FontSize="23" Foreground="#FFD6D2D2" Text="&#xE76E;" VerticalAlignment="Center" HorizontalAlignment="Center" />
-                            <TextBlock FontSize="18" FontWeight="Light" Margin="12,0,0,0" Foreground="#FFD6D2D2">小秘书</TextBlock>
                         </StackPanel>
                     </ListBoxItem>
                     <ListBoxItem Name="ChatRoom">
