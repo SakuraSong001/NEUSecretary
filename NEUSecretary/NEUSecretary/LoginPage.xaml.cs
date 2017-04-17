@@ -13,6 +13,7 @@ using SQLite.Net;
 using SQLite.Net.Platform.WinRT;
 using System.Text;
 using NEUSecretary.Models;
+using Windows.UI.Xaml.Media;
 
 // “空白页”项模板在 http://go.microsoft.com/fwlink/?LinkId=234238 上有介绍
 
@@ -26,7 +27,9 @@ namespace NEUSecretary
         public LoginPage()
         {
             this.InitializeComponent();
-
+            ImageBrush imageBrush = new ImageBrush();
+            imageBrush.ImageSource = new BitmapImage(new Uri("ms-appx:///Assets/20160906083927863.jpg", UriKind.Absolute));
+            bg.Background = imageBrush;
         }
 
         private async void LoggingButton_Click(object sender, RoutedEventArgs e)

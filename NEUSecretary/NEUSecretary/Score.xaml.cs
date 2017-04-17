@@ -244,7 +244,7 @@ namespace NEUSecretary
             {
                 localSettings.Values["term"] = 9;
             }
-
+            Current_xueqi.Text = "当前学期:"+item.Content.ToString();
             cleanScore();
             getScore();
         }
