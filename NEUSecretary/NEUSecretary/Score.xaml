@@ -7,7 +7,7 @@
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d">
 
-    <Grid Background="SkyBlue">
+    <Grid Background="White">
         <Grid.RowDefinitions>
             <RowDefinition Height="1*"></RowDefinition>
             <RowDefinition Height="1*"></RowDefinition>
@@ -25,31 +25,66 @@
         </Grid.ColumnDefinitions>
         <TextBlock Name="GPATextblock" Grid.Row="0" Grid.ColumnSpan="5"   VerticalAlignment="Center" HorizontalAlignment="Center" Text="测试"/>
         <ComboBox Name="TermComboBox" 
+                      Background="#5C85EE"
+                      Foreground="White"
                       SelectionChanged="ComboBox_SelectionChanged" 
-                      VerticalAlignment="Center"
+                      VerticalAlignment="Bottom"
                       HorizontalAlignment="Right"
-                      Width="150" Grid.Row="0" Grid.ColumnSpan="6">
+                      Width="150" Grid.Row="0" Grid.ColumnSpan="2" Grid.Column="6" RenderTransformOrigin="1.109,0.675"  >
             <ComboBoxItem  Foreground="White">2014-2015学年第一学期</ComboBoxItem>
             <ComboBoxItem  Foreground="White">2014-2015学年第二学期</ComboBoxItem>
             <ComboBoxItem  Foreground="White">2015-2016学年第一学期</ComboBoxItem>
             <ComboBoxItem  Foreground="White">2015-2016学年第二学期</ComboBoxItem>
             <ComboBoxItem  Foreground="White">2016-2017学年第一学期</ComboBoxItem>
         </ComboBox>
-        <TextBlock Foreground="Black" Name="score11"  HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Row="1" Grid.Column="0"/>
-        <TextBlock Foreground="Black" Name="score12"  HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Row="1" Grid.Column="1"/>
-        <TextBlock Foreground="Black" Name="score13"  HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Row="1" Grid.Column="2"/>
-        <TextBlock Foreground="Black" Name="score14"  HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Row="1" Grid.Column="3"/>
-        <TextBlock Foreground="Black" Name="score15"  HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Row="1" Grid.Column="4"/>
-        <TextBlock Foreground="Black" Name="score16"  HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Row="1" Grid.Column="5"/>
-        <TextBlock Foreground="Black" Name="score17"  HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Row="1" Grid.Column="6"/>
-        <TextBlock Foreground="Black" Name="score18"  HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Row="1" Grid.Column="7"/>
-        <TextBlock Foreground="Black" Name="score21"  HorizontalAlignment="Center" VerticalAlignment="Top" Grid.Row="2" Grid.Column="0"/>
-        <TextBlock Foreground="Black" Name="score22"  HorizontalAlignment="Center" VerticalAlignment="Top" Grid.Row="2" Grid.Column="1"/>
-        <TextBlock Foreground="Black" Name="score23"  HorizontalAlignment="Center" VerticalAlignment="Top" Grid.Row="2" Grid.Column="2"/>
-        <TextBlock Foreground="Black" Name="score24"  HorizontalAlignment="Center" VerticalAlignment="Top" Grid.Row="2" Grid.Column="3"/>
-        <TextBlock Foreground="Black" Name="score25"  HorizontalAlignment="Center" VerticalAlignment="Top" Grid.Row="2" Grid.Column="4"/>
-        <TextBlock Foreground="Black" Name="score26"  HorizontalAlignment="Center" VerticalAlignment="Top" Grid.Row="2" Grid.Column="5"/>
-        <TextBlock Foreground="Black" Name="score27"  HorizontalAlignment="Center" VerticalAlignment="Top" Grid.Row="2" Grid.Column="6"/>
-        <TextBlock Foreground="Black" Name="score28"  HorizontalAlignment="Center" VerticalAlignment="Top" Grid.Row="2" Grid.Column="7"/>
+        <TextBlock Foreground="#516ABB" Name="Current_xueqi" FontSize="20"  HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2" Margin="0 0 0 0"/>
+        <Border Background="#5C85EE" Margin="0 0 2 0" Grid.Row="1" Grid.Column="0">
+            <TextBlock Foreground="White" Name="score11"  HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Row="1" Grid.Column="0"/>
+        </Border>
+        <Border Background="#5C85EE" Margin="0 0 2 0" Grid.Row="1" Grid.Column="1">
+            <TextBlock Foreground="White" Name="score12"  HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Row="1" Grid.Column="1"/>
+        </Border>
+        <Border Background="#5C85EE" Margin="0 0 2 0" Grid.Row="1" Grid.Column="2">
+            <TextBlock Foreground="White" Name="score13"  HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Row="1" Grid.Column="2"/>
+        </Border>
+        <Border Background="#5C85EE" Margin="0 0 2 0" Grid.Row="1" Grid.Column="3">
+            <TextBlock Foreground="White" Name="score14"  HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Row="1" Grid.Column="3"/>
+        </Border>
+        <Border Background="#5C85EE" Margin="0 0 2 0" Grid.Row="1" Grid.Column="4">
+            <TextBlock Foreground="White" Name="score15"  HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Row="1" Grid.Column="4"/>
+        </Border>
+        <Border Background="#5C85EE" Margin="0 0 2 0" Grid.Row="1" Grid.Column="5">
+            <TextBlock Foreground="White" Name="score16"  HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Row="1" Grid.Column="5"/>
+        </Border>
+        <Border Background="#5C85EE" Margin="0 0 2 0" Grid.Row="1" Grid.Column="6">
+            <TextBlock Foreground="White" Name="score17"  HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Row="1" Grid.Column="6"/>
+        </Border>
+        <Border Background="#5C85EE" Margin="0 0 2 0" Grid.Row="1" Grid.Column="7">
+            <TextBlock Foreground="White" Name="score18"  HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Row="1" Grid.Column="7"/>
+        </Border>
+        <Border Background="WhiteSmoke"  Grid.Row="2" Grid.Column="0">
+            <TextBlock Foreground="#DF5A64" Name="score21"  HorizontalAlignment="Center" VerticalAlignment="Top" Grid.Row="2" Grid.Column="0"/>
+        </Border>
+        <Border Background="WhiteSmoke"  Grid.Row="2" Grid.Column="1">
+            <TextBlock Foreground="#6397CA" Name="score22"  HorizontalAlignment="Center" VerticalAlignment="Top" Grid.Row="2" Grid.Column="0"/>
+        </Border>
+        <Border Background="WhiteSmoke"  Grid.Row="2" Grid.Column="2">
+            <TextBlock Foreground="Black" Name="score23"  HorizontalAlignment="Center" VerticalAlignment="Top" Grid.Row="2" Grid.Column="0"/>
+        </Border>
+        <Border Background="WhiteSmoke"  Grid.Row="2" Grid.Column="3">
+            <TextBlock Foreground="Black" Name="score24"  HorizontalAlignment="Center" VerticalAlignment="Top" Grid.Row="2" Grid.Column="0"/>
+        </Border>
+        <Border Background="WhiteSmoke"  Grid.Row="2" Grid.Column="4">
+            <TextBlock Foreground="Black" Name="score25"  HorizontalAlignment="Center" VerticalAlignment="Top" Grid.Row="2" Grid.Column="0"/>
+        </Border>
+        <Border Background="WhiteSmoke"  Grid.Row="2" Grid.Column="5">
+            <TextBlock Foreground="Black" Name="score26"  HorizontalAlignment="Center" VerticalAlignment="Top" Grid.Row="2" Grid.Column="0"/>
+        </Border>
+        <Border Background="WhiteSmoke"  Grid.Row="2" Grid.Column="6">
+            <TextBlock Foreground="Black" Name="score27"  HorizontalAlignment="Center" VerticalAlignment="Top" Grid.Row="2" Grid.Column="0"/>
+        </Border>
+        <Border Background="WhiteSmoke"  Grid.Row="2" Grid.Column="7">
+            <TextBlock Foreground="Black" Name="score28"  HorizontalAlignment="Center" VerticalAlignment="Top" Grid.Row="2" Grid.Column="0"/>
+        </Border>
     </Grid>
 </Page>

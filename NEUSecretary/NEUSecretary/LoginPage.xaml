@@ -9,7 +9,7 @@
     mc:Ignorable="d">
 
     <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
-        <RelativePanel Background="DeepSkyBlue">
+        <RelativePanel Name="bg">
             <TextBlock Name="HeadPottraitButton"
                 RelativePanel.AlignHorizontalCenterWithPanel="True"
                 FontFamily="Segoe MDL2 Assets"
