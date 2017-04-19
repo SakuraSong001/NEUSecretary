@@ -13,14 +13,29 @@ using SQLite.Net;
 using SQLite.Net.Platform.WinRT;
 using System.Text;
 using NEUSecretary.Models;
+using System.Collections.ObjectModel;
 
 // “空白页”项模板在 http://go.microsoft.com/fwlink/?LinkId=234238 上有介绍
+
 
 namespace NEUSecretary
 {
     /// <summary>
     /// 可用于自身或导航至 Frame 内部的空白页。
     /// </summary>
+    /// 
+    public class SelfStudyClassroom
+    {
+        public string roomid { get; set; }
+        public string roomtype { get; set; }
+
+        public SelfStudyClassroom(string id,string type)
+        {
+            roomid = id;
+            roomtype = type;
+        }
+    }
+
     public sealed partial class Selfstudy : Page
     {
         ApplicationDataContainer localSettings = ApplicationData.Current.LocalSettings;
@@ -162,53 +177,21 @@ namespace NEUSecretary
             StringBuilder sb = new StringBuilder();
             var list = conn.Table<ROOM>();
 
-            room11.Text = "教学楼";
-            room12.Text = "教室类型";
-            room21.Text = "";
-            room22.Text = "";
-
+            
+            List<SelfStudyClassroom> Classroom = new List<SelfStudyClassroom>();
             foreach (var item in list)
             {
-                room21.Text += item.classroom;
-                room22.Text += item.roominfo;
+                Classroom.Add(new SelfStudyClassroom( item.classroom, item.roominfo ));
 
             }
+            SstudyGridView.ItemsSource = Classroom;
 
             var dialog = new MessageDialog("查询到信息");
             await dialog.ShowAsync();
             localSettings.Values["cortanaUse"] = "false";
 
         }
-        private void TermComboBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
-        {
-            var combo = (ComboBox)sender;
-            var item = (ComboBoxItem)combo.SelectedItem;
-            if (item.Content.ToString() == "2016-2017学年第一学期")
-            {
-                localSettings.Values["roomTerm"] = 13;
-            }
-            else if (item.Content.ToString() == "2016-2017学年第二学期")
-            {
-                localSettings.Values["roomTerm"] = 14;
-            }
-            else if (item.Content.ToString() == "2015-2016学年第二学期")
-            {
-                localSettings.Values["roomTerm"] = 12;
-            }
-            else if (item.Content.ToString() == "2015-2016学年第一学期")
-            {
-                localSettings.Values["roomTerm"] = 11;
-            }
-            else if (item.Content.ToString() == "2014-2015学年第二学期")
-            {
-                localSettings.Values["roomTerm"] = 10;
-            }
-            else if (item.Content.ToString() == "2014-2015学年第一学期")
-            {
-                localSettings.Values["roomTerm"] = 9;
-            }
-        }
-
+       
         private void WeekdayComboBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             var combo = (ComboBox)sender;
@@ -294,11 +277,10 @@ namespace NEUSecretary
             String storyNo = localSettings.Values["roomId"].ToString();
 
             String postUrl = "http://uvp.leeeeo.com/room/";
+            SelfStudyRelativePanel.Height = 200;
 
             var local = ApplicationData.Current.LocalFolder;
             
-            room21.Text = "请稍候";
-            room22.Text = "请稍候";
 
             using (HttpClient client = new HttpClient())
             {
@@ -354,49 +336,89 @@ namespace NEUSecretary
             StringBuilder sb = new StringBuilder();
             var list = conn.Table<ROOM>();
 
-            room11.Text = "教学楼";
-            room12.Text = "教室类型";
-            room21.Text = "";
-            room22.Text = "";
-
+            List<SelfStudyClassroom> Classroom = new List<SelfStudyClassroom> ();
             foreach (var item in list)
             {
-                room21.Text += item.classroom;
-                room22.Text += item.roominfo;
-               
+                Classroom.Add(new SelfStudyClassroom(item.classroom,item.roominfo));
+                
             }
+            SstudyGridView.ItemsSource = Classroom;
         }
 
-        private void RoomListBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
+   
+        private void RoomComboBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-            if (DachengHouse.IsSelected)
+            var combo = (ComboBox)sender;
+            var item = (ComboBoxItem)combo.SelectedItem;
+            if (item.Content.ToString() == "大成教学楼")
             {
                 localSettings.Values["roomId"] = "0000";
             }
-            else if (YifuHouse.IsSelected)
+            else if (item.Content.ToString() == "逸夫楼")
             {
                 localSettings.Values["roomId"] = "0001";
             }
-            else if (JidianHouse.IsSelected)
+            else if (item.Content.ToString() == "机电馆")
             {
                 localSettings.Values["roomId"] = "0003";
             }
-            else if (XinxiHouse.IsSelected)
+            else if (item.Content.ToString() == "信息学馆")
             {
                 localSettings.Values["roomId"] = "0104";
             }
-            else if (WenguanHouse.IsSelected)
+            else if (item.Content.ToString() == "文管学馆")
             {
                 localSettings.Values["roomId"] = "0101";
             }
-            else if (JianzhuHouse.IsSelected)
+            else if (item.Content.ToString() == "建筑学馆")
             {
                 localSettings.Values["roomId"] = "0102";
             }
-            else if (ShengmingHouse.IsSelected)
+            else if (item.Content.ToString() == "生命学馆")
             {
                 localSettings.Values["roomId"] = "0103";
             }
         }
+
+        private void TermChooseButton_Click(object sender, RoutedEventArgs e)
+        {
+            TermBox.Visibility = new Visibility();
+            TermBox.Visibility = Visibility.Visible;   
+        }
+
+        private void TermBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            var combo = (ComboBox)sender;
+            var item = (ComboBoxItem)combo.SelectedItem;
+            TermTextBlock.Text = item.Content.ToString();
+            TermBox.Visibility = new Visibility();
+            TermBox.Visibility = Visibility.Collapsed;
+            if (item.Content.ToString() == "2016-2017学年第一学期")
+            {                
+                localSettings.Values["roomTerm"] = 13;
+            }
+            else if (item.Content.ToString() == "2016-2017学年第二学期")
+            {
+                localSettings.Values["roomTerm"] = 14;
+            }
+            else if (item.Content.ToString() == "2015-2016学年第二学期")
+            {
+                localSettings.Values["roomTerm"] = 12;
+            }
+            else if (item.Content.ToString() == "2015-2016学年第一学期")
+            {
+                localSettings.Values["roomTerm"] = 11;
+            }
+            else if (item.Content.ToString() == "2014-2015学年第二学期")
+            {
+                localSettings.Values["roomTerm"] = 10;
+            }
+            else if (item.Content.ToString() == "2014-2015学年第一学期")
+            {
+                localSettings.Values["roomTerm"] = 9;
+            }
+        }
+
+    
     }
 }
