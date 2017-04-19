@@ -1,0 +1,92 @@
+﻿<Page
+    x:Class="NEUSecretary.Turing"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:NEUSecretary"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
+
+    <Grid>
+        <VisualStateManager.VisualStateGroups>
+            <VisualStateGroup>
+                <VisualState x:ConnectionId='1' x:Name="wideView">
+                    <VisualState.StateTriggers>
+                        <AdaptiveTrigger MinWindowWidth="720" />
+                    </VisualState.StateTriggers>
+                    <VisualState.Setters>
+                        <Setter Target="TuringText.Width" Value="200"/>
+                        <Setter Target="TuringImage.Width" Value="150"/>
+                        <Setter Target="TuringImage.Margin" Value="0 0 0 40"/>
+                        <Setter Target="ScrollText.(RelativePanel.RightOf)" Value="TuringText"/>
+                        <Setter Target="ScrollText.Width" Value="600"/>
+                        <Setter Target="ScrollText.Height" Value="600"/>
+                        <Setter Target="TuringInfo.Height" Value="30"/>
+                        <Setter Target="TuringAge.Height" Value="30"/>
+                        <Setter Target="TuringGender.Height" Value="30"/>
+                        <Setter Target="TuringConstellation.Height" Value="30"/>
+                        <Setter Target="TuringFather.Height" Value="30"/>
+                        <Setter Target="TuringMather.Height" Value="30"/>
+                        <Setter Target="TuringInfo.(RelativePanel.Below)" Value="TuringImage"/>
+                        <Setter Target="TuringAge.(RelativePanel.Below)" Value="TuringInfo"/>
+                        <Setter Target="TuringGender.(RelativePanel.Below)" Value="TuringAge"/>
+                        <Setter Target="TuringConstellation.(RelativePanel.Below)" Value="TuringGender"/>
+                        <Setter Target="TuringFather.(RelativePanel.Below)" Value="TuringConstellation"/>
+                        <Setter Target="TuringMather.(RelativePanel.Below)" Value="TuringFather"/>
+                    </VisualState.Setters>
+                </VisualState>
+                <VisualState x:ConnectionId='2' x:Name="narrowView">
+                    <VisualState.StateTriggers>
+                        <AdaptiveTrigger MinWindowWidth="0" />
+                    </VisualState.StateTriggers>
+                    <VisualState.Setters>
+                        <Setter Target="TuringText.Width" Value="360"/>
+                        <Setter Target="TuringText.Height" Value="80"/>
+                        <Setter Target="TuringAge.Text" Value=""/>
+                        <Setter Target="TuringGender.Text" Value=""/>
+                        <Setter Target="TuringFather.Text" Value=""/>
+                        <Setter Target="TuringImage.Margin" Value="74,0,-73.333,0"/>
+                        <Setter Target="TuringInfo.Margin" Value="104,29,-106,-29"/>
+                        <Setter Target="TuringInfo.(RelativePanel.RightOf)" Value="TuringImage"/>
+                        <Setter Target="TuringMather.Text" Value=""/>
+                        <Setter Target="TuringConstellation.Text" Value=""/>
+                        <Setter Target="ScrollText.Width" Value="360"/>
+                        <Setter Target="ScrollText.Height" Value="600"/>
+                    </VisualState.Setters>
+                </VisualState>
+            </VisualStateGroup>
+        </VisualStateManager.VisualStateGroups>
+        <RelativePanel HorizontalAlignment="Center">
+            <RelativePanel x:ConnectionId='3' Name="TuringText" HorizontalAlignment="Center" BorderBrush="Black">
+                <Image x:ConnectionId='8' Name="TuringImage" Source="Assets/gakki.png"></Image>
+                <TextBlock x:ConnectionId='9' Name="TuringInfo"  HorizontalAlignment="Center">
+                    机器人昵称:小秘书
+                </TextBlock>
+                <TextBlock x:ConnectionId='10' Name="TuringAge" HorizontalAlignment="Center">
+                    机器人年龄：1
+                </TextBlock>
+                <TextBlock x:ConnectionId='11' Name="TuringGender" HorizontalAlignment="Center">
+                    机器人性别：女
+                </TextBlock>
+                <TextBlock x:ConnectionId='12' Name="TuringConstellation" HorizontalAlignment="Center">
+                    机器人星座：狮子座
+                </TextBlock>
+                <TextBlock x:ConnectionId='13' Name="TuringFather" HorizontalAlignment="Center">
+                    爸爸的名字：刘元兴
+                </TextBlock>
+                <TextBlock x:ConnectionId='14' Name="TuringMather" HorizontalAlignment="Center">
+                    妈妈的名字：周浩
+                </TextBlock>
+            </RelativePanel>
+            <ScrollViewer x:ConnectionId='4'  Background="White" Foreground="Black" Name="ScrollText"  VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Auto"                                      >
+                <ScrollViewer.Content>
+                    <StackPanel x:ConnectionId='7' x:Name="lbMsg"/>
+                </ScrollViewer.Content>
+            </ScrollViewer>
+            <Button x:ConnectionId='5' Background="SkyBlue" Name="btnSendMsg"                          RelativePanel.Below="ScrollText" RelativePanel.AlignRightWith="ScrollText">发送</Button>
+            <TextBox x:ConnectionId='6' Text="hello" x:Name="tbMsg"  RelativePanel.Below="ScrollText" RelativePanel.AlignLeftWith="ScrollText"/>
+        </RelativePanel>
+        
+    </Grid>
+</Page>
+

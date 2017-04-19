@@ -1,0 +1,110 @@
+﻿<Page
+    x:Class="NEUSecretary.Chatroom"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:NEUSecretary"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
+
+    <Grid Background="White">
+        <VisualStateManager.VisualStateGroups>
+            <VisualStateGroup>
+                <VisualState x:ConnectionId='1' x:Name="MobileView">
+                    <VisualState.StateTriggers>
+                    <AdaptiveTrigger MinWindowWidth="0" />
+                    </VisualState.StateTriggers>
+                    <VisualState.Setters>
+                        <Setter Target="ChatroomTitle.FontSize" Value="30" />
+                        <Setter Target="ServerInfoIp.(RelativePanel.Below)" Value="ChatroomTitle"/>
+                        <Setter Target="ServerInfoPort.(RelativePanel.Below)" Value="ChatroomTitle"/>
+                        <Setter Target="ServerInfoPort.(RelativePanel.RightOf)" Value="ServerInfoIp"/>
+                    </VisualState.Setters>
+                </VisualState>
+                <VisualState x:ConnectionId='2' x:Name="TabletView">
+                    <VisualState.StateTriggers>
+                        <AdaptiveTrigger MinWindowWidth="600" />
+                    </VisualState.StateTriggers>
+                    <VisualState.Setters>
+                        <Setter Target="lbMsg.Width" Value="900"/>
+                        <Setter Target="ScrollViewMsg.Height" Value="570"/>
+                        <Setter Target="tbMsg.Width" Value="900"/>
+                        <Setter Target="tbMsg.Margin" Value="10 10 0 0"/>
+                        <Setter Target="ScrollViewMsg.(RelativePanel.Below)"  Value=""/>
+                        <Setter Target="ScrollViewMsg.Margin" Value="10 0 0 0"/>
+                        <Setter Target="ScrollViewMsg.(RelativePanel.RightOf)"  Value="socketPlane"/>
+                        <Setter Target="txtIp.(RelativePanel.Below)" Value="ClientIp"/>
+                        <Setter Target="txtIp.(RelativePanel.RightOf)" Value=""/>
+                        <Setter Target="ClientPort.(RelativePanel.Below)" Value="txtIp"/>
+                        <Setter Target="ClientPort.(RelativePanel.RightOf)" Value=""/>
+                        <Setter Target="txtPort.(RelativePanel.Below)" Value="ClientPort"/>
+                        <Setter Target="txtPort.(RelativePanel.RightOf)" Value=""/>
+                        <Setter Target="btConnectSocket.(RelativePanel.Below)" Value="txtPort"/>
+                        <Setter Target="btConnectSocket.(RelativePanel.RightOf)" Value=""/>
+                        <Setter Target="ServerInfoIp.(RelativePanel.RightOf)" Value="ChatroomTitle"/>
+                        <Setter Target="ServerInfoPort.(RelativePanel.RightOf)" Value="ServerInfoIp"/>
+                        <Setter Target="socketPlane.BorderBrush" Value="#F3F3F3"/>
+                        <Setter Target="socketPlane.BorderThickness" Value="1"/>
+                        <Setter Target="socketPlane.Height" Value="610"/>
+                        <Setter Target="socketPlane.Width" Value="300"/>
+                        <Setter Target="txtIp.(RelativePanel.AlignHorizontalCenterWithPanel)" Value="True"/>
+                        <Setter Target="ClientIp.(RelativePanel.AlignHorizontalCenterWithPanel)" Value="True"/>
+                        <Setter Target="txtPort.(RelativePanel.AlignHorizontalCenterWithPanel)" Value="True"/>
+                        <Setter Target="ClientPort.(RelativePanel.AlignHorizontalCenterWithPanel)" Value="True"/>
+                        <Setter Target="btConnectSocket.(RelativePanel.AlignHorizontalCenterWithPanel)" Value="True"/>
+                        <Setter Target="btConnectSocket.(RelativePanel.AlignRightWithPanel)" Value="False"/>
+                        <Setter Target="btConnectSocket.Margin" Value="0 50 0 10"/>
+                        <Setter Target="txtIp.Margin" Value="0 10 0 10"/>
+                        <Setter Target="ClientIp.Margin" Value="0 50 0 10"/>
+                        <Setter Target="txtPort.Margin" Value="0 10 0 10"/>
+                        <Setter Target="ClientPort.Margin" Value="0 50 0 10"/>
+                        <Setter Target="socketPlane.VerticalAlignment" Value="Center"/>
+                        <Setter Target="tbMsg.(RelativePanel.AlignLeftWith)" Value="ScrollViewMsg"/>
+                        <Setter Target="ChatroomTitle.FontSize" Value="40"/>
+                        <Setter Target="ServerInfoIp.FontSize" Value="20"/>
+                        <Setter Target="ServerInfoPort.FontSize" Value="20"/>
+                        <Setter Target="TitlePanel.Margin" Value="0 0 0 20"/>
+                    </VisualState.Setters>
+                </VisualState>
+            </VisualStateGroup>
+        </VisualStateManager.VisualStateGroups>
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+
+        <RelativePanel x:ConnectionId='3' x:Name="TitlePanel" Grid.Row="0" HorizontalAlignment="Center">
+            <TextBlock x:ConnectionId='14' Name="ChatroomTitle" Margin="10 10 10 0" Text="NEUSecretary-Chatroom" Foreground="Black"/>
+            <TextBlock x:ConnectionId='15' Name="ServerInfoIp" Foreground="Black" Margin="10 10 10 10" RelativePanel.AlignBottomWithPanel="True" >
+                <Run Text="本机IP：" />
+                <Run x:ConnectionId='18' x:Name="runIp" FontSize="24"/>
+            </TextBlock>
+            <TextBlock x:ConnectionId='16' Name="ServerInfoPort" Foreground="Black" Margin="10 10 10 10" RelativePanel.AlignBottomWithPanel="True">
+                <Run Text="监听端口："/>
+                <Run x:ConnectionId='17' x:Name="runPort" FontSize="20"/>
+            </TextBlock>
+        </RelativePanel>
+        <Grid x:ConnectionId='4' x:Name="ContentPanel" Grid.Row="1">
+            <RelativePanel BorderBrush="Red" HorizontalAlignment="Center">
+                <RelativePanel x:ConnectionId='5' Name="socketPlane">
+                    <TextBlock x:ConnectionId='9' Foreground="Black" Name="ClientIp" Margin="10 10 10 10">服务器IP：</TextBlock>
+                    <TextBox x:ConnectionId='10' Foreground="Black" Name="txtIp" RelativePanel.RightOf="ClientIp" Background="White"/>
+                    <TextBlock x:ConnectionId='11' Foreground="Black" Name="ClientPort" RelativePanel.RightOf="txtIp" Margin="10 10 10 10">服务器端口：</TextBlock>
+                    <TextBox x:ConnectionId='12' Foreground="Black" Name="txtPort" RelativePanel.RightOf="ClientPort" Background="White" />
+                    <Button x:ConnectionId='13' Foreground="Black" Content="连接socket" x:Name="btConnectSocket"                           Background="#DEE1E4" RelativePanel.RightOf="txtPort" RelativePanel.AlignRightWithPanel="True" Margin="0 0 10 0"/>
+                </RelativePanel>
+                <ScrollViewer x:ConnectionId='6' ScrollViewer.VerticalScrollBarVisibility="Hidden" ScrollViewer.IsScrollInertiaEnabled="True" BorderThickness="1" Margin="0 10 0 0" BorderBrush="#DEE1E4" Name="ScrollViewMsg" Height="420" VerticalScrollMode="Enabled"  RelativePanel.Below="socketPlane" RelativePanel.AlignHorizontalCenterWithPanel="True">
+                    <ScrollViewer.Content>
+                        <StackPanel x:ConnectionId='8' x:Name="lbMsg" Width="400" Margin="0 0 0 70">
+
+                        </StackPanel>
+                    </ScrollViewer.Content>
+                   
+                </ScrollViewer>
+                <TextBox x:ConnectionId='7' BorderBrush="#DEE1E4" Foreground="Black" Background="White" Margin="0 10 0 0" Text="hello" x:Name="tbMsg" Width="400"                      RelativePanel.Below="ScrollViewMsg"  RelativePanel.AlignHorizontalCenterWithPanel="True"/>
+            </RelativePanel>
+        </Grid>
+    </Grid>
+</Page>
+

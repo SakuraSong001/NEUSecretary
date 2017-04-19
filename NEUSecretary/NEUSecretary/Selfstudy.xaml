@@ -9,149 +9,138 @@
 
     <Grid Background="White">
         <Grid.RowDefinitions>
-            <RowDefinition Height="360"/>
+            <RowDefinition Height="auto"/>
             <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
 
-        <RelativePanel Name="SelfStudyRelativePanel" Grid.Row="0">
+        <RelativePanel Name="SelfStudyRelativePanel" Grid.Row="0" Height="300" Margin="20">
             <RelativePanel.Background>
                 <ImageBrush  ImageSource="Assets/000.jpg" Stretch="UniformToFill"/>
             </RelativePanel.Background>
 
-            <Grid Height="255" Width="450" Margin="60,55,0,0" Background="White">
-                <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="auto"/>
-                    <ColumnDefinition Width="*"   />
-                </Grid.ColumnDefinitions>
+            <Grid Width="800" Margin="0,0,0,30" Background="White" Opacity="0.65"
+                  RelativePanel.AlignBottomWithPanel="True" RelativePanel.AlignHorizontalCenterWithPanel="True">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="auto"/>
+                    <RowDefinition Height="auto"/>
+                </Grid.RowDefinitions>
 
-
-                <ListBox SelectionMode="Single" 
-                         SelectionChanged="RoomListBox_SelectionChanged"
-                         Background="DeepSkyBlue" Grid.Column="0" Name="RoomListBox">
-                    <ListBoxItem Name="YifuHouse" Foreground="White" Height="35">
-                        <TextBlock Margin="0,-5,0,-5">逸夫楼</TextBlock>
-                    </ListBoxItem>
-                    <ListBoxItem Name="DachengHouse" Foreground="White" Height="35">
-                        <TextBlock Margin="0,-5,0,-5">大成教学楼</TextBlock>
-                    </ListBoxItem>
-                    <ListBoxItem Name="JidianHouse" Foreground="White" Height="35">
-                        <TextBlock Margin="0,-5,0,-5">机电馆</TextBlock>
-                    </ListBoxItem>
-                    <ListBoxItem Name="JianzhuHouse" Foreground="White" Height="35">
-                        <TextBlock Margin="0,-5,0,-5">建筑学馆</TextBlock>
-                    </ListBoxItem>
-                    <ListBoxItem Name="XinxiHouse" Foreground="White" Height="35">
-                        <TextBlock Margin="0,-5,0,-5">信息学馆</TextBlock>
-                    </ListBoxItem>
-                    <ListBoxItem Name="ShengmingHouse" Foreground="White" Height="35">
-                        <TextBlock Margin="0,-5,0,-5">生命学馆</TextBlock>
-                    </ListBoxItem>
-                    <ListBoxItem Name="WenguanHouse" Foreground="White" Height="35">
-                        <TextBlock Margin="0,-5,0,-5">文管学馆</TextBlock>
-                    </ListBoxItem>
-                </ListBox>
-
-                <Grid Grid.Column="1">
-                    <Grid.RowDefinitions>
-                        <RowDefinition Height="auto"/>
-                        <RowDefinition Height="150"/>
-                        <RowDefinition Height="*"/>
-                    </Grid.RowDefinitions>
-
-                    <RelativePanel Grid.Row="0" BorderThickness="0,0,0,1" BorderBrush="LightBlue" Margin="15,10,15,0">
-                        <TextBlock Name="TermTextBlock" RelativePanel.AlignRightWithPanel="True"
-                                   RelativePanel.AlignVerticalCenterWithPanel="True" Margin="0,0,5,0"
-                                   Foreground="Black" FontWeight="Light">获取当年学期</TextBlock>
-
-                        <ComboBox Name="TermComboBox"
-                                  SelectionChanged="TermComboBox_SelectionChanged" 
-                                  VerticalAlignment="Center"
-                                  HorizontalAlignment="Right"
-                                  Width="150" Grid.Row="0" Grid.Column="1">
-                            <ComboBoxItem  Foreground="White">2014-2015学年第一学期</ComboBoxItem>
-                            <ComboBoxItem  Foreground="White">2014-2015学年第二学期</ComboBoxItem>
-                            <ComboBoxItem  Foreground="White">2015-2016学年第一学期</ComboBoxItem>
-                            <ComboBoxItem  Foreground="White">2015-2016学年第二学期</ComboBoxItem>
-                            <ComboBoxItem  Foreground="White">2016-2017学年第一学期</ComboBoxItem>
-                        </ComboBox>
-                    </RelativePanel>
-
-                    <Grid Grid.Row="1">
-                        <Grid.RowDefinitions>
-                            <RowDefinition Height="*"/>
-                            <RowDefinition Height="*"/>
-                            <RowDefinition Height="*"/>
-                        </Grid.RowDefinitions>
-
-                        <StackPanel Grid.Row="0" Orientation="Horizontal">
-                            <TextBlock Grid.Row="0" HorizontalAlignment="Center" VerticalAlignment="Center"
-                                       Margin="15,0,0,0" Foreground="Black" FontWeight="Light">选择日期</TextBlock>
-                            <CalendarDatePicker Name="SelfStudy_DatePicker" Grid.Column="1"
-                                                Margin="10,0,0,0" Width="245" FontWeight="Light"
-                                                BorderBrush="AliceBlue" BorderThickness="1,1,1,1">
-                            </CalendarDatePicker>
-                        </StackPanel>
-
-                        <StackPanel Grid.Row="1" Orientation="Horizontal">
-                            <TextBlock HorizontalAlignment="Center" VerticalAlignment="Center"
-                                       Margin="29,0,0,0" Foreground="Black" FontWeight="Light">第几周</TextBlock>
-                            <TextBox Name="ResultWeek" VerticalAlignment="Center" 
-                                      Margin="10,0,0,0" Width="90" PlaceholderText="请输入"></TextBox>
-                           
-                            <TextBlock HorizontalAlignment="Center" VerticalAlignment="Center"
-                                       Margin="27,0,0,0" Foreground="Black" FontWeight="Light">周几</TextBlock>
-                            <ComboBox Name="WeekdayComboBox" 
-                                      SelectionChanged="WeekdayComboBox_SelectionChanged" 
-                                      VerticalAlignment="Center" Margin="10,0,0,0" Width="90" >
-                                <ComboBoxItem  Foreground="White">星期一</ComboBoxItem>
-                                <ComboBoxItem  Foreground="White">星期二</ComboBoxItem>
-                                <ComboBoxItem  Foreground="White">星期三</ComboBoxItem>
-                                <ComboBoxItem  Foreground="White">星期四</ComboBoxItem>
-                                <ComboBoxItem  Foreground="White">星期五</ComboBoxItem>
-                                <ComboBoxItem  Foreground="White">星期六</ComboBoxItem>
-                                <ComboBoxItem  Foreground="White">星期日</ComboBoxItem>
-                            </ComboBox>
-                        </StackPanel>
-
-                        <StackPanel Grid.Row="2" Orientation="Horizontal">
-                            <TextBlock Grid.Row="2" HorizontalAlignment="Center" VerticalAlignment="Center"
-                                        Margin="14,0,0,0" Foreground="Black" FontWeight="Light">选择时间</TextBlock>
-                            <ComboBox Name="TimeComboBox" 
-                                      SelectionChanged="TimeComboBox_SelectionChanged" 
-                                      VerticalAlignment="Center"
-                                      HorizontalAlignment="Right"
-                                      Margin="10,0,0,0" Width="246" Grid.Row="0" Grid.Column="3">
-                                <ComboBoxItem  Foreground="White">1-2</ComboBoxItem>
-                                <ComboBoxItem  Foreground="White">3-4</ComboBoxItem>
-                                <ComboBoxItem  Foreground="White">5-6</ComboBoxItem>
-                                <ComboBoxItem  Foreground="White">7-8</ComboBoxItem>
-                                <ComboBoxItem  Foreground="White">9-10</ComboBoxItem>
-                                <ComboBoxItem  Foreground="White">11-12</ComboBoxItem>
-                            </ComboBox>
-                        </StackPanel>
-                    </Grid>
-
-                    <Button Name="SearchBtn" RelativePanel.AlignRightWithPanel="True" Grid.Row="2"
-                                Margin="0,0,27,0" Width="80" Height="30"  Click="SearchBtn_Click"
-                                Background="DeepSkyBlue" HorizontalAlignment="Right">
-                        <TextBlock FontSize="15" >搜索</TextBlock>
+                <RelativePanel Grid.Row="0" BorderThickness="0,0,0,1" BorderBrush="DeepSkyBlue" Margin="15,5,15,5">
+                    <Button RelativePanel.AlignLeftWithPanel="True" 
+                            Name="TermChooseButton"
+                            Click="TermChooseButton_Click">
+                        <Button.Background>
+                            <SolidColorBrush Opacity="0"/>
+                        </Button.Background>
+                        <TextBlock Name="TermTextBlock" Foreground="Blue" FontSize="18" FontWeight="Medium">获取当年学期</TextBlock>
                     </Button>
 
-                </Grid>
+                    <ComboBox Name="TermBox"  Visibility="Collapsed" 
+                              SelectionChanged="TermBox_SelectionChanged" 
+                              RelativePanel.AlignLeftWithPanel="True" 
+                              Width="180">
+                        <ComboBoxItem Foreground="White">2014-2015学年第一学期</ComboBoxItem>
+                        <ComboBoxItem Foreground="White">2014-2015学年第二学期</ComboBoxItem>
+                        <ComboBoxItem Foreground="White">2015-2016学年第一学期</ComboBoxItem>
+                        <ComboBoxItem Foreground="White">2015-2016学年第二学期</ComboBoxItem>
+                        <ComboBoxItem Foreground="White">2016-2017学年第一学期</ComboBoxItem>
+                        <ComboBoxItem Foreground="White">2016-2017学年第二学期</ComboBoxItem>
+                    </ComboBox>
+                </RelativePanel>
+
+                <RelativePanel Grid.Row="1" Margin="15,5,15,10">
+
+                    <StackPanel Orientation="Horizontal" >
+                        <ComboBox Name="RoomComboBox" Width="115" 
+                                  PlaceholderText="教学楼" 
+                                  FontWeight="Light" Grid.Column="0"                                 
+                                  SelectionChanged="RoomComboBox_SelectionChanged"  >
+                            <ComboBoxItem Name="YifuHouse" Foreground="White" Height="35">
+                                <TextBlock Margin="0,-5,0,-5">逸夫楼</TextBlock>
+                            </ComboBoxItem>
+                            <ComboBoxItem Name="DachengHouse" Foreground="White" Height="35">
+                                <TextBlock Margin="0,-5,0,-5">大成教学楼</TextBlock>
+                            </ComboBoxItem>
+                            <ComboBoxItem Name="JidianHouse" Foreground="White" Height="35">
+                                <TextBlock Margin="0,-5,0,-5">机电馆</TextBlock>
+                            </ComboBoxItem>
+                            <ComboBoxItem Name="JianzhuHouse" Foreground="White" Height="35">
+                                <TextBlock Margin="0,-5,0,-5">建筑学馆</TextBlock>
+                            </ComboBoxItem>
+                            <ComboBoxItem Name="XinxiHouse" Foreground="White" Height="35">
+                                <TextBlock Margin="0,-5,0,-5">信息学馆</TextBlock>
+                            </ComboBoxItem>
+                            <ComboBoxItem Name="ShengmingHouse" Foreground="White" Height="35">
+                                <TextBlock Margin="0,-5,0,-5">生命学馆</TextBlock>
+                            </ComboBoxItem>
+                            <ComboBoxItem Name="WenguanHouse" Foreground="White" Height="35">
+                                <TextBlock Margin="0,-5,0,-5">文管学馆</TextBlock>
+                            </ComboBoxItem>
+                        </ComboBox>
+
+                        <CalendarDatePicker Name="SelfStudy_DatePicker" Grid.Column="1"
+                                        Margin="10,0,0,0" Width="120" FontWeight="Light">
+                        </CalendarDatePicker>
+                        
+                        <TextBox Name="ResultWeek" VerticalAlignment="Center" 
+                             Margin="10,0,0,0" Width="90" PlaceholderText="第几周"></TextBox>
+                        
+                        <ComboBox Name="WeekdayComboBox" PlaceholderText="星期几" 
+                              Foreground="LightGray" FontWeight="Light"
+                              SelectionChanged="WeekdayComboBox_SelectionChanged" 
+                              VerticalAlignment="Center" Margin="10,0,0,0" Width="90" >
+                            <ComboBoxItem  Foreground="White">星期一</ComboBoxItem>
+                            <ComboBoxItem  Foreground="White">星期二</ComboBoxItem>
+                            <ComboBoxItem  Foreground="White">星期三</ComboBoxItem>
+                            <ComboBoxItem  Foreground="White">星期四</ComboBoxItem>
+                            <ComboBoxItem  Foreground="White">星期五</ComboBoxItem>
+                            <ComboBoxItem  Foreground="White">星期六</ComboBoxItem>
+                            <ComboBoxItem  Foreground="White">星期日</ComboBoxItem>
+                        </ComboBox>
+                        
+
+                        <ComboBox Name="TimeComboBox" PlaceholderText="第几节" FontWeight="ExtraLight" Foreground="Gray"
+                              SelectionChanged="TimeComboBox_SelectionChanged" 
+                              VerticalAlignment="Center"
+                              HorizontalAlignment="Right"
+                              Margin="10,0,0,0" Width="90" Grid.Row="0" Grid.Column="3">
+                            <ComboBoxItem  Foreground="White">1-2</ComboBoxItem>
+                            <ComboBoxItem  Foreground="White">3-4</ComboBoxItem>
+                            <ComboBoxItem  Foreground="White">5-6</ComboBoxItem>
+                            <ComboBoxItem  Foreground="White">7-8</ComboBoxItem>
+                            <ComboBoxItem  Foreground="White">9-10</ComboBoxItem>
+                            <ComboBoxItem  Foreground="White">11-12</ComboBoxItem>
+                        </ComboBox>
+                        
+                    </StackPanel>
+
+                    <Button Name="SearchBtn" Margin="0,0,15,0"
+                            RelativePanel.AlignRightWithPanel="True" 
+                            RelativePanel.AlignVerticalCenterWithPanel="True"
+                            Width="80" Height="30"  Click="SearchBtn_Click"
+                            Background="DeepSkyBlue" HorizontalAlignment="Right">
+                        <TextBlock FontSize="15" >搜索</TextBlock>
+                    </Button>
+                </RelativePanel>
+                
             </Grid>
         </RelativePanel>
 
-        <RelativePanel Grid.Row="1">
-            <TextBlock Name="room11" Foreground="Black" HorizontalAlignment="Center" VerticalAlignment="Center"
-                       Grid.Row="0" Grid.Column="0" Margin="40,20,80,10" FontSize="16">教学楼</TextBlock>
-            <TextBlock Name="room12" Foreground="Black" HorizontalAlignment="Center" VerticalAlignment="Center"
-                       Grid.Row="0" Grid.Column="1" Margin="0,20,0,10" FontSize="16"
-                       RelativePanel.RightOf="room11">教室类型</TextBlock>
-            <TextBlock Name="room21" Foreground="Black" HorizontalAlignment="Center" VerticalAlignment="Top" 
-                       Grid.Row="1" Grid.Column="0" RelativePanel.Below="room11" RelativePanel.AlignLeftWith="room11"/>
-            <TextBlock Name="room22" Foreground="Black" HorizontalAlignment="Center" VerticalAlignment="Top" 
-                       Grid.Row="1" Grid.Column="1" RelativePanel.Below="room12" RelativePanel.AlignLeftWith="room12"/>
-        </RelativePanel>
+
+
+        <GridView x:Name="SstudyGridView" Grid.Row="1" Margin="30">
+            <GridView.ItemTemplate>
+                <DataTemplate>
+                    <RelativePanel Height="100" Width="140" Margin="10" Background="Black" Opacity="0.8">
+                        <Image Source="Assets/classroom.jpg" Opacity="0.6" Stretch="UniformToFill"/>
+                        <TextBlock Name="RoomID" Margin="10,20,0,0" FontWeight="Medium" Text="{Binding roomid}"></TextBlock>
+                        <TextBlock Name="RoomType" Margin="10,15,0,0"
+                                   RelativePanel.Below="RoomID" FontWeight="Medium" Text="{Binding roomtype}"></TextBlock>
+                    </RelativePanel>
+                </DataTemplate>
+            </GridView.ItemTemplate>
+        </GridView>
+        
              
 
     </Grid>

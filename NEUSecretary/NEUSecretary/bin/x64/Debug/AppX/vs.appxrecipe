@@ -28,13 +28,13 @@
     <AppXManifest Include="D:\code\NEUSecretary\NEUSecretary\NEUSecretary\bin\x64\Debug\Core\AppxManifest.xml">
       <PackagePath>AppxManifest.xml</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2017-04-13T14:15:04.521</Modified>
+      <Modified>2017-04-18T16:29:51.887</Modified>
     </AppXManifest>
   </ItemGroup>
   <ItemGroup>
     <AppxPackagedFile Include="D:\code\NEUSecretary\NEUSecretary\NEUSecretary\bin\x64\Debug\NEUSecretary.exe">
       <PackagePath>entrypoint\NEUSecretary.exe</PackagePath>
-      <Modified>2017-04-13T14:14:58.926</Modified>
+      <Modified>2017-04-18T16:29:30.528</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\user\.nuget\packages\Microsoft.CSharp\4.0.0\lib\netcore50\Microsoft.CSharp.dll">
       <PackagePath>Microsoft.CSharp.dll</PackagePath>
@@ -474,97 +474,185 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="D:\code\NEUSecretary\NEUSecretary\NEUSecretary\Assets\000.jpg">
       <PackagePath>Assets\000.jpg</PackagePath>
-      <Modified>2017-04-13T12:34:54.505</Modified>
+      <Modified>2017-04-17T07:31:42.658</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="D:\code\NEUSecretary\NEUSecretary\NEUSecretary\Assets\091.jpg">
       <PackagePath>Assets\091.jpg</PackagePath>
-      <Modified>2017-04-13T12:34:54.574</Modified>
+      <Modified>2017-04-17T07:31:42.743</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="D:\code\NEUSecretary\NEUSecretary\NEUSecretary\Assets\classroom.jpg">
+      <PackagePath>Assets\classroom.jpg</PackagePath>
+      <Modified>2017-04-18T13:50:15.063</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="D:\code\NEUSecretary\NEUSecretary\NEUSecretary\Assets\default.jpg">
+      <PackagePath>Assets\default.jpg</PackagePath>
+      <Modified>2017-04-17T07:31:42.943</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="D:\code\NEUSecretary\NEUSecretary\NEUSecretary\Assets\IMG_0557.JPG">
       <PackagePath>Assets\IMG_0557.JPG</PackagePath>
-      <Modified>2017-04-13T12:34:54.574</Modified>
+      <Modified>2017-04-17T07:31:42.805</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="D:\code\NEUSecretary\NEUSecretary\NEUSecretary\Assets\11111.png">
+      <PackagePath>Assets\11111.png</PackagePath>
+      <Modified>2017-04-17T07:31:42.790</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="D:\code\NEUSecretary\NEUSecretary\NEUSecretary\Assets\1222.png">
+      <PackagePath>Assets\1222.png</PackagePath>
+      <Modified>2017-04-17T07:31:42.790</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="D:\code\NEUSecretary\NEUSecretary\NEUSecretary\Assets\class.png">
       <PackagePath>Assets\class.png</PackagePath>
-      <Modified>2017-04-13T12:34:54.705</Modified>
+      <Modified>2017-04-17T07:31:42.928</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="D:\code\NEUSecretary\NEUSecretary\NEUSecretary\Assets\cloud-icon-weather_128.png">
+      <PackagePath>Assets\cloud-icon-weather_128.png</PackagePath>
+      <Modified>2017-04-17T07:31:42.943</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="D:\code\NEUSecretary\NEUSecretary\NEUSecretary\Assets\drizzle-rain-icon_128.png">
+      <PackagePath>Assets\drizzle-rain-icon_128.png</PackagePath>
+      <Modified>2017-04-17T07:31:42.943</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="D:\code\NEUSecretary\NEUSecretary\NEUSecretary\Assets\gakki.png">
       <PackagePath>Assets\gakki.png</PackagePath>
-      <Modified>2017-04-13T12:34:54.754</Modified>
+      <Modified>2017-04-17T07:31:42.990</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="D:\code\NEUSecretary\NEUSecretary\NEUSecretary\Assets\happy.png">
+      <PackagePath>Assets\happy.png</PackagePath>
+      <Modified>2017-04-17T07:31:43.062</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="D:\code\NEUSecretary\NEUSecretary\NEUSecretary\Assets\homepage.png">
       <PackagePath>Assets\homepage.png</PackagePath>
-      <Modified>2017-04-13T12:34:54.758</Modified>
+      <Modified>2017-04-17T07:31:43.087</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="D:\code\NEUSecretary\NEUSecretary\NEUSecretary\Assets\jingdian3.9.png">
+      <PackagePath>Assets\jingdian3.9.png</PackagePath>
+      <Modified>2017-04-17T07:31:43.095</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="D:\code\NEUSecretary\NEUSecretary\NEUSecretary\Assets\jingdian4.9.png">
+      <PackagePath>Assets\jingdian4.9.png</PackagePath>
+      <Modified>2017-04-17T07:31:43.101</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="D:\code\NEUSecretary\NEUSecretary\NEUSecretary\Assets\Leeeeo.png">
+      <PackagePath>Assets\Leeeeo.png</PackagePath>
+      <Modified>2017-04-17T07:31:42.805</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="D:\code\NEUSecretary\NEUSecretary\NEUSecretary\Assets\Library.png">
       <PackagePath>Assets\Library.png</PackagePath>
-      <Modified>2017-04-13T12:34:54.642</Modified>
+      <Modified>2017-04-17T07:31:42.859</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="D:\code\NEUSecretary\NEUSecretary\NEUSecretary\Assets\lightning-icon_128.png">
+      <PackagePath>Assets\lightning-icon_128.png</PackagePath>
+      <Modified>2017-04-17T07:31:43.107</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="D:\code\NEUSecretary\NEUSecretary\NEUSecretary\Assets\Loke.png">
+      <PackagePath>Assets\Loke.png</PackagePath>
+      <Modified>2017-04-17T07:31:42.859</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="D:\code\NEUSecretary\NEUSecretary\NEUSecretary\Assets\night-clouds-moon-icon_128.png">
+      <PackagePath>Assets\night-clouds-moon-icon_128.png</PackagePath>
+      <Modified>2017-04-17T07:31:43.112</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="D:\code\NEUSecretary\NEUSecretary\NEUSecretary\Assets\rain-icon-weather_128.png">
+      <PackagePath>Assets\rain-icon-weather_128.png</PackagePath>
+      <Modified>2017-04-17T07:31:43.116</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="D:\code\NEUSecretary\NEUSecretary\NEUSecretary\Assets\Sakura.png">
+      <PackagePath>Assets\Sakura.png</PackagePath>
+      <Modified>2017-04-17T07:31:42.859</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="D:\code\NEUSecretary\NEUSecretary\NEUSecretary\Assets\score.png">
       <PackagePath>Assets\score.png</PackagePath>
-      <Modified>2017-04-13T12:34:54.774</Modified>
+      <Modified>2017-04-17T07:31:43.121</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="D:\code\NEUSecretary\NEUSecretary\NEUSecretary\Assets\selfinfo.png">
       <PackagePath>Assets\selfinfo.png</PackagePath>
-      <Modified>2017-04-13T12:34:54.774</Modified>
+      <Modified>2017-04-17T07:31:43.132</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="D:\code\NEUSecretary\NEUSecretary\NEUSecretary\Assets\Selfstudy.png">
       <PackagePath>Assets\Selfstudy.png</PackagePath>
-      <Modified>2017-04-13T12:34:54.673</Modified>
+      <Modified>2017-04-17T07:31:42.874</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="D:\code\NEUSecretary\NEUSecretary\NEUSecretary\Assets\snow-snowflakes-icon_128.png">
+      <PackagePath>Assets\snow-snowflakes-icon_128.png</PackagePath>
+      <Modified>2017-04-17T07:31:43.136</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="D:\code\NEUSecretary\NEUSecretary\NEUSecretary\Assets\strong-wind-weather-ic_128.png">
+      <PackagePath>Assets\strong-wind-weather-ic_128.png</PackagePath>
+      <Modified>2017-04-17T07:31:43.140</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="D:\code\NEUSecretary\NEUSecretary\NEUSecretary\Assets\sun-smile-glasses-icon_128.png">
+      <PackagePath>Assets\sun-smile-glasses-icon_128.png</PackagePath>
+      <Modified>2017-04-17T07:31:43.144</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="D:\code\NEUSecretary\NEUSecretary\NEUSecretary\Assets\sw-wind-direction-icon_128.png">
+      <PackagePath>Assets\sw-wind-direction-icon_128.png</PackagePath>
+      <Modified>2017-04-17T07:31:43.148</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="D:\code\NEUSecretary\NEUSecretary\NEUSecretary\Assets\temperature-weather-ic_128.png">
+      <PackagePath>Assets\temperature-weather-ic_128.png</PackagePath>
+      <Modified>2017-04-17T07:31:43.163</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="D:\code\NEUSecretary\NEUSecretary\NEUSecretary\Assets\timg.png">
       <PackagePath>Assets\timg.png</PackagePath>
-      <Modified>2017-04-13T12:34:54.774</Modified>
+      <Modified>2017-04-17T07:31:43.168</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="D:\code\NEUSecretary\NEUSecretary\NEUSecretary\Assets\tornado-twister-icon_128.png">
+      <PackagePath>Assets\tornado-twister-icon_128.png</PackagePath>
+      <Modified>2017-04-17T07:31:43.172</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="D:\code\NEUSecretary\NEUSecretary\NEUSecretary\Assets\user_default.png">
       <PackagePath>Assets\user_default.png</PackagePath>
-      <Modified>2017-04-13T12:34:54.790</Modified>
+      <Modified>2017-04-17T07:31:43.179</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="D:\code\NEUSecretary\NEUSecretary\NEUSecretary\Assets\wind-breeze-icon_128.png">
+      <PackagePath>Assets\wind-breeze-icon_128.png</PackagePath>
+      <Modified>2017-04-17T07:31:43.182</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="D:\code\NEUSecretary\NEUSecretary\NEUSecretary\Assets\LockScreenLogo.scale-200.png">
       <PackagePath>Assets\LockScreenLogo.scale-200.png</PackagePath>
-      <Modified>2017-04-13T12:34:54.645</Modified>
+      <Modified>2017-04-17T07:31:42.859</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="D:\code\NEUSecretary\NEUSecretary\NEUSecretary\Assets\SplashScreen.scale-200.png">
       <PackagePath>Assets\SplashScreen.scale-200.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2017-04-13T12:34:54.689</Modified>
+      <Modified>2017-04-17T07:31:42.890</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="D:\code\NEUSecretary\NEUSecretary\NEUSecretary\Assets\Square150x150Logo.scale-200.png">
       <PackagePath>Assets\Square150x150Logo.scale-200.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2017-04-13T12:34:54.689</Modified>
+      <Modified>2017-04-17T07:31:42.906</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="D:\code\NEUSecretary\NEUSecretary\NEUSecretary\Assets\Square44x44Logo.scale-200.png">
       <PackagePath>Assets\Square44x44Logo.scale-200.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2017-04-13T12:34:54.689</Modified>
+      <Modified>2017-04-17T07:31:42.906</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="D:\code\NEUSecretary\NEUSecretary\NEUSecretary\Assets\Square44x44Logo.targetsize-24_altform-unplated.png">
       <PackagePath>Assets\Square44x44Logo.targetsize-24_altform-unplated.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2017-04-13T12:34:54.689</Modified>
+      <Modified>2017-04-17T07:31:42.906</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="D:\code\NEUSecretary\NEUSecretary\NEUSecretary\Assets\StoreLogo.png">
       <PackagePath>Assets\StoreLogo.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2017-04-13T12:34:54.705</Modified>
+      <Modified>2017-04-17T07:31:42.906</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="D:\code\NEUSecretary\NEUSecretary\NEUSecretary\Assets\Wide310x150Logo.scale-200.png">
       <PackagePath>Assets\Wide310x150Logo.scale-200.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2017-04-13T12:34:54.705</Modified>
+      <Modified>2017-04-17T07:31:42.924</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="D:\code\NEUSecretary\NEUSecretary\NEUSecretary\Properties\Default.rd.xml">
       <PackagePath>Properties\Default.rd.xml</PackagePath>
-      <Modified>2017-04-13T12:34:54.862</Modified>
+      <Modified>2017-04-17T07:31:43.319</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="D:\code\NEUSecretary\NEUSecretary\NEUSecretary\VoiceCommandsFile.xml">
       <PackagePath>VoiceCommandsFile.xml</PackagePath>
-      <Modified>2017-04-13T12:34:54.886</Modified>
+      <Modified>2017-04-17T07:31:43.357</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="D:\code\NEUSecretary\NEUSecretary\NEUSecretary\bin\x64\Debug\NEUSecretary.xr.xml">
       <PackagePath>NEUSecretary.xr.xml</PackagePath>
-      <Modified>2017-04-13T13:41:19.212</Modified>
+      <Modified>2017-04-18T16:04:42.686</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Program Files %28x86%29\Windows Kits\10\UnionMetadata\Windows.winmd">
       <PackagePath>WinMetadata\Windows.winmd</PackagePath>
@@ -572,11 +660,11 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="D:\code\NEUSecretary\NEUSecretary\NEUSecretary\bin\x64\Debug\resources.pri">
       <PackagePath>resources.pri</PackagePath>
-      <Modified>2017-04-13T14:15:03.375</Modified>
+      <Modified>2017-04-18T16:29:46.478</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="D:\code\NEUSecretary\NEUSecretary\NEUSecretary\bin\x64\Debug\Core\NEUSecretary.exe">
       <PackagePath>NEUSecretary.exe</PackagePath>
-      <Modified>2017-04-13T14:15:04.505</Modified>
+      <Modified>2017-04-18T16:29:51.868</Modified>
     </AppxPackagedFile>
   </ItemGroup>
   <ItemGroup>
